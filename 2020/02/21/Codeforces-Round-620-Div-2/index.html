@@ -6,15 +6,20 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020 | 11D_Beyonder&#39;s Blog</title>
+  <title>Codeforces Round | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/Codeforces-Round-620-Div-2/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.niupic.com/images/2020/02/21/6H6e.png">
+<meta property="article:published_time" content="2020-02-21T05:40:20.000Z">
+<meta property="article:modified_time" content="2020-02-21T06:16:00.063Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="Codeforeces">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.niupic.com/images/2020/02/21/6H6e.png">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
   
@@ -138,35 +143,90 @@
           </div>
           <div id="js-content" class="content-ll">
             
-  
-  
+<article id="post-Codeforces-Round-620-Div-2" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/Codeforces-Round-620-Div-2/" class="archive-article-date">
-  	<time datetime="2020-02-21T05:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Codeforces-Round-620-Div-2/">Codeforces Round</a>
+    <h1 class="article-title" itemprop="name">
+      Codeforces Round
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        <a href="/2020/02/21/Codeforces-Round-620-Div-2/" class="archive-article-date">
+  	<time datetime="2020-02-21T05:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
+</a>
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>  
+<h1 id="E-1-Trees-and-Queries"><a href="#E-1-Trees-and-Queries" class="headerlink" title="E. 1-Trees and Queries"></a>E. 1-Trees and Queries</h1><p>Gildong was hiking a mountain, walking by millions of trees. Inspired by them, he suddenly came up with an interesting idea for trees in data structures: What if we add another edge in a tree?<br>Then he found that such tree-like graphs are called 1-trees. Since Gildong was bored of solving too many tree problems, he wanted to see if similar techniques in trees can be used in 1-trees as well. Instead of solving it by himself, he’s going to test you by providing queries on 1-trees.<br>First, he’ll provide you a tree (not 1-tree) with n vertices, then he will ask you q queries. Each query contains 5 integers: x, y, a, b, and k. This means you’re asked to determine if there exists a path from vertex a to b that contains exactly k edges after adding a bidirectional edge between vertices x and y. A path can contain the same vertices and same edges multiple times. All queries are independent of each other; i.e. the added edge in a query is removed in the next query.  </p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line contains an integer n (3≤n≤105), the number of vertices of the tree.<br>Next n−1 lines contain two integers u and v (1≤u,v≤n, u≠v) each, which means there is an edge between vertex u and v. All edges are bidirectional and distinct.<br>Next line contains an integer q (1≤q≤105), the number of queries Gildong wants to ask.<br>Next q lines contain five integers x, y, a, b, and k each (1≤x,y,a,b≤n, x≠y, 1≤k≤109) – the integers explained in the description. It is guaranteed that the edge between x and y does not exist in the original tree.   </p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each query, print “YES” if there exists a path that contains exactly k edges from vertex a to b after adding an edge between vertices x and y. Otherwise, print “NO”.<br>You can print each letter in any case (upper or lower).  </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>5<br>1 2<br>2 3<br>3 4<br>4 5<br>5<br>1 3 1 2 2<br>1 4 1 3 2<br>1 4 1 3 3<br>4 2 3 3 9<br>5 2 3 3 9   </p>
+<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><p>YES<br>YES<br>NO<br>YES<br>NO  </p>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>The image below describes the tree (circles and solid lines) and the added edges for each query (dotted lines).<br><img src="https://i.niupic.com/images/2020/02/21/6H6e.png" alt=""><br>Possible paths for the queries with “YES” answers are:  </p>
+<ul>
+<li><p>1-st query: 1 – 3 – 2  </p>
+</li>
+<li><p>2-nd query: 1 – 2 – 3  </p>
+</li>
+<li><p>4-th query: 3 – 4 – 2 – 3 – 4 – 2 – 3 – 4 – 2 – 3  </p>
+<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>给一颗有$n$个点的树，输入$(n-1)$条边。每次询问在$x,y$之间增加一条路径，回答在$a,b$之间是否存在长度为$k$的路径。每一次询问添加的边在下一次询问时就会消亡（本质上是一个离线问题）。</p>
+<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>假设$a→b$有一条路径长为$l$，如果$(k-l)$ $mod$ $2=0$，即$k≥l$且$k,l$同奇偶，那么长度为$k$的路径一定存在。因为当从$a$出发经过$l$的长度走到$b$后，我们可以在一条边上来回走$\frac{{k - l}}{2}$次，走够$(k-l)$步，于是长度为$k$的路径就产生了。<br>所以我们只需要找到一条与$k$同奇偶的最短路径，这样的路径有三种:  </p>
+</li>
+<li><p>$a→b$    </p>
+</li>
+<li><p>$a→x→y→b$  </p>
+</li>
+<li><p>$a→y→x→b$    </p>
+<p>$x→y,y→x$的路径长度为$1$，其余路径的长度可利用LCA求得。  </p>
+</li>
+</ul>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100005</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">e</span>//链式前向星存图</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> next,v;<span class="comment">//w都为1，因此此处不设置改变量</span></span><br><span class="line">&#125;edge[N&lt;&lt;<span class="number">1</span>];</span><br><span class="line"><span class="keyword">int</span> head[N],cnt,depth[N],father[N][<span class="number">21</span>],n,q;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">	cnt=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">AddEdge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	edge[cnt].next=head[u];</span><br><span class="line">	edge[cnt].v=v;</span><br><span class="line">	head[u]=cnt++;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> f)</span><span class="comment">//起点是u，u的父亲节点是f </span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	depth[u]=depth[f]+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">20</span>;i++) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(father[u][i<span class="number">-1</span>])</span><br><span class="line">		&#123;</span><br><span class="line">			father[u][i]=father[father[u][i<span class="number">-1</span>]][i<span class="number">-1</span>];</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">break</span>;<span class="comment">//如过没有father[u][i-1]，那么更远的父亲节点也不可能有。</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=head[u];i!=<span class="number">-1</span>;i=edge[i].next)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> v=edge[i].v;</span><br><span class="line">		<span class="keyword">if</span>(v==f) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			father[v][<span class="number">0</span>]=u;</span><br><span class="line">			dfs(v,u);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">lca</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(depth[x]&lt;depth[y]) swap(x,y);<span class="comment">//默认x的深度大</span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> delta=depth[x]-depth[y];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">20</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>((<span class="number">1</span>&lt;&lt;i)&amp;delta) x=father[x][i];</span><br><span class="line">		<span class="keyword">if</span>(x==y) <span class="keyword">return</span> x;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">20</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(father[x][i]!=father[y][i])</span><br><span class="line">		&#123;</span><br><span class="line">			x=father[x][i];</span><br><span class="line">			y=father[y][i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> father[x][<span class="number">0</span>];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">GetDis</span><span class="params">(<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (depth[a]+depth[b]-(depth[lca(a,b)]&lt;&lt;<span class="number">1</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">check</span><span class="params">(<span class="keyword">int</span> l,<span class="keyword">int</span> k)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> (l&lt;=k&amp;&amp;((k-l)&amp;<span class="number">1</span>)==<span class="number">0</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">int</span> u,v;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n<span class="number">-1</span>;i++) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;u&gt;&gt;v;</span><br><span class="line">		AddEdge(u,v);</span><br><span class="line">		AddEdge(v,u);</span><br><span class="line">	&#125;</span><br><span class="line">	dfs(<span class="number">1</span>,<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;q;</span><br><span class="line">	<span class="keyword">int</span> x,y,a,b,k;</span><br><span class="line">	<span class="keyword">while</span>(q--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">bool</span> flag=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;x&gt;&gt;y&gt;&gt;a&gt;&gt;b&gt;&gt;k;</span><br><span class="line">		<span class="keyword">int</span> l1,l2,l3;</span><br><span class="line">		l1=GetDis(a,b);</span><br><span class="line">		l2=GetDis(a,x)+<span class="number">1</span>+GetDis(y,b);</span><br><span class="line">		l3=GetDis(a,y)+<span class="number">1</span>+GetDis(x,b);</span><br><span class="line">		<span class="keyword">if</span>(check(l1,k)) flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(check(l2,k)) flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(check(l3,k)) flag=<span class="number">1</span>;</span><br><span class="line">		<span class="keyword">if</span>(flag) <span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/alipay.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/wechatpay.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -178,198 +238,121 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/02/21/Codeforces-Round-620-Div-2/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/LCA-lowest-common-ancestor/" class="archive-article-date">
-  	<time datetime="2020-02-21T04:48:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/21/LCA-lowest-common-ancestor/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">LCA(lowest common ancestor)</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/LCA-lowest-common-ancestor/">LCA(lowest common ancestor)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#E-1-Trees-and-Queries"><span class="toc-number">1.</span> <span class="toc-text">E. 1-Trees and Queries</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">1.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input"><span class="toc-number">1.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output"><span class="toc-number">1.3.2.</span> <span class="toc-text">output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-number">1.4.</span> <span class="toc-text">Note</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation"><span class="toc-number">1.5.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">1.6.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.7.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/21/%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-20T16:37:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-        </div>
-    	 
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E%E7%AE%97%E6%B3%95/">树上倍增算法</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/20/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E9%9B%86%E8%AE%AD/" class="archive-article-date">
-  	<time datetime="2020-02-20T05:17:27.530Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-20</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/20/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E9%9B%86%E8%AE%AD/">2020牛客寒假集训</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">牛客网</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" class="archive-article-date">
-  	<time datetime="2020-02-19T02:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/">矩阵快速幂</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	<a href="/2020/02/19/Nice-to-Meet-You/" class="archive-article-date">
-  	<time datetime="2020-02-18T16:40:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/Nice-to-Meet-You/">Nice to Meet You!</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
-  
-
-    
 
 
           </div>
@@ -392,8 +375,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: true,
