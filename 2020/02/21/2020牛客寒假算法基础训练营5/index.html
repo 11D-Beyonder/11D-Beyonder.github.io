@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>2020牛客寒假算法基础训练营5 | 11D_Beyonder&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="2020牛客寒假算法基础训练营5">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55/index.html">
+<meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://s2.ax1x.com/2020/02/15/1vwQrF.th.jpg">
+<meta property="article:published_time" content="2020-02-21T13:29:48.000Z">
+<meta property="article:modified_time" content="2020-02-21T13:30:40.873Z">
+<meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="牛客竞赛">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://s2.ax1x.com/2020/02/15/1vwQrF.th.jpg">
+  
+    <link rel="alternate" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">11D_Beyonder&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-2020牛客寒假算法基础训练营5" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55/" class="article-date">
+  <time datetime="2020-02-21T13:29:48.000Z" itemprop="datePublished">2020-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      2020牛客寒假算法基础训练营5
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+<h2 id="A-模板"><a href="#A-模板" class="headerlink" title="A-模板"></a>A-模板</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>牛牛，牛可乐和牛能组成了一只队伍参加ACM系列赛事，他们起了一个优雅的队名叫~“牛牛战队”。<br>牛牛战队在没有比赛的时候，会把各种板子放在密码柜里，防止弄丢。这一个密码由整个队伍掌管。其中牛牛和牛能有两个密钥，各自有一个仅由大写字母构成的字符串。牛可乐则掌握着解密方法。一天，你用一瓶可乐贿赂牛可乐，得到了解密的办法。<br>牛可乐将试图通过以下操作用尽可能少的步骤把一个密钥转换为另一个：<br>①将其中任意一个字母替换为另一个<br>②把最后一个字母删除<br>③在尾部添加一个字母<br>④得到的转化步数就是最后的密码。<br>一天，你和他们队员一起聚餐，你用可乐把他们灌倒了，从牛牛和牛能口中套出了两个密钥。你要趁他们醒之前拿到模板并复印一份再放回去。你能尽快的算出密码吗？  </p>
+<h3 id="输入描述"><a href="#输入描述" class="headerlink" title="输入描述"></a>输入描述</h3><p>输入数据共33行，第一行包括两个整数$n,m{\text{(1}} \leqslant n,m \leqslant {10^5})$，表示两个密钥的长度。<br>第二行包含一个长度为n的字符串${s_1}$，表示第一个密钥。<br>第三行包含一个长度为m的字符串${s_2}$，表示第二个密钥。  </p>
+<h3 id="输出描述"><a href="#输出描述" class="headerlink" title="输出描述"></a>输出描述</h3><p>在一行内输出一个整数，表示密码。</p>
+<h3 id="示例1"><a href="#示例1" class="headerlink" title="示例1"></a>示例1</h3><p>输入<br>4 3<br>WXYZ<br>WXY<br>输出<br>1</p>
+<h3 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h3><p>题目看起来是编辑距离的模板题，其实就是一个很简单的题目，贪心地考虑问题。<br>先考虑两个字符串相同的部分，显然，只要把原字符串和新字符串不同的字符修改就行了；对于两个字符串后面不同的部分，如果原字符串比较长，就全部删掉；如果原字符串比较短，就对照第二个字符串添加字符。   </p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> n,m;</span><br><span class="line"><span class="built_in">string</span> s1,s2;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d"</span>,&amp;n,&amp;m);</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;s1&gt;&gt;s2;</span><br><span class="line">	<span class="keyword">if</span>(n&gt;m)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=n-m;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(s1[i]!=s2[i]) ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(n&lt;=m)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=m-n;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(s1[i]!=s2[i]) ans++;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="B-牛牛战队的比赛地"><a href="#B-牛牛战队的比赛地" class="headerlink" title="B-牛牛战队的比赛地"></a>B-牛牛战队的比赛地</h2><h3 id="题目描述-1"><a href="#题目描述-1" class="headerlink" title="题目描述"></a>题目描述</h3><p>由于牛牛战队经常要外出比赛，因此在全国各地建立了很多训练基地，每一个基地都有一个坐标$(x,y)$。<br>这周末，牛牛队又要出去比赛了，各个比赛的赛点都在$x$轴上。牛牛战队为了方便比赛，想找一个到达训练基地最大距离最小的地方作为比赛地。<br>这个问题对于牛牛战队太简单了，它就交给了你，你来帮他算一下~</p>
+<h3 id="输入描述-1"><a href="#输入描述-1" class="headerlink" title="输入描述"></a>输入描述</h3><p>输入数据第一行包含一个整数$N(1≤N≤100000)$，表示牛牛战队训练基地的数量。<br>接下来$N$行，每行包括22个整数$x,y( - 10000 \leqslant x,y \leqslant 10000)$，表示每一个训练基地的坐标。  </p>
+<h3 id="输出描述-1"><a href="#输出描述-1" class="headerlink" title="输出描述"></a>输出描述</h3><p>输出一个小数，表示选择的比赛地距离各训练基地最大距离的最小值。<br>如果你的答案是$a$，标准答案是$b$，当$\frac{|a-b|}{max(1,|b|)}\leq 10^{-4}$时，你的答案将被判定为正确。</p>
+<h3 id="示例1-1"><a href="#示例1-1" class="headerlink" title="示例1"></a>示例1</h3><p>输入<br>3<br>0 0<br>2 0<br>0 2<br>输出<br>2<br>说明<br>当在$(0,0)$比赛时，到三个训练基地的最大距离是$2$。可以证明这是最小值。  </p>
+<h3 id="思路-1"><a href="#思路-1" class="headerlink" title="思路"></a>思路</h3><p>很容易想到，训练基地横坐标从负无穷到正无穷，所求值先减小后增大，具有两个单调区间，可以用四分法。</p>
+<h3 id="代码-1"><a href="#代码-1" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> init 0x7fffffff</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> eps 1e-6</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">    <span class="keyword">double</span> x,y;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">node p[<span class="number">100005</span>];</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">GetDis</span><span class="params">(node a, node b)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    <span class="keyword">return</span> <span class="built_in">sqrt</span>(<span class="built_in">pow</span>(a.y-b.y, <span class="number">2</span>)+<span class="built_in">pow</span>(a.x-b.x,<span class="number">2</span>));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">double</span> <span class="title">GetMax</span><span class="params">(<span class="keyword">double</span> a)</span><span class="comment">//找到比赛地距训练基地的最大距离</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    node temp;</span><br><span class="line">    temp.x=a;</span><br><span class="line">    temp.y=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">double</span> res=<span class="number">0</span>;</span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++) res=max(res,GetDis(temp,p[i]));</span><br><span class="line">    <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;  </span><br><span class="line">    <span class="keyword">int</span> i;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">double</span> left=init;</span><br><span class="line">    <span class="keyword">double</span> right=-init;</span><br><span class="line">    <span class="keyword">for</span> (i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">    &#123;</span><br><span class="line">        node temp;</span><br><span class="line">        <span class="built_in">scanf</span>(<span class="string">"%lf%lf"</span>,&amp;temp.x,&amp;temp.y);</span><br><span class="line">        p[i]=temp;</span><br><span class="line">        <span class="comment">//确定两个端点</span></span><br><span class="line">        left=min(left,temp.x);</span><br><span class="line">        right=max(right,temp.x);       </span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">while</span>(right-left&gt;eps)</span><br><span class="line">    &#123;</span><br><span class="line">        <span class="keyword">double</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">double</span> left_mid=(left+mid)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">double</span> right_mid=(right+mid)/<span class="number">2</span>;</span><br><span class="line">        <span class="keyword">if</span> (GetMax(left_mid)&lt;GetMax(right_mid)) right=right_mid;</span><br><span class="line">        <span class="keyword">else</span> left=left_mid;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">double</span> mid=(left+right)/<span class="number">2</span>;</span><br><span class="line">    <span class="built_in">cout</span>&lt;&lt;GetMax(mid);</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="D-牛牛与牛妹的约会"><a href="#D-牛牛与牛妹的约会" class="headerlink" title="D-牛牛与牛妹的约会"></a>D-牛牛与牛妹的约会</h2><h3 id="题目描述-2"><a href="#题目描述-2" class="headerlink" title="题目描述"></a>题目描述</h3><p>牛牛在辛苦的一天的比赛之后，要去找牛妹玩，其实牛妹那天也在比赛。他为了找到牛妹，要尽快的从自己的比赛地到她的比赛地。<br>还记得吗，比赛地都是只在$x$轴上的，所以两个人的坐标都满足$y=0$。牛牛除了可以以1单位距离/单位时间的速度移动任意时间以外，还可以花费1单位时间进行闪现。每次闪现时，如果当前他的坐标是$x=k$，他将闪现到$x=\sqrt[3]{k}$的位置。<br>请帮他算算，最短需要多少时间，他可以找到牛妹~  </p>
+<h3 id="输入描述-2"><a href="#输入描述-2" class="headerlink" title="输入描述"></a>输入描述</h3><p>输入数据包括多组用例，输入第一行包含一个数字$T(1 \leq T \leq 5 \times 10^5)$，表示数据组数。<br>接下来$T$行，每行包括两个整数$a,b(|a|,|b|\leq 10^6)$，表示牛牛所在的位置和牛妹所在的位置。 </p>
+<h3 id="输入描述-3"><a href="#输入描述-3" class="headerlink" title="输入描述"></a>输入描述</h3><p>输出共$T$行，每行包括一个实数，表示牛牛所花费的最短时间。<br>如果你的答案是$a$，标准答案是$b$，当$|a-b|\leq 10^{-6}$ 时，你的答案将被判定为正确。</p>
+<h3 id="示例1-2"><a href="#示例1-2" class="headerlink" title="示例1"></a>示例1</h3><p>输入<br>2<br>3 -1<br>1 2<br>输出<br>3.442249570<br>1.000000000  </p>
+<h3 id="思路-2"><a href="#思路-2" class="headerlink" title="思路"></a>思路</h3><p>本题采用贪心的方法，看闪现和前进哪一步更优。具体过程见代码注释。</p>
+<h3 id="代码-2"><a href="#代码-2" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> eps 1e-6</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">double</span> p=<span class="number">1.0</span>/<span class="number">3</span>;</span><br><span class="line">	<span class="keyword">double</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">double</span> a,b;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">	<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">double</span> na;</span><br><span class="line">		<span class="keyword">if</span>(a&lt;<span class="number">0</span>) na=-<span class="built_in">pow</span>(-a,p);<span class="comment">//负数直接pow会乱码</span></span><br><span class="line">		<span class="keyword">else</span> na=<span class="built_in">pow</span>(a,p); </span><br><span class="line">        <span class="comment">//abs(a-b)-abs(na-b)就是闪现一次走过的路程</span></span><br><span class="line">		<span class="keyword">if</span>(<span class="built_in">abs</span>(a-b)-<span class="built_in">abs</span>(na-b)&gt;<span class="number">1.0</span>+eps||<span class="built_in">abs</span>(a-b)-<span class="built_in">abs</span>(na-b)&gt;<span class="number">1.0</span>-eps)</span><br><span class="line">		&#123;</span><br><span class="line">            <span class="comment">/*</span></span><br><span class="line"><span class="comment">            此if包含两层递进的关系：</span></span><br><span class="line"><span class="comment">            ①开三次根号后两者接近了；          </span></span><br><span class="line"><span class="comment">            ②花一秒闪现比花一秒前进一个单位走过的路程长。</span></span><br><span class="line"><span class="comment">            */</span></span><br><span class="line">			ans+=<span class="number">1.0</span>;</span><br><span class="line">			a=na;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			ans+=<span class="built_in">abs</span>(a-b);</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.9lf\n"</span>,ans);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		solve();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="E-Enjoy-the-game"><a href="#E-Enjoy-the-game" class="headerlink" title="E-Enjoy the game"></a>E-Enjoy the game</h2><h3 id="题目描述-3"><a href="#题目描述-3" class="headerlink" title="题目描述"></a>题目描述</h3><p>牛牛战队的三个队员在训练之余会自己口胡了一些题当做平时的益智游戏。有一天牛可乐想出了一个小游戏给另外两名队员玩，游戏规则如下：</p>
+<ul>
+<li>初始一共有nn张卡牌</li>
+<li>先手第一步最少要拿$1$张牌，最多要拿$n$$−$$1$张牌。</li>
+<li>接下来每一步，双方最少要拿$1$张牌，最多拿等同于上一步对方拿的牌数的牌。</li>
+<li>拿走最后一张牌的人将取得游戏的胜利。<br>你作为旁观者，看着他们玩的很开心，想参与到这场游戏中来，赌一赌谁会能赢。   <h3 id="输入描述-4"><a href="#输入描述-4" class="headerlink" title="输入描述"></a>输入描述</h3>输入数据包含一个整数$n(2 \leq n \leq 10^{18})$，表示初始卡牌张数。<h3 id="输出描述-2"><a href="#输出描述-2" class="headerlink" title="输出描述"></a>输出描述</h3>如果先手有必胜策略，输出Bob，否则输出Alice。<h3 id="示例1-3"><a href="#示例1-3" class="headerlink" title="示例1"></a>示例1</h3>输入<br>2<br>输出<br>Alice<br>说明<br>先手必须拿走一张牌，然后后手拿走了另一张牌，游戏结束。<h3 id="思路-3"><a href="#思路-3" class="headerlink" title="思路"></a>思路</h3>找找规律。<br>若牌数为奇数则Bob赢。若为偶数，偶数中含有（除$1$以外）奇数因子，则Bob赢；<br>偶数中（除$1$以外）不含奇数因子，则Alice赢（即牌数为2的n次幂）。<br>于是只需要判断n是不是2的n次幂就可以了。有个很骚气的方法，${2^n} = k \Leftrightarrow k&amp; (k - 1) = 0,(n \in N)$。<h3 id="代码-3"><a href="#代码-3" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">    ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">    <span class="keyword">long</span> <span class="keyword">long</span> n;</span><br><span class="line">    <span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">    <span class="keyword">if</span>(!(n&amp;(n<span class="number">-1</span>))) <span class="built_in">cout</span>&lt;&lt;<span class="string">"Alice"</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"Bob"</span>;</span><br><span class="line">    <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="F-碎碎念"><a href="#F-碎碎念" class="headerlink" title="F-碎碎念"></a>F-碎碎念</h2><h3 id="题目描述-4"><a href="#题目描述-4" class="headerlink" title="题目描述"></a>题目描述</h3>在ACM比赛里，除了CE以外都是有效的提交。每一个提交都会有其评测的结果，或是AC，或是RJ（Rejected，包含各种不通过的情况）。往往一个人上去提交的时候，总有一个队友会坐在边上等着结果。那个人，往往都是只读题不写题的云选手~<br>牛牛战队里也有这样的云选手——牛能。当牛能看到有效提交得到了AC以后，都会大呼一声“你好能啊！”，反之，如果得到了RJ的话，就会化身为喷子，说xx句“你能不能行啊！”。大家比赛的都十分紧张，这样的大声呼喊未免会引起旁边队伍的注意。<br>当然牛牛战队交题的时候也很小心，一旦这一发出现了RJ，下一发有效提交一定能获得AC。<br>比赛结束了以后，旁边的一支队伍愤怒的跑过来说：你们比赛的时候吵不吵啊，一直在这大吼，吼了这么多句！<br>激烈的争吵引起了吃瓜群众的注意，吃瓜群众问道：吼了多少句啊，这么讨厌的吗！<br>“啊……我也记不清了，大概是在[L,R]这个区间吧。”<br>作为吃瓜群众的你，想根据这个信息算出，这个队伍有多少种有效提交结果序列的可能呢？<h3 id="输入描述-5"><a href="#输入描述-5" class="headerlink" title="输入描述"></a>输入描述</h3>输入数据包括单组数据、多组询问。输入第一行包含一个整数$x(2 \leq x \leq 100,000)$，表示牛能在RJ状态下会说“你能不能行啊！”的句子数量。<br>第二行包括一个整数$Q(1 \leq Q \leq 10^5)$，表示询问数量。<br>接下来$Q$行，每行包括两个整数$L,R(1 \leq L \leq R \leq 100,000)$，表示每次询问下句子的区间数。<h3 id="输出描述-3"><a href="#输出描述-3" class="headerlink" title="输出描述"></a>输出描述</h3>对于每组数据，在一行内输出一个整数，表示牛牛战队提交结果的可能性。由于结果可能很大，请对<br>$1000000007$取模。<h3 id="示例1-4"><a href="#示例1-4" class="headerlink" title="示例1"></a>示例1</h3>输入<br>3<br>3<br>3 3<br>1 4<br>1 5<br>输出<br>2<br>7<br>11<br>说明<br>第一组询问：可以是三个AC，或者一个RJ。<br>第二组询问：可以是1<del>4个AC，一个AC和一个RJ（共2种顺序），或者一个RJ。<br>第三组询问：可以有1</del>5个AC，两个AC和一个RJ（共3种顺序），一个AC和一个RJ（共2种顺序），或者一个RJ。  <h3 id="思路-4"><a href="#思路-4" class="headerlink" title="思路"></a>思路</h3>考虑到了第$i$句话时候，这种状态可能由两种状态转移而来。<br>直接一发AC，从第$i-1i$句话直接到达第$i$句。<br>如果$i&gt;=k$,可以由一发RJ从$i-k$句到达第i句。<br>可以构造$DP[i][0/1]$，$DP[i][0]$表示到了第$i<br>$句话，是从$i-1$句话AC到达的方案数。$DP[i][1]$表示到了第$i$句话，是由$i-k$句话RJ过来的方案数。<br>由此可知转移条件<br>$DP[i][0]=DP[i-1][0]+DP[i-1][1]$<br>$DP[i][1]=DP[i-k]<a href="i>=k">0</a>$<br>易确定边界条件$DP[0][0]=1,DP[0][1]=0$。<br>由于有$Q$次查询 ，查询数目较多，我们可以线性时间内预处理前nn项和即前缀和，然后用第$R$项减去第$L-1$项即可。<h3 id="代码-4"><a href="#代码-4" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">100009</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> mod=<span class="number">1000000007</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> dp[N][<span class="number">2</span>]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">int</span> q,x;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;x&gt;&gt;q;</span><br><span class="line">        dp[<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;N;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            dp[i][<span class="number">0</span>]=(dp[i<span class="number">-1</span>][<span class="number">0</span>]+dp[i<span class="number">-1</span>][<span class="number">1</span>])%mod;</span><br><span class="line">            <span class="keyword">if</span>(i&gt;=x) dp[i][<span class="number">1</span>]=dp[i-x][<span class="number">0</span>];</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> ans[N]=&#123;<span class="number">0</span>&#125;;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;N;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            ans[i]=(dp[i][<span class="number">0</span>]+dp[i][<span class="number">1</span>])%mod;</span><br><span class="line">            ans[i]=(ans[i]+ans[i<span class="number">-1</span>])%mod;<span class="comment">//构造前缀和</span></span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">int</span> l,r;</span><br><span class="line">        <span class="keyword">while</span>(q--)</span><br><span class="line">        &#123;</span><br><span class="line">            <span class="built_in">cin</span>&gt;&gt;l&gt;&gt;r;</span><br><span class="line">            <span class="keyword">int</span> res=(ans[r]-ans[l<span class="number">-1</span>]+mod)%mod;</span><br><span class="line">            <span class="built_in">printf</span>(<span class="string">"%d\n"</span>,res);</span><br><span class="line">        &#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">        solve();</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<h2 id="H-Hash"><a href="#H-Hash" class="headerlink" title="H-Hash"></a>H-Hash</h2><h3 id="题目描述-5"><a href="#题目描述-5" class="headerlink" title="题目描述"></a>题目描述</h3><p>这里有一个hash函数。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> LEN = <span class="number">6</span>;</span><br><span class="line"><span class="keyword">int</span> mod;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">Hash</span><span class="params">(<span class="keyword">char</span> str[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> res = <span class="number">0</span>;</span><br><span class="line">        <span class="keyword">for</span> (<span class="keyword">int</span> i = <span class="number">0</span>; i &lt; LEN; i++)</span><br><span class="line">        &#123;</span><br><span class="line">            res = (res * <span class="number">26</span> + str[i] - <span class="string">'a'</span>) % mod; </span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>现给定一个长度为$6$的仅由小写字母构成的字符串$s$和模数$mod$，请找到字典序最小且大于$s$的一个长度为$6$的仅由小写字母构成的字符串$s’$，使得其hash值和$s$的hash相等。</p>
+<h3 id="输入描述-6"><a href="#输入描述-6" class="headerlink" title="输入描述"></a>输入描述</h3><p>多组用例，请处理到文件结束。（用例组数大约为1000组左右）<br>对于每组用例，输入一行，包含一个长度为$6$的仅由小写字母构成的字符串$s$和模数$mod(2 \leq mod \leq 10^7)$，用空格隔开。</p>
+<h3 id="输出描述-4"><a href="#输出描述-4" class="headerlink" title="输出描述"></a>输出描述</h3><p>对于每组用例，如果存在如题目所述的$s’$，请输出$s’$，否则输出-1。</p>
+<h3 id="示例1-5"><a href="#示例1-5" class="headerlink" title="示例1"></a>示例1</h3><p>输入<br>abcdef 11<br>输出<br>abcdeq</p>
+<h3 id="思路-5"><a href="#思路-5" class="headerlink" title="思路"></a>思路</h3><p>卡哈希。<br>观察给的哈希函数可以轻松看出，这个哈希函数就仅仅是把一个只由小写字符组成的字符串当成了一个26进制的数，不取模的情况下，任意小写字符串和自然数是一一对应的。因此，只要把给的字符串转换成对应的26进制整数，加上模数后转换回字符串，一定可以得到一个最小字典序大于原串的字符串。只要这个新字符串长度为6即是满足要求的字符串。<br>需要知道的是怎么把哈希值转化成字符串。</p>
+<h3 id="代码-5"><a href="#代码-5" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> len=<span class="number">6</span>,base=<span class="number">26</span>;</span><br><span class="line"><span class="keyword">int</span> mod;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">long</span> <span class="keyword">long</span> res=<span class="number">0</span>;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;len;i++)</span><br><span class="line">        &#123;</span><br><span class="line">            res=res*base+s[i]-<span class="string">'a'</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        res+=mod;</span><br><span class="line">        <span class="keyword">for</span>(i=len<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)<span class="comment">//还原</span></span><br><span class="line">        &#123;</span><br><span class="line">            s[i]=res%base+<span class="string">'a'</span>;</span><br><span class="line">            res/=base;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">if</span>(res) <span class="built_in">cout</span>&lt;&lt;<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">        <span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;s&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">        <span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;mod) </span><br><span class="line">        &#123;</span><br><span class="line">            solve();</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="I-I题是个签到题"><a href="#I-I题是个签到题" class="headerlink" title="I-I题是个签到题"></a>I-I题是个签到题</h2><h3 id="题目描述-6"><a href="#题目描述-6" class="headerlink" title="题目描述"></a>题目描述</h3><p>经过2019一年的比赛，牛牛战队的队员发现了一个重大规律：I题是个签到题！<br>签到题的定义是：通过人数大于等于全场人数的$80$$%$或者通过人数是所有题目前三多的题（也就是最多有两个题目通过人数严格比它多）叫做签到题。<br>2020赛季就要到了，牛牛战队要去验证这个规律了，已知现在每个题的过题情况，看一看I题是不是一个签到题。</p>
+<h3 id="输入描述-7"><a href="#输入描述-7" class="headerlink" title="输入描述"></a>输入描述</h3><p>输入数据共$2$行。第一行包括两个整数$n,m(9 \leq n \leq 13, 100 \leq m \leq 1,000)$，表示比赛的总题数和比赛的总人数。<br>第二行包括以空格分隔的$n$个整数$a_1,a_2,\cdots,a_n(a_i &gt;0)$，表示每个题通过的人数。</p>
+<h3 id="输出描述-5"><a href="#输出描述-5" class="headerlink" title="输出描述"></a>输出描述</h3><p>如果I题是个签到题，则输出Yes，否则输出No。（不区分大小写）</p>
+<h3 id="示例1-6"><a href="#示例1-6" class="headerlink" title="示例1"></a>示例1</h3><p>输入<br>9 100<br>100 100 100 100 100 100 100 100 100<br>输出<br>Yes</p>
+<h3 id="思路-6"><a href="#思路-6" class="headerlink" title="思路"></a>思路</h3><p>I是签到题的条件：<br>①超过$80$$%$的人做出I题；<br>②做出的人数超过I题的题目至多2个。<br>两个条件满足其一即可。</p>
+<h3 id="代码-6"><a href="#代码-6" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> sc[<span class="number">15</span>];</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">        <span class="keyword">int</span> n,m;</span><br><span class="line">        <span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">        <span class="keyword">int</span> i;</span><br><span class="line">        <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++) <span class="built_in">cin</span>&gt;&gt;sc[i];</span><br><span class="line">        <span class="keyword">if</span>(sc[<span class="number">8</span>]&gt;=<span class="number">0.8</span>*m) <span class="built_in">cout</span> &lt;&lt;<span class="string">"Yes"</span>;</span><br><span class="line">        <span class="keyword">else</span></span><br><span class="line">        &#123;</span><br><span class="line">            <span class="keyword">int</span> rank=<span class="number">0</span>;</span><br><span class="line">            <span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">            &#123;</span><br><span class="line">                <span class="keyword">if</span>(sc[i]&gt;sc[<span class="number">8</span>]) rank++;</span><br><span class="line">            &#125;</span><br><span class="line">            <span class="keyword">if</span>(rank&gt;<span class="number">2</span>) <span class="built_in">cout</span>&lt;&lt;<span class="string">"No"</span>;</span><br><span class="line">            <span class="keyword">else</span> <span class="built_in">cout</span> &lt;&lt;<span class="string">"Yes"</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        <span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+<h2 id="J-牛牛战队的秀场"><a href="#J-牛牛战队的秀场" class="headerlink" title="J-牛牛战队的秀场"></a>J-牛牛战队的秀场</h2><h3 id="题目描述-7"><a href="#题目描述-7" class="headerlink" title="题目描述"></a>题目描述</h3><p>牛牛战队里，不仅有训练，也有追逐。<br>牛牛和牛能总是想知道谁更秀一点，他们通常会去比谁的代码更秀，谁的成绩更秀……<br>这一次，他们开始比谁的走位更秀。他们来到一个半径为$r$的圆上，画了圆内接的正$n$边形。为了秀走位，他们只允许自己在多边形的边上移动。<br>同时，他们随便选取正$n$边形的一个顶点为$1$号顶点，按顺时针的顺序把其他的点叫做$2$号顶点，$3$号顶点……一开始，两人分别在$i$号顶点和$j$号顶点。<br>现在，牛牛要一边沿着多边形的边秀走位，一边走向牛能。他想知道，他最短要走多少距离才能走到牛能的旁边？</p>
+<h3 id="输入描述-8"><a href="#输入描述-8" class="headerlink" title="输入描述"></a>输入描述</h3><p>输入数据共$2$行，第一行有两个整数$n,r(3 \leq n \leq 1000, 1 \leq r \leq 10^6)$，表示在半径为$r$的圆上画了一个内接$n$边形。<br>第二行有两个整数$i,j(1 \leq i, j \leq n)$，表示牛牛一开始在$i$号顶点，牛能一开始在$j$号顶点。</p>
+<h3 id="输出描述-6"><a href="#输出描述-6" class="headerlink" title="输出描述"></a>输出描述</h3><p>一个小数$x$，表示牛牛要移动的最短距离。<br>如果你的答案是$a$，标准答案是$b$，如果$\frac{|a-b|}{max(1,|b|)}\leq 10^{-6}<br>max(1,∣b∣)$<br>，你的答案将被判定为正确。</p>
+<h3 id="示例1-7"><a href="#示例1-7" class="headerlink" title="示例1"></a>示例1</h3><p>输入<br>4 1<br>1 2<br>输出<br>1.414214</p>
+<h3 id="思路-7"><a href="#思路-7" class="headerlink" title="思路"></a>思路</h3><p>关键问题是求正n边形的边长。<br><img src="https://s2.ax1x.com/2020/02/15/1vwQrF.th.jpg" alt=""><br>把正$n$边形分割为$n$个全等的等腰三角形，每个等腰三角形顶角为$\frac{{2\pi }}{n}$，腰为$r$。由余弦定理，易得，边长为$\sqrt {2{r^2}(1 - \cos \frac{{2\pi }}{n})} $。</p>
+<h3 id="代码-7"><a href="#代码-7" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cmath&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> pi 3.14159265</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">int</span> a,b;</span><br><span class="line">	<span class="keyword">int</span> r;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%d%d"</span>,&amp;n,&amp;r,&amp;a,&amp;b);</span><br><span class="line">	<span class="keyword">int</span> dis=min(<span class="built_in">abs</span>(a-b),n-<span class="built_in">abs</span>(a-b));</span><br><span class="line">	<span class="keyword">double</span> p=(pi*<span class="number">2</span>)/n;</span><br><span class="line">	<span class="keyword">double</span> ans=(<span class="keyword">double</span>)<span class="built_in">sqrt</span>(<span class="number">2</span>*(<span class="keyword">double</span>)r*r*(<span class="number">1</span>-<span class="built_in">cos</span>(p)))*dis;</span><br><span class="line">	<span class="built_in">printf</span>(<span class="string">"%.7lf"</span>,ans);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55/" data-id="ck6wasffk0001h0co28v60id9" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B/" rel="tag">牛客竞赛</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+    <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A56/" id="article-nav-newer" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Newer</strong>
+      <div class="article-nav-title">
+        
+          2020牛客寒假算法基础训练营6
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A54/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2020牛客寒假算法基础训练营4</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B/" rel="tag">牛客竞赛</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Codeforces/" style="font-size: 10px;">Codeforces</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 15px;">数据结构与算法</a> <a href="/tags/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B/" style="font-size: 20px;">牛客竞赛</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/">Educational Codeforces Round 82 (Rated for Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A56/">2020牛客寒假算法基础训练营6</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55/">2020牛客寒假算法基础训练营5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A54/">2020牛客寒假算法基础训练营4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A53/">2020牛客寒假算法基础集训营3</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 11D_Beyonder<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  
+
+  
+  <title>Educational Codeforces Round 82 (Rated for Div. 2) | 11D_Beyonder&#39;s Blog</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Educational Codeforces Round 82 (Rated for Div. 2)">
+<meta property="og:url" content="http://yoursite.com/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/index.html">
+<meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
+<meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-21T13:56:16.000Z">
+<meta property="article:modified_time" content="2020-02-21T13:57:39.025Z">
+<meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="Codeforces">
+<meta name="twitter:card" content="summary">
+  
+    <link rel="alternate" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
+  
+  
+    <link rel="icon" href="/favicon.png">
+  
+  
+    <link href="//fonts.googleapis.com/css?family=Source+Code+Pro" rel="stylesheet" type="text/css">
+  
+  
+<link rel="stylesheet" href="/css/style.css">
+
+<meta name="generator" content="Hexo 4.2.0"></head>
+
+<body>
+  <div id="container">
+    <div id="wrap">
+      <header id="header">
+  <div id="banner"></div>
+  <div id="header-outer" class="outer">
+    <div id="header-title" class="inner">
+      <h1 id="logo-wrap">
+        <a href="/" id="logo">11D_Beyonder&#39;s Blog</a>
+      </h1>
+      
+    </div>
+    <div id="header-inner" class="inner">
+      <nav id="main-nav">
+        <a id="main-nav-toggle" class="nav-icon"></a>
+        
+          <a class="main-nav-link" href="/">Home</a>
+        
+          <a class="main-nav-link" href="/archives">Archives</a>
+        
+      </nav>
+      <nav id="sub-nav">
+        
+          <a id="nav-rss-link" class="nav-icon" href="/atom.xml" title="RSS Feed"></a>
+        
+        <a id="nav-search-btn" class="nav-icon" title="Search"></a>
+      </nav>
+      <div id="search-form-wrap">
+        <form action="//google.com/search" method="get" accept-charset="UTF-8" class="search-form"><input type="search" name="q" class="search-form-input" placeholder="Search"><button type="submit" class="search-form-submit">&#xF002;</button><input type="hidden" name="sitesearch" value="http://yoursite.com"></form>
+      </div>
+    </div>
+  </div>
+</header>
+      <div class="outer">
+        <section id="main"><article id="post-Educational-Codeforces-Round-82-Rated-for-Div-2" class="article article-type-post" itemscope itemprop="blogPost">
+  <div class="article-meta">
+    <a href="/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/" class="article-date">
+  <time datetime="2020-02-21T13:56:16.000Z" itemprop="datePublished">2020-02-21</time>
+</a>
+    
+  </div>
+  <div class="article-inner">
+    
+    
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      Educational Codeforces Round 82 (Rated for Div. 2)
+    </h1>
+  
+
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+<h1 id="A-Erasing-Zeroes"><a href="#A-Erasing-Zeroes" class="headerlink" title="A. Erasing Zeroes"></a>A. Erasing Zeroes</h1><p>You are given a string s. Each character is either 0 or 1.<br>You want all 1’s in the string to form a contiguous subsegment. For example, if the string is 0, 1, 00111 or 01111100, then all 1’s form a contiguous   subsegment, and if the string is 0101, 100001 or 11111111111101, then this condition is not met.<br>You may erase some (possibly none) 0’s from the string. What is the minimum number of 0’s that you have to erase?  </p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line contains one integer t (1≤t≤100) — the number of test cases.<br>Then t lines follow, each representing a test case. Each line contains one string s (1≤|s|≤100); each character of s is either 0 or 1.</p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Print t integers, where the i-th integer is the answer to the i-th testcase (the minimum number of 0’s that you have to erase from s).  </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>3<br>010011<br>0<br>1111000  </p>
+<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><p>2<br>0<br>0  </p>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>In the first test case you have to delete the third and forth symbols from string 010011 (it turns into 0111).</p>
+<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>给一个01字符串，我们可以去掉一些0，来获得一串完整的1，问最少要去掉几个0。</p>
+<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>显然，如果字符串中没有1，那么答案是0。如果字符串中有1，我们只要找到最开头的1和最末尾的1，把中间的0去掉就行了。</p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> p1,p2;</span><br><span class="line">		<span class="built_in">string</span> s;</span><br><span class="line">		p1=p2=<span class="number">0</span>;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">		<span class="keyword">int</span> i;</span><br><span class="line">		<span class="keyword">int</span> l=s.size();</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;l;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[i]==<span class="string">'1'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				p1=i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">for</span>(i=l<span class="number">-1</span>;i&gt;=<span class="number">0</span>;i--)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(s[i]==<span class="string">'1'</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				p2=i;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">if</span>(p1==<span class="number">0</span>&amp;&amp;p2==<span class="number">0</span>) ans=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(i=p1;i&lt;=p2;i++)</span><br><span class="line">			&#123;			</span><br><span class="line">				<span class="keyword">if</span>(s[i]==<span class="string">'0'</span>) ans++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B-National-Project"><a href="#B-National-Project" class="headerlink" title="B. National Project"></a>B. National Project</h1><p>Your company was appointed to lay new asphalt on the highway of length n. You know that every day you can either repair one unit of the highway (lay new asphalt over one unit of the highway) or skip repairing.<br>Skipping the repair is necessary because of the climate. The climate in your region is periodical: there are g days when the weather is good and if you lay new asphalt these days it becomes high-quality pavement; after that, the weather during the next b days is bad, and if you lay new asphalt these days it becomes low-quality pavement; again g good days, b bad days and so on.<br>You can be sure that you start repairing at the start of a good season, in other words, days 1,2,…,g are good.<br>You don’t really care about the quality of the highway, you just want to make sure that at least half of the highway will have high-quality pavement. For example, if the n=5 then at least 3 units of the highway should have high quality; if n=4 then at least 2 units should have high quality.<br>What is the minimum number of days is needed to finish the repair of the whole highway?  </p>
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h2><p>The first line contains a single integer T $(1 \leqslant T \leqslant {10^4})$ — the number of test cases.<br>Next T lines contain test cases — one per line. Each line contains three integers n, g and b $(1 \leqslant n,g,b \leqslant {10^9})$ — the length of the highway and the number of good and bad days respectively.  </p>
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>Print T integers — one per test case. For each test case, print the minimum number of days required to repair the whole highway if at least half of it should have high quality.</p>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h2><h3 id="input-1"><a href="#input-1" class="headerlink" title="input"></a>input</h3><p>3<br>5 1 1<br>8 10 10<br>1000000 1 1000000  </p>
+<h3 id="output-1"><a href="#output-1" class="headerlink" title="output"></a>output</h3><p>5<br>8<br>499999500000  </p>
+<h2 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a>Note</h2><p>In the first test case, you can just lay new asphalt each day, since days 1,3,5 are good.<br>In the second test case, you can also lay new asphalt each day, since days 1-8 are good.  </p>
+<h2 id="Translation-1"><a href="#Translation-1" class="headerlink" title="Translation"></a>Translation</h2><p>要修一条高速公路，一开始修时有g个连续好天气，然后接着b个坏天气。之后g个好天气和b个坏天气交替。好天气修的路质量高，坏天气修的路质量差，每天修一个单位的路，要求质量高的路至少占总路程的一半且一定要把路修完，问至少需要花费几天。   </p>
+<h2 id="Idea-Ⅰ"><a href="#Idea-Ⅰ" class="headerlink" title="Idea Ⅰ"></a>Idea Ⅰ</h2><p>由题意，消耗的天数越多，好天气就越多，这是一个单调的问题，不妨用二分法解决。假设最短需要$l = n$天，最长需要$r = {10^{18}}$。寻找符合的最小的mid。</p>
+<h2 id="Code-Ⅰ"><a href="#Code-Ⅰ" class="headerlink" title="Code Ⅰ"></a>Code Ⅰ</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll n,g,b;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;g&gt;&gt;b;</span><br><span class="line">	ll l=n,r=<span class="number">1e18</span>,ans;</span><br><span class="line">	ll need=(n+<span class="number">1</span>)/<span class="number">2</span>;<span class="comment">//计算出需要的好天气 </span></span><br><span class="line">	<span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">	&#123;</span><br><span class="line">		ll mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">		ll has=mid/(g+b)*g+min(mid%(g+b),g);</span><br><span class="line">		<span class="keyword">if</span>(has&gt;=need) </span><br><span class="line">		&#123;</span><br><span class="line">			r=mid<span class="number">-1</span>;</span><br><span class="line">			ans=mid;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		solve();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Postscript"><a href="#Postscript" class="headerlink" title="Postscript"></a>Postscript</h2><p>二分的过程非常重要，在此采取了这样的二分。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">&#123;</span><br><span class="line">	ll mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">	ll has=mid/(g+b)*g+min(mid%(g+b),g);</span><br><span class="line">	<span class="keyword">if</span>(has&gt;=need) </span><br><span class="line">	&#123;</span><br><span class="line">		r=mid<span class="number">-1</span>;</span><br><span class="line">		ans=mid;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> l=mid+<span class="number">1</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如下的二分不可采用：<br>①当得到ans后死循环。</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">&#123;</span><br><span class="line">	ll mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">	ll has=mid/(g+b)*g+min(mid%(g+b),g);</span><br><span class="line">	<span class="keyword">if</span>(has&gt;need) r=mid<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(has&lt;need) l=mid+<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">else</span> ans=mid;      </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>②跳出后得到的不一定是mid的最小值，mid的末尾可能包含几个没用的坏天气。 </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">while</span>(l&lt;=r)</span><br><span class="line">&#123;</span><br><span class="line">    ll mid=(l+r)/<span class="number">2</span>;</span><br><span class="line">    ll has=mid/(g+b)*g+min(mid%(g+b),g);</span><br><span class="line">    <span class="keyword">if</span>(has&gt;need) r=mid<span class="number">-1</span>;</span><br><span class="line">    <span class="keyword">else</span> <span class="keyword">if</span>(has&lt;need) l=mid+<span class="number">1</span>;</span><br><span class="line">    <span class="keyword">else</span></span><br><span class="line">    &#123;   </span><br><span class="line">        ans=mid;</span><br><span class="line">        <span class="keyword">break</span>;                  </span><br><span class="line">    &#125;                          </span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>AC代码的二分方式之所以可用，是因为其在找到第一个ans之后再进行二分，之后会因为r减过头了让l增加，最后找到最小的mid，并退出。</p>
+<h2 id="Idea-Ⅱ"><a href="#Idea-Ⅱ" class="headerlink" title="Idea Ⅱ"></a>Idea Ⅱ</h2><p>一方面，我们应该整修高速公路，因此我们必须花至少n天的时间来完成它。另一方面，至少有一半应铺设高质量的人行道，即需要在好天气下铺设。<br>那么，如何计算满足第二个条件的最小天数？铺设n长度的路，我们需要至少$\fracNaN{2}$个好天气，记为need。我们可以把(g+b)看成一个block，需要的块数是$\frac$,代表的天数是$\frac{g} \cdot (g + b)$，如果g能整除need，那么实际需要的天数可以减少b，因为多出来的b天是坏天气，是浪费的。如果不能整除，那么一定这些天数用完后，路一定还没修完，于是还要加上need%g。  </p>
+<h2 id="Code-Ⅱ"><a href="#Code-Ⅱ" class="headerlink" title="Code Ⅱ"></a>Code Ⅱ</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> ans,n,g,b;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;g&gt;&gt;b;</span><br><span class="line">	<span class="keyword">long</span> <span class="keyword">long</span> need=(n+<span class="number">1</span>)&gt;&gt;<span class="number">1</span>;</span><br><span class="line">	ans=need/g*(g+b);</span><br><span class="line">	<span class="keyword">if</span>(need%g) ans+=need%g;</span><br><span class="line">	<span class="keyword">else</span> ans-=b;</span><br><span class="line">	ans=max(n,ans);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		solve();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-Perfect-Keyboard"><a href="#C-Perfect-Keyboard" class="headerlink" title="C. Perfect Keyboard"></a>C. Perfect Keyboard</h1><p>Polycarp wants to assemble his own keyboard. Layouts with multiple rows are too complicated for him — his keyboard will consist of only one row, where all 26 lowercase Latin letters will be arranged in some order.<br>Polycarp uses the same password s on all websites where he is registered (it is bad, but he doesn’t care). He wants to assemble a keyboard that will allow to type this password very easily. He doesn’t like to move his fingers while typing the password, so, for each pair of adjacent characters in s, they should be adjacent on the keyboard. For example, if the password is abacaba, then the layout  cabdefghi… is perfect, since characters a and c are adjacent on the keyboard, and a and b are adjacent on the keyboard. It is guaranteed that there are no two adjacent equal characters in s, so, for example, the password cannot be password (two characters s are adjacent).<br>Can you help Polycarp with choosing the perfect layout of the keyboard, if it is possible?</p>
+<h2 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h2><p>The first line contains one integer T (1≤T≤1000) — the number of test cases.<br>Then T lines follow, each containing one string s (1≤|s|≤200) representing the test case. s consists of lowercase Latin letters only. There are no two adjacent equal characters in s.</p>
+<h2 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h2><p>For each test case, do the following:<br>if it is impossible to assemble a perfect keyboard, print NO (in upper case, it matters in this problem);<br>otherwise, print YES (in upper case), and then a string consisting of 26 lowercase Latin letters — the perfect layout. Each Latin letter should appear in this string exactly once. If there are multiple answers, print any of them.  </p>
+<h2 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h2><h3 id="input-2"><a href="#input-2" class="headerlink" title="input"></a>input</h3><p>5<br>ababa<br>codedoca<br>abcda<br>zxzytyz<br>abcdefghijklmnopqrstuvwxyza</p>
+<h3 id="output-2"><a href="#output-2" class="headerlink" title="output"></a>output</h3><p>YES<br>bacdefghijklmnopqrstuvwxyz<br>YES<br>edocabfghijklmnpqrstuvwxyz<br>NO<br>YES<br>xzytabcdefghijklmnopqrsuvw<br>NO</p>
+<h2 id="Translation-2"><a href="#Translation-2" class="headerlink" title="Translation"></a>Translation</h2><p>给一个字符串，要设计一个键盘，这个键盘也是一个字符串。要求打字的时候每打一个字，打下一个字的位置与现在手指放的位置是相邻的。即对于s中的每对相邻字符，它们在键盘上都应该相邻。例如，如果密码是abacaba，则布局cabdefghi …是完美的，因为键盘上的字符a和c相邻，而键盘上的a和b则相邻。而且题目明确说了题给的字符串相邻两个字符不会相同。</p>
+<h2 id="Idea-Ⅰ-1"><a href="#Idea-Ⅰ-1" class="headerlink" title="Idea Ⅰ"></a>Idea Ⅰ</h2><p>我们可以贪心地考虑问题。当遍历到一个字母的时候，如果这个字母已经在键盘上，那么找当前位置左右的相邻位置，如果找不到字母与其相等，则方案不可行，如果有，则移动手指；如果字母不在键盘上，这时候有两种可能，如果手指在键盘的端点上，则可添加字母，如果不在，那么方案不可行。</p>
+<h2 id="Code-Ⅰ-1"><a href="#Code-Ⅰ-1" class="headerlink" title="Code Ⅰ"></a>Code Ⅰ</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">string</span> s;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="built_in">vector</span>&lt;<span class="keyword">bool</span>&gt;used(<span class="number">26</span>);</span><br><span class="line">	used[s[<span class="number">0</span>]-<span class="string">'a'</span>]=<span class="literal">true</span>;</span><br><span class="line">	<span class="function"><span class="built_in">string</span> <span class="title">t</span><span class="params">(<span class="number">1</span>,s[<span class="number">0</span>])</span></span>;</span><br><span class="line">	<span class="keyword">int</span> pos=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i,len=s.size();</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;len;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(used[s[i]-<span class="string">'a'</span>])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(pos&gt;<span class="number">0</span>&amp;&amp;t[pos<span class="number">-1</span>]==s[i]) pos--;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(pos&lt;t.size()<span class="number">-1</span>&amp;&amp;t[pos+<span class="number">1</span>]==s[i]) pos++;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">else</span> </span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(pos==<span class="number">0</span>) t=s[i]+t;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(pos==t.size()<span class="number">-1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				t=t+s[i];</span><br><span class="line">				pos++;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">				<span class="keyword">return</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			used[s[i]-<span class="string">'a'</span>]=<span class="literal">true</span>;			</span><br><span class="line">		&#125; </span><br><span class="line">	&#125; </span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">25</span>;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!used[i]) t+=<span class="keyword">char</span>(i+<span class="string">'a'</span>);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;t&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		solve();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Code-Ⅱ-1"><a href="#Code-Ⅱ-1" class="headerlink" title="Code Ⅱ"></a>Code Ⅱ</h2><p>用图的思想考虑问题。每遍历到一个字母，把该字母连接到手指在键盘上指向的字母。键盘上字母相邻的字母个数为1或2，相邻字母个数是1的字母位于键盘的端点，这样的字母只能为2个。<br>如果键盘可以设计出来，那么构图完成后，我们得到了一条链，我们从一个端点的字母开始，向前推进。</p>
+<h2 id="Idea-Ⅱ-1"><a href="#Idea-Ⅱ-1" class="headerlink" title="Idea Ⅱ"></a>Idea Ⅱ</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;map&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="built_in">string</span> s;</span><br><span class="line"><span class="keyword">bool</span> vis[<span class="number">30</span>];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;s;</span><br><span class="line">	<span class="built_in">string</span> ans;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">if</span>(s.size()==<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		ans=<span class="string">"abcdefghijklmnopqrstuvwxyz"</span>;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">return</span>;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="keyword">bool</span> ok=<span class="number">1</span>;</span><br><span class="line">		<span class="built_in">map</span>&lt;pair&lt;<span class="keyword">int</span>,<span class="keyword">int</span>&gt;,<span class="keyword">int</span>&gt;mp;<span class="comment">//字母、字母、边权   </span></span><br><span class="line">		<span class="keyword">int</span> x,y;</span><br><span class="line">		<span class="keyword">int</span> l=s.size();</span><br><span class="line">		<span class="built_in">vector</span>&lt;<span class="keyword">int</span>&gt;v[<span class="number">30</span>];</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;l;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			x=s[i]-<span class="string">'a'</span>;</span><br><span class="line">			y=s[i<span class="number">-1</span>]-<span class="string">'a'</span>;</span><br><span class="line">			<span class="keyword">if</span>(x&gt;y) swap(x,y);<span class="comment">//(2,1)(1,2)其实是相同的，所以按照一定的次序组合可以去重。</span></span><br><span class="line">			<span class="keyword">if</span>(mp[make_pair(x,y)]==<span class="number">0</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				mp[make_pair(x,y)]=<span class="number">1</span>;</span><br><span class="line">				v[x].push_back(y);</span><br><span class="line">				v[y].push_back(x);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(v[x].size()&gt;<span class="number">2</span>||v[y].size()&gt;<span class="number">2</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				ok=<span class="number">0</span>;</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">int</span> cnt=<span class="number">0</span>,plus;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">25</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(v[i].size()==<span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				plus=i;</span><br><span class="line">				cnt++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		<span class="keyword">if</span>(ok==<span class="number">0</span>||cnt!=<span class="number">2</span>) <span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			ans+=<span class="string">'a'</span>+plus;</span><br><span class="line">			vis[plus]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">while</span>(<span class="number">1</span>)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">int</span> nxt=<span class="number">-1</span>;</span><br><span class="line">				<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;v[plus].size();i++)</span><br><span class="line">				&#123;</span><br><span class="line">                <span class="comment">//v[plus]最多有两个元素，一个元素已经在生成的链中了。</span></span><br><span class="line">					<span class="keyword">if</span>(vis[v[plus][i]]==<span class="number">0</span>) nxt=v[plus][i];</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">if</span>(nxt!=<span class="number">-1</span>)</span><br><span class="line">				&#123;</span><br><span class="line">					plus=nxt;</span><br><span class="line">					ans+=<span class="string">'a'</span>+plus;</span><br><span class="line">					vis[plus]=<span class="number">1</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> <span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;=<span class="number">25</span>;i++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(vis[i]) <span class="keyword">continue</span>;</span><br><span class="line">				<span class="keyword">else</span> ans+=<span class="string">'a'</span>+i;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--)</span><br><span class="line">	&#123;</span><br><span class="line">		solve();</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+      
+    </div>
+    <footer class="article-footer">
+      <a data-url="http://yoursite.com/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/" data-id="ck6wasffv000dh0co03qk6eyc" class="article-share-link">Share</a>
+      
+      
+  <ul class="article-tag-list" itemprop="keywords"><li class="article-tag-list-item"><a class="article-tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a></li></ul>
+
+    </footer>
+  </div>
+  
+    
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A56/" id="article-nav-older" class="article-nav-link-wrap">
+      <strong class="article-nav-caption">Older</strong>
+      <div class="article-nav-title">2020牛客寒假算法基础训练营6</div>
+    </a>
+  
+</nav>
+
+  
+</article>
+
+</section>
+        
+          <aside id="sidebar">
+  
+    
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tags</h3>
+    <div class="widget">
+      <ul class="tag-list" itemprop="keywords"><li class="tag-list-item"><a class="tag-list-link" href="/tags/Codeforces/" rel="tag">Codeforces</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" rel="tag">数据结构与算法</a></li><li class="tag-list-item"><a class="tag-list-link" href="/tags/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B/" rel="tag">牛客竞赛</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Tag Cloud</h3>
+    <div class="widget tagcloud">
+      <a href="/tags/Codeforces/" style="font-size: 10px;">Codeforces</a> <a href="/tags/%E6%95%B0%E6%8D%AE%E7%BB%93%E6%9E%84%E4%B8%8E%E7%AE%97%E6%B3%95/" style="font-size: 15px;">数据结构与算法</a> <a href="/tags/%E7%89%9B%E5%AE%A2%E7%AB%9E%E8%B5%9B/" style="font-size: 20px;">牛客竞赛</a>
+    </div>
+  </div>
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Archives</h3>
+    <div class="widget">
+      <ul class="archive-list"><li class="archive-list-item"><a class="archive-list-link" href="/archives/2020/02/">February 2020</a></li></ul>
+    </div>
+  </div>
+
+
+  
+    
+  <div class="widget-wrap">
+    <h3 class="widget-title">Recent Posts</h3>
+    <div class="widget">
+      <ul>
+        
+          <li>
+            <a href="/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/">Educational Codeforces Round 82 (Rated for Div. 2)</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A56/">2020牛客寒假算法基础训练营6</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A55/">2020牛客寒假算法基础训练营5</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E8%AE%AD%E7%BB%83%E8%90%A54/">2020牛客寒假算法基础训练营4</a>
+          </li>
+        
+          <li>
+            <a href="/2020/02/21/2020%E7%89%9B%E5%AE%A2%E5%AF%92%E5%81%87%E7%AE%97%E6%B3%95%E5%9F%BA%E7%A1%80%E9%9B%86%E8%AE%AD%E8%90%A53/">2020牛客寒假算法基础集训营3</a>
+          </li>
+        
+      </ul>
+    </div>
+  </div>
+
+  
+</aside>
+        
+      </div>
+      <footer id="footer">
+  
+  <div class="outer">
+    <div id="footer-info" class="inner">
+      &copy; 2020 11D_Beyonder<br>
+      Powered by <a href="http://hexo.io/" target="_blank">Hexo</a>
+    </div>
+  </div>
+</footer>
+    </div>
+    <nav id="mobile-nav">
+  
+    <a href="/" class="mobile-nav-link">Home</a>
+  
+    <a href="/archives" class="mobile-nav-link">Archives</a>
+  
+</nav>
+    
+
+<script src="//ajax.googleapis.com/ajax/libs/jquery/2.0.3/jquery.min.js"></script>
+
+
+  
+<link rel="stylesheet" href="/fancybox/jquery.fancybox.css">
+
+  
+<script src="/fancybox/jquery.fancybox.pack.js"></script>
+
+
+
+
+<script src="/js/script.js"></script>
+
+
+
+
+  </div>
+</body>
+</html>
