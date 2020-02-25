@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/2 | 11D_Beyonder&#39;s Blog</title>
+  <title>Codeforces Round #624 (Div.3) | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/02/page/2/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="Codeforces Round #624 (Div.3)">
+<meta property="og:url" content="http://yoursite.com/2020/02/25/Codeforces-Round-624-Div-3/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.niupic.com/images/2020/02/25/6SEO.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/02/25/6TLV.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/02/25/6TSa.jpg">
+<meta property="article:published_time" content="2020-02-25T07:28:59.000Z">
+<meta property="article:modified_time" content="2020-02-25T16:45:12.649Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="Codeforces">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.niupic.com/images/2020/02/25/6SEO.jpg">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
   
@@ -137,38 +144,137 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-Codeforces-Round-624-Div-3" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/Codeforces-Round-620-Div-2/" class="archive-article-date">
-  	<time datetime="2020-02-21T05:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Codeforces-Round-620-Div-2/">Codeforces Round #620 (Div. 2)</a>
+    <h1 class="article-title" itemprop="name">
+      Codeforces Round #624 (Div.3)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/02/25/Codeforces-Round-624-Div-3/" class="archive-article-date">
+  	<time datetime="2020-02-25T07:28:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>  
+<h1 id="A-Add-Odd-or-Subtract-Even"><a href="#A-Add-Odd-or-Subtract-Even" class="headerlink" title="A. Add Odd or Subtract Even"></a>A. Add Odd or Subtract Even</h1><p>You are given two positive integers a and b.<br>In one move, you can change a in the following way:  </p>
+<ul>
+<li>Choose any positive odd integer x (x&gt;0) and replace a with a+x;  </li>
+<li>choose any positive even integer y (y&gt;0) and replace a with a−y.  </li>
+</ul>
+<p>You can perform as many such operations as you want. You can choose the same numbers x and y in different moves.<br>Your task is to find the minimum number of moves required to obtain b from a. It is guaranteed that you can always obtain b from a.<br>You have to answer t independent test cases.  </p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input contains one integer $t (1≤t≤10^4)$ — the number of test cases.<br>Then t test cases follow. Each test case is given as two space-separated integers a and b $(1≤a,b≤10^9)$.  </p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each test case, print the answer — the minimum number of moves required to obtain b from a if you can perform any number of moves described in the problem statement. It is guaranteed that you can always obtain b from a.    </p>
+<h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>5<br>2 3<br>10 10<br>2 4<br>7 4<br>9 3  </p>
+<h3 id="output"><a href="#output" class="headerlink" title="output"></a>output</h3><p>1<br>0<br>2<br>2<br>1  </p>
+<h2 id="Note"><a href="#Note" class="headerlink" title="Note"></a>Note</h2><p>In the first test case, you can just add 1.<br>In the second test case, you don’t need to do anything.<br>In the third test case, you can add 1 two times.<br>In the fourth test case, you can subtract 4 and add 1.<br>In the fifth test case, you can just subtract 6.  </p>
+<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>给两个数$a,b$，可以作如下两种操作：  </p>
+<ul>
+<li>给$a$加上奇数$x(x&gt;0)$；  </li>
+<li>给$a$减去偶数$y(y&gt;0)$。  </li>
+</ul>
+<p>问从$a$变化到$b$至少需要几次操作。  </p>
+<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>要知道，一个数加上或减去偶数奇偶性不变，加上或减去奇数，奇偶性改变。<br>因此，若$a,b$同奇偶且$a&gt;b$，我们只需$a-y$；若$a,b$奇偶性不同且$a&lt;b$，我们只需$a+x$。  </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll a,b;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b;</span><br><span class="line">	<span class="keyword">if</span>(a==b) <span class="built_in">cout</span>&lt;&lt;<span class="number">0</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a&lt;b&amp;&amp;(a&amp;<span class="number">1</span>)!=(b&amp;<span class="number">1</span>)) <span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a&gt;b&amp;&amp;(a&amp;<span class="number">1</span>)==(b&amp;<span class="number">1</span>)) <span class="built_in">cout</span>&lt;&lt;<span class="number">1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="number">2</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--) solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="B-WeirdSort"><a href="#B-WeirdSort" class="headerlink" title="B. WeirdSort"></a>B. WeirdSort</h1><p>You are given an array $a$ of length $n$.<br>You are also given a set of distinct positions$ p_1,p_2,…,p_m$, where $1≤p_i&lt;n$. The position pi means that you can swap elements $a[pi]$ and$ a[p_i+1]$. You can apply this operation any number of times for each of the given positions.<br>Your task is to determine if it is possible to sort the initial array in non-decreasing order $(a_1≤a_2≤⋯≤a_n) $using only allowed swaps.<br>For example, if $a=[3,2,1]$ and $p=[1,2]$, then we can first swap elements $a[2]$ and $a[3]$ (because position $2$ is contained in the given set$ p$). We get the array $a=[3,1,2]$. Then we swap $a[1]$and $a[2]$ (position $1$ is also contained in $p$). We get the array$a=[1,3,2]$. Finally, we swap$ a[2]$ and $a[3]$ again and get the array $a=[1,2,3]$, sorted in non-decreasing order.<br>You can see that if $a=[4,1,2,3]$ and$ p=[3,2]$ then you cannot sort the array.<br>You have to answer $t$ independent test cases.  </p>
+<h2 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input contains one integer $t (1≤t≤100)$ — the number of test cases.<br>Then t test cases follow. The first line of each test case contains two integers$ n$ and $m   (1≤m&lt;n≤100)$ — the number of elements in a and the number of elements in$ p$. The second line of the test case contains n integers $a1,a2,…,an (1≤ai≤100)$. The third line of the test case contains m integers $p_1,p_2,…,p_m$ ($1≤p_i&lt;n$, all$ p_i$ are distinct) — the set of positions described in the problem statement.    </p>
+<h2 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h2><p>For each test case, print the answer — “YES” (without quotes) if you can sort the initial array in non-decreasing order$ (a_1≤a_2≤⋯≤a_n)$ using only allowed swaps. Otherwise, print “NO”.  </p>
+<h2 id="Example-1"><a href="#Example-1" class="headerlink" title="Example"></a>Example</h2><h3 id="input-1"><a href="#input-1" class="headerlink" title="input"></a>input</h3><p>6<br>3 2<br>3 2 1<br>1 2<br>4 2<br>4 1 2 3<br>3 2<br>5 1<br>1 2 3 4 5<br>1<br>4 2<br>2 1 4 3<br>1 3<br>4 2<br>4 3 2 1<br>1 3<br>5 2<br>2 1 2 3 3<br>1 4  </p>
+<h3 id="output-1"><a href="#output-1" class="headerlink" title="output"></a>output</h3><p>YES<br>NO<br>YES<br>YES<br>NO<br>YES  </p>
+<h3 id="Translation-1"><a href="#Translation-1" class="headerlink" title="Translation"></a>Translation</h3><p>给一个数列$a_1,a_2,…,a_n$，一个序列$p_1,p_2,…,p_m$。交换是合法的，问能否靠合法交换，得到不下降序列$a$。  </p>
+<h3 id="Idea-1"><a href="#Idea-1" class="headerlink" title="Idea"></a>Idea</h3><p>数据规模非常小，考虑暴力。遍历$p$，如果发现$a[p[i]]&gt;a[p[i]+1]$，则交换，将上述操作进行$T$次（将$T$取非常大），应该就能得到下降序列了，如果还没有得到，那就是不行。<br>这是不禁好奇，T最多取多大能保证不TLE，于是做了个测试（我手算二分哪！），把$T$逼近到$T=193999$,$T=194000$时有大概率会TLE。实际上T不需要取这么大。<br><img src="https://i.niupic.com/images/2020/02/25/6SEO.jpg" alt=""></p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">110</span>;</span><br><span class="line">	<span class="keyword">int</span> a[N],p[N];</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++) <span class="built_in">cin</span>&gt;&gt;p[i];</span><br><span class="line">	<span class="keyword">int</span> T=<span class="number">193999</span>;</span><br><span class="line">	<span class="keyword">while</span>(T--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(p[i]+<span class="number">1</span>&lt;=n&amp;&amp;a[p[i]]&gt;a[p[i]+<span class="number">1</span>]) swap(a[p[i]],a[p[i]+<span class="number">1</span>]);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">bool</span> ok=<span class="number">1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(a[i]&gt;a[i+<span class="number">1</span>])</span><br><span class="line">		&#123;</span><br><span class="line">			ok=<span class="number">0</span>;</span><br><span class="line">			<span class="keyword">break</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ok) <span class="built_in">cout</span>&lt;&lt;<span class="string">"YES"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">"NO"</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--) solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="C-Perform-the-Combo"><a href="#C-Perform-the-Combo" class="headerlink" title="C. Perform the Combo"></a>C. Perform the Combo</h1><p>You want to perform the combo on your opponent in one popular fighting game. The combo is the string s consisting of n lowercase Latin letters. To perform the combo, you have to press all buttons in the order they appear in s. I.e. if s=”abca” then you have to press ‘a’, then ‘b’, ‘c’ and ‘a’ again.<br>You know that you will spend m wrong tries to perform the combo and during the i-th try you will make a mistake right after pi-th button (1≤pi&lt;n) (i.e. you will press first pi buttons right and start performing the combo from the beginning). It is guaranteed that during the m+1-th try you press all buttons right and finally perform the combo.<br>I.e. if s=”abca”, m=2 and p=[1,3] then the sequence of pressed buttons will be ‘a’ (here you’re making a mistake and start performing the combo from the beginning), ‘a’, ‘b’, ‘c’, (here you’re making a mistake and start performing the combo from the beginning), ‘a’ (note that at this point you will not perform the combo because of the mistake), ‘b’, ‘c’, ‘a’.<br>Your task is to calculate for each button (letter) the number of times you’ll press it.<br>You have to answer t independent test cases.  </p>
+<h2 id="Input-2"><a href="#Input-2" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input contains one integer t (1≤t≤104) — the number of test cases.<br>Then t test cases follow.<br>The first line of each test case contains two integers n and m$ (2≤n≤2⋅10^5, 1≤m≤2⋅10^5)$ — the length of s and the number of tries correspondingly.<br>The second line of each test case contains the string s consisting of n lowercase Latin letters.<br>The third line of each test case contains m integers $p_1,p_2,…,p_m (1≤p_i&lt;n)$ — the number of characters pressed right during the i-th try.<br>It is guaranteed that the sum of n and the sum of m both does not exceed$ 2⋅10^5 (∑n≤2⋅10^5, ∑m≤2⋅10^5)$.<br>It is guaranteed that the answer for each letter does not exceed $ 2⋅10^9$.</p>
+<h2 id="Output-2"><a href="#Output-2" class="headerlink" title="Output"></a>Output</h2><p>For each test case, print the answer — 26 integers: the number of times you press the button ‘a’, the number of times you press the button ‘b’, …, the number of times you press the button ‘z’.  </p>
+<h2 id="Example-2"><a href="#Example-2" class="headerlink" title="Example"></a>Example</h2><h3 id="input-2"><a href="#input-2" class="headerlink" title="input"></a>input</h3><p>3<br>4 2<br>abca<br>1 3<br>10 5<br>codeforces<br>2 8 3 2 9<br>26 10<br>qwertyuioplkjhgfdsazxcvbnm<br>20 10 1 2 3 5 10 5 9 4  </p>
+<h3 id="output-2"><a href="#output-2" class="headerlink" title="output"></a>output</h3><p>4 2 2 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0<br>0 0 9 4 5 3 0 0 0 0 0 0 0 0 9 0 0 3 1 0 0 0 0 0 0 0<br>2 1 1 2 9 2 2 2 5 2 2 2 1 1 5 4 11 8 2 7 5 1 10 1 5 2   </p>
+<h2 id="Note-1"><a href="#Note-1" class="headerlink" title="Note"></a>Note</h2><p>The first test case is described in the problem statement. Wrong tries are “a”, “abc” and the final try is “abca”. The number of times you press ‘a’ is 4, ‘b’ is 2 and ‘c’ is 2.<br>In the second test case, there are five wrong tries: “co”, “codeforc”, “cod”, “co”, “codeforce” and the final try is “codeforces”. The number of times you press ‘c’ is 9, ‘d’ is 4, ‘e’ is 5, ‘f’ is 3, ‘o’ is 9, ‘r’ is 3 and ‘s’ is 1.  </p>
+<h2 id="Translation-2"><a href="#Translation-2" class="headerlink" title="Translation"></a>Translation</h2><p>这题不太好读，看Note对样例的解释就好理解一些。简单来说就是给一个长度为$n$的字符串，字符位置从1开始，给一堆位置$p_1,p_2,…,p_m (1≤p_i&lt;n)$，每一次都从$1$出发，走到$p_i$，$m$次这样的操作26个字母出现了几次。  </p>
+<h2 id="Idea-2"><a href="#Idea-2" class="headerlink" title="Idea"></a>Idea</h2><p>这很明显是一个前缀和问题，因为每一次都从$1$出发，出现了重叠的区间。<br>对每一个位置$i$，维护从$1$开始到$i$出现的$26$个字母个数$prefix[i][26]$。<br>获取$prefix$的方法很简单，我们只需要先遍历字符串，把第$i$位出现的字母作标记，即$prefix[i][s[i]-a]++$，再将前$i-1$位出现字母的个数向$i$位累加即可，即作一次前缀和操作。<br>然后只要将$m$次操作出现的字母个数累加即可。当然，最后一次经过整个字符串的操作不算在这$m$次里，需要单独再算一次。<br>！注意！：慎用$memset$初始化，因为有很多$test cases$，用$memst$进行了多余的初始化，容易TLE。我在此受到血的教训！<br><img src="https://i.niupic.com/images/2020/02/25/6TLV.jpg" alt=""></p>
+<h2 id="Code-2"><a href="#Code-2" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">200007</span>;</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">26</span>],prefix[N][<span class="number">26</span>];</span><br><span class="line"><span class="keyword">char</span> s[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="built_in">memset</span>(ans,<span class="number">0</span>,<span class="keyword">sizeof</span>(ans));</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;m;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">memset</span>(prefix[i],<span class="number">0</span>,<span class="keyword">sizeof</span>(prefix[i]));</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;(s+<span class="number">1</span>);		</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) prefix[i][s[i]-<span class="string">'a'</span>]++;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">2</span>;i&lt;=n;i++) <span class="comment">//前缀和操作</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">26</span>;j++) </span><br><span class="line">		&#123;</span><br><span class="line">			prefix[i][j]+=prefix[i<span class="number">-1</span>][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> opt;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;opt;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">26</span>;j++) </span><br><span class="line">		&#123;</span><br><span class="line">			ans[j]+=prefix[opt][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) ans[s[i]-<span class="string">'a'</span>]++;<span class="comment">//算上最后的一次</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cout</span>&lt;&lt;ans[i];</span><br><span class="line">		<span class="keyword">if</span>(i==<span class="number">25</span>) <span class="built_in">cout</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;<span class="string">' '</span>;</span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--) solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>如果想避免初始化操作，建议参考下面骚代码</p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">200007</span>;</span><br><span class="line"><span class="keyword">int</span> ans[<span class="number">26</span>],prefix[N][<span class="number">26</span>];</span><br><span class="line"><span class="keyword">char</span> s[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n,m;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d%d%s"</span>,&amp;n,&amp;m,s+<span class="number">1</span>);</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="comment">//前缀处理 </span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">26</span>;j++) </span><br><span class="line">		&#123;</span><br><span class="line">			<span class="comment">//第一步循环进来prefix[0][j]=0，于是所有的值都往后覆盖了。</span></span><br><span class="line">			prefix[i][j]=prefix[i<span class="number">-1</span>][j];</span><br><span class="line">		&#125;</span><br><span class="line">		prefix[i][s[i]-<span class="string">'a'</span>]++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++) ans[i]=prefix[n][i];<span class="comment">//ans也被覆盖</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> opt;</span><br><span class="line">		<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;opt);</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;<span class="number">26</span>;j++) </span><br><span class="line">		&#123;</span><br><span class="line">			ans[j]+=prefix[opt][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">26</span>;i++) </span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">printf</span>(<span class="string">"%d"</span>,ans[i]);</span><br><span class="line">		<span class="keyword">if</span>(i&lt;<span class="number">25</span>) <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line">		<span class="keyword">else</span> <span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">	&#125;  </span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">scanf</span>(<span class="string">"%d"</span>,&amp;t);</span><br><span class="line">	<span class="keyword">while</span>(t--) solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="D-Three-Integers"><a href="#D-Three-Integers" class="headerlink" title="D. Three Integers"></a>D. Three Integers</h1><p>You are given three integers $a≤b≤c$.<br>In one move, you can add +1 or −1 to any of these integers (i.e. increase or decrease any number by one). You can perform such operation any (possibly, zero) number of times, you can even perform this operation several times with one number. Note that you cannot make non-positive numbers using such operations.<br>You have to perform the minimum number of such operations in order to obtain three integers $A≤B≤C$ such that $B$ is divisible by $A$ and $C$ is divisible by $B$.<br>You have to answer t independent test cases.  </p>
+<h2 id="Input-3"><a href="#Input-3" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input contains one integer $t (1≤t≤100)$ — the number of test cases.<br>The next t lines describe test cases. Each test case is given on a separate line as three space-separated integers $a,b$ and $c (1≤a≤b≤c≤10^4)$.</p>
+<h2 id="Output-3"><a href="#Output-3" class="headerlink" title="Output"></a>Output</h2><p>For each test case, print the answer. In the first line print res — the minimum number of operations you have to perform to obtain three integers$ A≤B≤C$ such that B is divisible by$ A$ and$ C$ is divisible by $B$. On the second line print any suitable triple $A,B $and $C$.</p>
+<h2 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h2><h3 id="input-3"><a href="#input-3" class="headerlink" title="input"></a>input</h3><p>8<br>1 2 3<br>123 321 456<br>5 10 15<br>15 18 21<br>100 100 101<br>1 22 29<br>3 19 38<br>6 30 46  </p>
+<h3 id="output-3"><a href="#output-3" class="headerlink" title="output"></a>output</h3><p>1<br>1 1 3<br>102<br>114 228 456<br>4<br>4 8 16<br>6<br>18 18 18<br>1<br>100 100 100<br>7<br>1 22 22<br>2<br>1 19 38<br>8<br>6 24 48  </p>
+<h2 id="Translation-3"><a href="#Translation-3" class="headerlink" title="Translation"></a>Translation</h2><p>给三个数$a,b,c$，每一次操作，可以从三个数中选一个数，进行$+1$或$-1$两种操作，问至少几次操作使得$b$能被$a$整除，$c$能被$b$整除。输出最小次数和修改后的$a,b,c$。</p>
+<h2 id="Idea-3"><a href="#Idea-3" class="headerlink" title="Idea"></a>Idea</h2><p>$a,b,c$不是很大，可以考虑暴力构造一下。枚举的上界不能过小，否则就被hack了。<br><img src="https://i.niupic.com/images/2020/02/25/6TSa.jpg" alt=""></p>
+<h2 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;string&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> prefix pre</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> aa,bb,cc;</span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">1000000000</span>;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> n=<span class="number">20000</span>;</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">1</span>;i*j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(k=<span class="number">1</span>;k*j*i&lt;=n;k++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(<span class="built_in">abs</span>(i*j*k-c)+<span class="built_in">abs</span>(a-i)+<span class="built_in">abs</span>(i*j-b)&lt;ans)</span><br><span class="line">				&#123;</span><br><span class="line">					ans=<span class="built_in">abs</span>(i*j*k-c)+<span class="built_in">abs</span>(a-i)+<span class="built_in">abs</span>(i*j-b);</span><br><span class="line">					aa=i;</span><br><span class="line">					bb=i*j;</span><br><span class="line">					cc=i*j*k;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans&lt;&lt;<span class="built_in">endl</span>&lt;&lt;aa&lt;&lt;<span class="string">' '</span>&lt;&lt;bb&lt;&lt;<span class="string">' '</span>&lt;&lt;cc&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--) solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h1 id="F-Moving-Points"><a href="#F-Moving-Points" class="headerlink" title="F. Moving Points"></a>F. Moving Points</h1><p>There are n points on a coordinate axis OX. The i-th point is located at the integer point $x_i$ and has a speed vi. It is guaranteed that no two points occupy the same coordinate. All $n$ points move with the constant speed, the coordinate of the i-th point at the moment t (t can be non-integer) is calculated as $x_i+t⋅v_i$.<br>Consider two points$ i$ and $j$. Let $d(i,j)$ be the minimum possible distance between these two points over any possible moments of time (even non-integer). It means that if two points i and j coincide at some moment, the value $d(i,j)$ will be 0.<br>Your task is to calculate the value$\sum\limits_{{\text{1}} \leqslant i < j \leqslant n} {d(i,j)} $ (the sum of minimum distances over all pairs of points).  </p>
+<h2 id="Input-4"><a href="#Input-4" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input contains one integer$ n (2≤n≤2⋅10^5)$ — the number of points.<br>The second line of the input contains n integers$ x_1,x_2,…,x_n (1≤x_i≤10^8)$, where xi is the initial   coordinate of the i-th point. It is guaranteed that all xi are distinct.<br>The third line of the input contains n integers $v_1,v_2,…,v_n (−10^8≤vi≤10^8)$, where vi is the speed of the i-th point.  </p>
+<h2 id="Output-4"><a href="#Output-4" class="headerlink" title="Output"></a>Output</h2><p>Print one integer — the value$\sum\limits_{{\text{1}} \leqslant i < j \leqslant n} {d(i,j)} $ (the sum of minimum distances over all pairs of points).  </p>
+<h2 id="Examples"><a href="#Examples" class="headerlink" title="Examples"></a>Examples</h2><h3 id="input-4"><a href="#input-4" class="headerlink" title="input"></a>input</h3><p>3<br>1 3 2<br>-100 2 3  </p>
+<h3 id="output-4"><a href="#output-4" class="headerlink" title="output"></a>output</h3><p>3  </p>
+<h3 id="input-5"><a href="#input-5" class="headerlink" title="input"></a>input</h3><p>5<br>2 1 4 3 5<br>2 2 2 3 4  </p>
+<h3 id="output-5"><a href="#output-5" class="headerlink" title="output"></a>output</h3><p>19  </p>
+<h3 id="input-6"><a href="#input-6" class="headerlink" title="input"></a>input</h3><p>2<br>2 1<br>-3 0   </p>
+<h3 id="output-6"><a href="#output-6" class="headerlink" title="output"></a>output</h3><p>0  </p>
+<h2 id="Translation-4"><a href="#Translation-4" class="headerlink" title="Translation"></a>Translation</h2><p>有$n$个动点在一维坐标轴上匀速移动，每个动点给出初始坐标和移动速度。令$d（i,j）$是在任何可能的时刻（甚至是非整数），这两点之间的最小可能距离。任务是计算$\sum\limits_{{\text{1}} \leqslant i < j \leqslant n} {d(i,j)} $。</p>
+<h2 id="Idea-4"><a href="#Idea-4" class="headerlink" title="Idea"></a>Idea</h2><p>对于所有$x_i&lt;x_j$，最小距离有两种情况：  </p>
+<ul>
+<li>若$v_i&gt;v_j$，两点会在一开始相互靠近，最小距离为0；  </li>
+<li>若$v_i≤v_j$，两点互相远离，最小距离即为初态。  </li>
+</ul>
+<p>为了能够进行上述的讨论，我们要将$x$进行升序排序。然后另开一个数组存所有的速度，排序并去重。利用二分查找速度数组得出小于当前点速度的点个数。开两个树状数组，一个$cnt$维护速度小于$v$的个数，一个$sum$维护速度小于$v$的$x$之和。从左向右扫描一遍所有的点，每次加上$x×cnt-sum$，并将状态加入树状数组中维护即可。<br>这属于树状数组的单点更新和区间查询，假设当前第$i$个点的$point[i].v$在所有$v$中排在$idx$位；我们需要查询$1-&gt;idx$小于$v$的个数$cnt$，和$1-&gt;idx$小于$v$的$x$之和$sum$；每次更新时$cnt+1$，$sum+point[i].x$。</p>
+<h2 id="Code-4"><a href="#Code-4" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">200007</span>;</span><br><span class="line">ll v[N],cnt[N],sum[N],ans;</span><br><span class="line"><span class="keyword">int</span> len;</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function"><span class="keyword">inline</span> <span class="keyword">int</span> <span class="title">lowbit</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">return</span> x&amp;(-x);</span><br><span class="line">&#125;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">node</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> x,v;</span><br><span class="line">	<span class="keyword">bool</span> <span class="keyword">operator</span>&lt;(node &amp;a)<span class="keyword">const</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">return</span> x&lt;a.x;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;point[N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">update</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> val)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(x&lt;=n)</span><br><span class="line">	&#123;</span><br><span class="line">		cnt[x]++;</span><br><span class="line">		sum[x]+=val;</span><br><span class="line">		x+=lowbit(x);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function">ll <span class="title">query</span><span class="params">(<span class="keyword">int</span> x,ll a[])</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll res=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(x)</span><br><span class="line">	&#123;</span><br><span class="line">		res+=a[x];</span><br><span class="line">		x-=lowbit(x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> res;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;	</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">cin</span>&gt;&gt;point[i].x;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;point[i].v;</span><br><span class="line">		v[i]=point[i].v;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(point+<span class="number">1</span>,point+<span class="number">1</span>+n);</span><br><span class="line">	sort(v+<span class="number">1</span>,v+<span class="number">1</span>+n);</span><br><span class="line">	len=unique(v+<span class="number">1</span>,v+<span class="number">1</span>+n)-(v+<span class="number">1</span>);<span class="comment">//去重是为了算排位</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> idx=lower_bound(v+<span class="number">1</span>,v+<span class="number">1</span>+len,point[i].v)-v;</span><br><span class="line">		ans+=point[i].x*query(idx,cnt)-query(idx,sum);</span><br><span class="line">		<span class="comment">//已经加入树状数组的元素的x都会比当前的x[i]小</span></span><br><span class="line">		update(idx,point[i].x);</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -180,172 +286,121 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/02/25/Codeforces-Round-624-Div-3/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/LCA-lowest-common-ancestor/" class="archive-article-date">
-  	<time datetime="2020-02-21T04:48:11.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/02/22/%E7%89%9B%E5%AE%A2%E5%B0%8F%E7%99%BD%E6%9C%88%E8%B5%9B22/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">牛客小白月赛22</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/LCA-lowest-common-ancestor/">LCA(lowest common ancestor)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#A-Add-Odd-or-Subtract-Even"><span class="toc-number">1.</span> <span class="toc-text">A. Add Odd or Subtract Even</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">1.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input"><span class="toc-number">1.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output"><span class="toc-number">1.3.2.</span> <span class="toc-text">output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-number">1.4.</span> <span class="toc-text">Note</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation"><span class="toc-number">1.5.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">1.6.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-number">1.7.</span> <span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#B-WeirdSort"><span class="toc-number">2.</span> <span class="toc-text">B. WeirdSort</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-1"><span class="toc-number">2.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-1"><span class="toc-number">2.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-1"><span class="toc-number">2.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input-1"><span class="toc-number">2.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output-1"><span class="toc-number">2.3.2.</span> <span class="toc-text">output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Translation-1"><span class="toc-number">2.3.3.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea-1"><span class="toc-number">2.3.4.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-1"><span class="toc-number">2.3.5.</span> <span class="toc-text">Code</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#C-Perform-the-Combo"><span class="toc-number">3.</span> <span class="toc-text">C. Perform the Combo</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-2"><span class="toc-number">3.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-2"><span class="toc-number">3.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-2"><span class="toc-number">3.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input-2"><span class="toc-number">3.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output-2"><span class="toc-number">3.3.2.</span> <span class="toc-text">output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note-1"><span class="toc-number">3.4.</span> <span class="toc-text">Note</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation-2"><span class="toc-number">3.5.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea-2"><span class="toc-number">3.6.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-2"><span class="toc-number">3.7.</span> <span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#D-Three-Integers"><span class="toc-number">4.</span> <span class="toc-text">D. Three Integers</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-3"><span class="toc-number">4.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-3"><span class="toc-number">4.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example-3"><span class="toc-number">4.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input-3"><span class="toc-number">4.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output-3"><span class="toc-number">4.3.2.</span> <span class="toc-text">output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation-3"><span class="toc-number">4.4.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea-3"><span class="toc-number">4.5.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-3"><span class="toc-number">4.6.</span> <span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#F-Moving-Points"><span class="toc-number">5.</span> <span class="toc-text">F. Moving Points</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input-4"><span class="toc-number">5.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output-4"><span class="toc-number">5.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Examples"><span class="toc-number">5.3.</span> <span class="toc-text">Examples</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input-4"><span class="toc-number">5.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output-4"><span class="toc-number">5.3.2.</span> <span class="toc-text">output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#input-5"><span class="toc-number">5.3.3.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output-5"><span class="toc-number">5.3.4.</span> <span class="toc-text">output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#input-6"><span class="toc-number">5.3.5.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output-6"><span class="toc-number">5.3.6.</span> <span class="toc-text">output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation-4"><span class="toc-number">5.4.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea-4"><span class="toc-number">5.5.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code-4"><span class="toc-number">5.6.</span> <span class="toc-text">Code</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E%E7%AE%97%E6%B3%95/" class="archive-article-date">
-  	<time datetime="2020-02-20T16:37:29.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
+        
+    </div>
+</aside>
 
-        </div>
-    	 
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/%E6%A0%91%E4%B8%8A%E5%80%8D%E5%A2%9E%E7%AE%97%E6%B3%95/">树上倍增算法</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/19/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/" class="archive-article-date">
-  	<time datetime="2020-02-19T02:10:53.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/%E7%9F%A9%E9%98%B5%E5%BF%AB%E9%80%9F%E5%B9%82/">矩阵快速幂</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数据结构与算法</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/19/Nice-to-Meet-You/" class="archive-article-date">
-  	<time datetime="2020-02-18T16:40:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-19</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/19/Nice-to-Meet-You/">Nice to Meet You!</a>
-    </h1>
   
 
-        <div class="article-info info-on-right">
-          
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/02/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/02/">1</a><span class="page-number current">2</span>
-    </nav>
-  
 
 
           </div>
@@ -383,8 +438,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

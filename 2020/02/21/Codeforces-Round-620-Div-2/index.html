@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.niupic.com/images/2020/02/21/6H6e.png">
 <meta property="article:published_time" content="2020-02-21T05:40:20.000Z">
-<meta property="article:modified_time" content="2020-02-21T13:59:33.228Z">
+<meta property="article:modified_time" content="2020-02-25T07:32:13.717Z">
 <meta property="article:author" content="11D_Beyonder">
 <meta property="article:tag" content="Codeforces">
 <meta name="twitter:card" content="summary">
@@ -65,7 +65,7 @@
 			</ul>
 		</nav>
     <nav>
-          文章总数 14
+          文章总数 15
     </nav>
 		<nav class="header-smart-menu">
     		
@@ -171,7 +171,7 @@
       
         <hr>
 <a id="more"></a>  
-<h1 id="E-1-Trees-and-Queries"><a href="#E-1-Trees-and-Queries" class="headerlink" title="E. 1-Trees and Queries"></a>E. 1-Trees and Queries</h1><p>Gildong was hiking a mountain, walking by millions of trees. Inspired by them, he suddenly came up with an interesting idea for trees in data structures: What if we add another edge in a tree?<br>Then he found that such tree-like graphs are called 1-trees. Since Gildong was bored of solving too many tree problems, he wanted to see if similar techniques in trees can be used in 1-trees as well. Instead of solving it by himself, he’s going to test you by providing queries on 1-trees.<br>First, he’ll provide you a tree (not 1-tree) with n vertices, then he will ask you q queries. Each query contains 5 integers: x, y, a, b, and k. This means you’re asked to determine if there exists a path from vertex a to b that contains exactly k edges after adding a bidirectional edge between vertices x and y. A path can contain the same vertices and same edges multiple times. All queries are independent of each other; i.e. the added edge in a query is removed in the next query.  </p>
+<h1 id="E-1-Trees-and-Queries-LCA求树上距离"><a href="#E-1-Trees-and-Queries-LCA求树上距离" class="headerlink" title="E .1-Trees and Queries(LCA求树上距离)"></a>E .1-Trees and Queries(LCA求树上距离)</h1><p>Gildong was hiking a mountain, walking by millions of trees. Inspired by them, he suddenly came up with an interesting idea for trees in data structures: What if we add another edge in a tree?<br>Then he found that such tree-like graphs are called 1-trees. Since Gildong was bored of solving too many tree problems, he wanted to see if similar techniques in trees can be used in 1-trees as well. Instead of solving it by himself, he’s going to test you by providing queries on 1-trees.<br>First, he’ll provide you a tree (not 1-tree) with n vertices, then he will ask you q queries. Each query contains 5 integers: x, y, a, b, and k. This means you’re asked to determine if there exists a path from vertex a to b that contains exactly k edges after adding a bidirectional edge between vertices x and y. A path can contain the same vertices and same edges multiple times. All queries are independent of each other; i.e. the added edge in a query is removed in the next query.  </p>
 <h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The first line contains an integer $n (3≤n≤10^5)$, the number of vertices of the tree.<br>Next n−1 lines contain two integers$ u$ and$ v (1≤u,v≤n, u≠v)$ each, which means there is an edge between vertex u and v. All edges are bidirectional and distinct.<br>Next line contains an integer $q (1≤q≤10^5)$, the number of queries Gildong wants to ask.<br>Next $q$ lines contain five integers$ x, y, a, b$, and$ k$each$ (1≤x,y,a,b≤n, x≠y, 1≤k≤10^9)$ – the integers explained in the description. It is guaranteed that the edge between x and y does not exist in the original tree.   </p>
 <h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each query, print “YES” if there exists a path that contains exactly k edges from vertex a to b after adding an edge between vertices x and y. Otherwise, print “NO”.<br>You can print each letter in any case (upper or lower).  </p>
 <h2 id="Example"><a href="#Example" class="headerlink" title="Example"></a>Example</h2><h3 id="input"><a href="#input" class="headerlink" title="input"></a>input</h3><p>5<br>1 2<br>2 3<br>3 4<br>4 5<br>5<br>1 3 1 2 2<br>1 4 1 3 2<br>1 4 1 3 3<br>4 2 3 3 9<br>5 2 3 3 9   </p>
@@ -347,7 +347,7 @@
                 </span>
                 <span class="tooltip-content">
                     <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#E-1-Trees-and-Queries"><span class="toc-number">1.</span> <span class="toc-text">E. 1-Trees and Queries</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">1.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input"><span class="toc-number">1.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output"><span class="toc-number">1.3.2.</span> <span class="toc-text">output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-number">1.4.</span> <span class="toc-text">Note</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation"><span class="toc-number">1.5.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">1.6.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.7.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#E-1-Trees-and-Queries-LCA求树上距离"><span class="toc-number">1.</span> <span class="toc-text">E .1-Trees and Queries(LCA求树上距离)</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">1.1.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">1.2.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Example"><span class="toc-number">1.3.</span> <span class="toc-text">Example</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#input"><span class="toc-number">1.3.1.</span> <span class="toc-text">input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#output"><span class="toc-number">1.3.2.</span> <span class="toc-text">output</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Note"><span class="toc-number">1.4.</span> <span class="toc-text">Note</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation"><span class="toc-number">1.5.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">1.6.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">1.7.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
                     </div>
                 </span>
             </div>
@@ -502,11 +502,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
+                <a href="javascript:void(0)" class="js-tag color1">Codeforces</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">Codeforces</a>
+                <a href="javascript:void(0)" class="js-tag color3">数据结构与算法</a>
               </li>
             
             <div class="clearfix"></div>
