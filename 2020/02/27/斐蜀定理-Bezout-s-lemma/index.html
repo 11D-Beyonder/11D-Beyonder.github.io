@@ -6,14 +6,19 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Codeforces | 11D_Beyonder&#39;s Blog</title>
+  <title>斐蜀定理(Bézout&#39;s lemma) | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Codeforces/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="斐蜀定理(Bézout&#39;s lemma)">
+<meta property="og:url" content="http://yoursite.com/2020/02/27/%E6%96%90%E8%9C%80%E5%AE%9A%E7%90%86-Bezout-s-lemma/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-02-27T15:40:00.000Z">
+<meta property="article:modified_time" content="2020-02-27T16:43:40.085Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="数论">
+<meta property="article:tag" content="洛谷">
+<meta property="article:tag" content="扩展欧几里得算法">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
@@ -137,142 +142,218 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-斐蜀定理-Bezout-s-lemma" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      斐蜀定理(Bézout&#39;s lemma)
+    </h1>
+  
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/02/27/%E6%96%90%E8%9C%80%E5%AE%9A%E7%90%86-Bezout-s-lemma/" class="archive-article-date">
+  	<time datetime="2020-02-27T15:40:00.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-27</time>
+</a>
+
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>  
+<h2 id="定理描述"><a href="#定理描述" class="headerlink" title="定理描述"></a>定理描述</h2><p>对任何整数$a$、${\displaystyle b}$和${\displaystyle c}$，关于未知数${\displaystyle x}$和${\displaystyle y}$的线性丢番图方程：${\displaystyle ax+by=c}$当且仅当$gcd(a,b)|c$时有整数解。  </p>
+<h2 id="证明"><a href="#证明" class="headerlink" title="证明"></a>证明</h2><h3 id="先证："><a href="#先证：" class="headerlink" title="先证："></a>先证：</h3><p><strong>对于任意整数 $a,b$ ，存在一对整数 $x,y$ ，满足 $ax+by=gcd(a,b)$。</strong><br>①在欧几里得算法(Euclidean algorithm)的最后一步，即 b=0 时，显然有一对整数 $x=1,y=0$，使得 $a \times 1+0 \times 0=gcd(a,0)$；<br>②若 $b&gt;0$ ，则$ gcd(a,b)=gcd(b,a\bmod b)$。假设存在一对整数 $x,y$ ，满足$ b \times x+(a \bmod b)\times y=gcd(b,a\bmod b)$。<br>那么$bx+(a \bmod b)·y=bx+(a−b⌊\frac{a}{b}⌋)·y=ay+b· (x−⌊\frac{a}{b}⌋y)$<br>令 $x′=y,y′=x−⌊\frac{a}{b}⌋y $，得到 $ax′+by′=gcd(a,b)$。<br>由数学归纳法，命题成立。<br>证毕。  </p>
+<h3 id="又证："><a href="#又证：" class="headerlink" title="又证："></a>又证：</h3><p><strong>对于更为一般的方程 $ax+by=c $，当且仅当$ gcd(a,b)∣c$，该方程有整数解。</strong><br>由于证明过程复杂，以下给出简单的感性认识。<br>我们可以先求出 $ax+by=gcd(a,b)$ 的一组特解 $x_0,y_0$，然后令$ x_0,y_0$ 同时乘上 $\frac{c}{gcd(a,b)}$，就得到了$ ax+by=c$ 的一组特解$ \frac{c}{gcd(a,b)}x_0,\frac{c}{gcd(a,b)}y_0$。  </p>
+<h2 id="求解方法"><a href="#求解方法" class="headerlink" title="求解方法"></a>求解方法</h2><p>通过对于上述证明，我们得到了求解斐蜀等式的方法，即扩展欧几里得算法(Extended Euclidean algorithm)。<br>扩展欧几里得算法能求出$ax+by=gcd(a,b)$的一组特解。当递归至$b=0$时，此时斐蜀方程有一组解$x=1,y=0$，此值按照规则$x′=y,y′=x−⌊\frac{a}{b}⌋y $向上层返回。<br>将这组特解同时乘上 $\frac{c}{gcd(a,b)}$，就得到了$ ax+by=c$ 的一组特解$ \frac{c}{gcd(a,b)}x_0,\frac{c}{gcd(a,b)}y_0$。<br>下面给出斐蜀方程的通解：<br>$$<br>x=\frac{c}{d}x_0+k\frac{b}{d},y=\frac{c}{d}y_0-k\frac{a}{d}(k\in Z,d=gcd(a,b))<br>$$</p>
+<h2 id="例题：洛谷CF7C-Line"><a href="#例题：洛谷CF7C-Line" class="headerlink" title="例题：洛谷CF7C Line"></a>例题：洛谷CF7C Line</h2><h3 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h3><p>A line on the plane is described by an equation Ax+By+C=0Ax+By+C=0 . You are to find any point on this line, whose coordinates are integer numbers from$ -5·10^{18}$to$ 5·10^{18}.inclusive, or to find out that such points do not exist.  </p>
+<h3 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h3><p>The first line contains three integers $A$ ,$ B$ and$C$$ ( -2·10^{9}&lt;=A,B,C&lt;=2·10^{9} )$ —corresponding coefficients of the line equation. It is guaranteed that $A^{2}+B^{2}&gt;0$ .  </p>
+<h3 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h3><p>If the required point exists, output its coordinates, otherwise output -1.  </p>
+<h3 id="题意翻译"><a href="#题意翻译" class="headerlink" title="题意翻译"></a>题意翻译</h3><p>一条直线：Ax+By+C=0（AB不同时为0），找到任意一个点（在-5e18~5e18之间）让它的横纵坐标均为整数，或者确定没有这样的点。<br>输入：A，B，C<br>输出：该点坐标，没有就输出-1  </p>
+<h3 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h3><p>输入<br>2 5 3<br>输出<br>6 -3  </p>
+<h3 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h3><p>解一个斐蜀方程$ax+by=-c$，用扩展欧几里得算法的板子。  </p>
+<h3 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function">ll <span class="title">ex_gcd</span><span class="params">(ll a,ll b,ll &amp;x,ll &amp;y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(!b)</span><br><span class="line">	&#123;</span><br><span class="line">		x=<span class="number">1</span>;</span><br><span class="line">		y=<span class="number">0</span>;</span><br><span class="line">		<span class="keyword">return</span> a;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span></span><br><span class="line">	&#123;</span><br><span class="line">		ll gcd=ex_gcd(b,a%b,x,y);</span><br><span class="line">		<span class="comment">//向上递推</span></span><br><span class="line">		ll temp=x;</span><br><span class="line">		x=y;</span><br><span class="line">		y=temp-a/b*y;</span><br><span class="line">		<span class="keyword">return</span> gcd;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ll a,b,c,x,y;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;a&gt;&gt;b&gt;&gt;c;</span><br><span class="line">	c=-c;</span><br><span class="line">	ll d=ex_gcd(a,b,x,y);</span><br><span class="line">	<span class="comment">//随便取了一组解</span></span><br><span class="line">	x=c/d*x+b/d*<span class="number">3</span>;</span><br><span class="line">	y=c/d*y-a/d*<span class="number">3</span>;</span><br><span class="line">	<span class="keyword">if</span>(c%d) <span class="built_in">cout</span>&lt;&lt;<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;x&lt;&lt;<span class="string">' '</span>&lt;&lt;y;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ios::sync_with_stdio(<span class="literal">false</span>);</span><br><span class="line">	<span class="built_in">cin</span>.tie(<span class="number">0</span>);</span><br><span class="line">	<span class="built_in">cout</span>.tie(<span class="number">0</span>);</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/25/Codeforces-Round-624-Div-3/" class="archive-article-date">
-  	<time datetime="2020-02-25T07:28:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/25/Codeforces-Round-624-Div-3/">Codeforces Round #624 (Div.3)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/" class="archive-article-date">
-  	<time datetime="2020-02-21T13:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/">Educational Codeforces Round 82 (Rated for Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">洛谷</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/Codeforces-Round-620-Div-2/" class="archive-article-date">
-  	<time datetime="2020-02-21T05:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Codeforces-Round-620-Div-2/">Codeforces Round #620 (Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">扩展欧几里得算法</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/02/27/%E6%96%90%E8%9C%80%E5%AE%9A%E7%90%86-Bezout-s-lemma/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/02/27/%E9%AB%98%E7%B2%BE%E5%BA%A6%E7%AE%97%E6%B3%95/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">高精度算法</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#定理描述"><span class="toc-number">1.</span> <span class="toc-text">定理描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#证明"><span class="toc-number">2.</span> <span class="toc-text">证明</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#先证："><span class="toc-number">2.1.</span> <span class="toc-text">先证：</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#又证："><span class="toc-number">2.2.</span> <span class="toc-text">又证：</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#求解方法"><span class="toc-number">3.</span> <span class="toc-text">求解方法</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#例题：洛谷CF7C-Line"><span class="toc-number">4.</span> <span class="toc-text">例题：洛谷CF7C Line</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#题目描述"><span class="toc-number">4.1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入格式"><span class="toc-number">4.2.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出格式"><span class="toc-number">4.3.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题意翻译"><span class="toc-number">4.4.</span> <span class="toc-text">题意翻译</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入输出样例"><span class="toc-number">4.5.</span> <span class="toc-text">输入输出样例</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#题解"><span class="toc-number">4.6.</span> <span class="toc-text">题解</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码"><span class="toc-number">4.7.</span> <span class="toc-text">代码</span></a></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -310,9 +391,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
