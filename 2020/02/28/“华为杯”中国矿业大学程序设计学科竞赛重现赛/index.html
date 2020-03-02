@@ -15,7 +15,7 @@
 <meta property="og:locale" content="en_US">
 <meta property="og:image" content="https://i.niupic.com/images/2020/02/29/6XaG.png">
 <meta property="article:published_time" content="2020-02-28T14:50:11.000Z">
-<meta property="article:modified_time" content="2020-03-02T15:22:12.081Z">
+<meta property="article:modified_time" content="2020-03-02T15:31:57.734Z">
 <meta property="article:author" content="11D_Beyonder">
 <meta property="article:tag" content="牛客竞赛">
 <meta name="twitter:card" content="summary">
@@ -230,7 +230,7 @@
 <th align="center">$\xi=0$</th>
 <th align="center">$\xi =1$</th>
 <th align="center">$\xi =2$</th>
-<th>$\xi=…$</th>
+<th align="center">$\xi=…$</th>
 </tr>
 </thead>
 <tbody><tr>
@@ -238,14 +238,14 @@
 <td align="center">$\frac{{{p_b}}}{{{p_a} + {p_b}}}$</td>
 <td align="center">$\frac{{{p_a}}}{{{p_a} + {p_b}}} \frac{{{p_b}}}{{{p_a} + {p_b}}}$</td>
 <td align="center">${\left( {\frac{{{p_a}}}{{{p_a} + {p_b}}}} \right)^2}\frac{{{p_b}}}{{{p_a} + {p_b}}}$</td>
-<td>$…$</td>
+<td align="center">$P(\xi)=…$</td>
 </tr>
 <tr>
 <td align="center">“ab”子序列个数</td>
 <td align="center">$i+j$</td>
 <td align="center">$i+j+1$</td>
 <td align="center">$i+j+2$</td>
-<td>$…$</td>
+<td align="center">$i+j+…$</td>
 </tr>
 </tbody></table>
 <p>由期望定义，得：  </p>
@@ -269,7 +269,7 @@ $$
 <p>解得：</p>
 
 $$
-dp[i][j] = i + j + \frac{{{p_b}}}{{{p_b}}}(i + j \geqslant k)
+dp[i][j] = i + j + \frac{{{p_a}}}{{{p_b}}}(i + j \geqslant k)
 $$
   
 <p>接下来就是分情况进行记忆化搜索，得到$dp[1][0]$<br>需要注意的是所有概率运算都在模$10^9+7$的意义下进行，即计算逆元。</p>
