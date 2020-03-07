@@ -6,21 +6,15 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>洛谷P1328 生活大爆炸版石头剪刀布 | 11D_Beyonder&#39;s Blog</title>
+  <title>Tag: DFS | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="article">
-<meta property="og:title" content="洛谷P1328 生活大爆炸版石头剪刀布">
-<meta property="og:url" content="http://yoursite.com/2020/03/02/%E6%B4%9B%E8%B0%B7P1328-%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8%E7%89%88%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/index.html">
+  <meta property="og:type" content="website">
+<meta property="og:title" content="11D_Beyonder&#39;s Blog">
+<meta property="og:url" content="http://yoursite.com/tags/DFS/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
-<meta property="og:image" content="https://cdn.luogu.com.cn/upload/pic/1346.png">
-<meta property="article:published_time" content="2020-03-02T01:57:15.000Z">
-<meta property="article:modified_time" content="2020-03-02T07:47:55.420Z">
 <meta property="article:author" content="11D_Beyonder">
-<meta property="article:tag" content="洛谷">
-<meta property="article:tag" content="模拟">
 <meta name="twitter:card" content="summary">
-<meta name="twitter:image" content="https://cdn.luogu.com.cn/upload/pic/1346.png">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
   
@@ -143,329 +137,66 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            <article id="post-洛谷P1328-生活大爆炸版石头剪刀布" class="article article-type-post " itemscope itemprop="blogPost">
-  <div class="article-inner">
-    
-      <header class="article-header">
-        
+            
   
-    <h1 class="article-title" itemprop="name">
-      洛谷P1328 生活大爆炸版石头剪刀布
+  
+    
+    
+      
+      
+      <section class="archives-wrap">
+        <div class="archive-year-wrap">
+          <a href="/archives/2020" class="archive-year">2020</a>
+        </div>
+        <div class="archives">
+    
+    <article class="archive-article archive-type-post">
+  <div class="archive-article-inner">
+    <header class="archive-article-header">
+      	<div class="article-meta">
+	      	
+<a href="/2020/03/08/POJ-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/" class="archive-article-date">
+  	<time datetime="2020-03-07T17:10:44.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
+</a>
+
+        </div>
+    	 
+  
+    <h1 itemprop="name">
+      <a class="archive-article-title" href="/2020/03/08/POJ-1321-%E6%A3%8B%E7%9B%98%E9%97%AE%E9%A2%98/">POJ 1321 棋盘问题</a>
     </h1>
   
 
-        
-        
-        <!-- 不蒜子统计 -->
-        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
-              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
-        </span>
-
-<a href="/2020/03/02/%E6%B4%9B%E8%B0%B7P1328-%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8%E7%89%88%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/" class="archive-article-date">
-  	<time datetime="2020-03-02T01:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-
-        
-      </header>
-    
-    <div class="article-entry" itemprop="articleBody">
-      
-        <hr>
-<a id="more"></a>  
-<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>石头剪刀布是常见的猜拳游戏:石头胜剪刀,剪刀胜布,布胜石头。如果两个人出拳一 样，则不分胜 负。在《生活大爆炸》第二季第8集中出现了一种石头剪刀布的升级版游戏。<br>升级版游戏在传统的石头剪刀布游戏的基础上,增加了两个新手势:<br>斯波克:《星际迷航》主角之一。<br>蜥蜴人:《星际迷航》中的反面角色。<br>这五种手势的胜负关系如表一所示,表中列出的是甲对乙的游戏结果。<br><img src="https://cdn.luogu.com.cn/upload/pic/1346.png" alt=""><br>现在,小 A和小 B尝试玩这种升级版的猜拳游戏。已知他们的出拳都是有周期性规律的，但周期长度不一定相等。例如：如果小A以“石头-布-石头-剪刀-蜥蜴人-斯波克”长度为 $6$ 的周期出拳,那么他的出拳序列就是“石头-布-石头-剪刀-蜥蜴人-斯波克-石头-布-石头-剪刀-蜥蜴人-斯波克-……”,而如果小B以“剪刀-石头-布-斯波克-蜥蜴人”长度为 $5$ 的周期出拳,那么他出拳的序列就是“剪刀-石头-布-斯波克-蜥蜴人-剪刀-石头-布-斯波克-蜥蜴人-……”<br>已知小 A和小 B 一共进行 $N $次猜拳。每一次赢的人得 $1$分，输的得 $0$ 分；平局两人都得 $0$ 分。现请你统计 $N$ 次猜拳结束之后两人的得分。  </p>
-<h2 id="输入格式"><a href="#输入格式" class="headerlink" title="输入格式"></a>输入格式</h2><p>第一行包含三个整数：$N,N_A,N_B$，分别表示共进行 $N$次猜拳、小 A出拳的周期长度，小 B 出拳的周期长度。数与数之间以一个空格分隔。<br>第二行包含 $N_A$个整数,表示小 A出拳的规律,第三行包含 $N_B$个整数,表示小 B 出拳的规律。 其中，$0$表示“剪刀”，$1$ 表示“石头”，$2$ 表示“布”，$3$ 表示“蜥蜴人”，$4$表示“斯波克”。  数与数之间以一个空格分隔。  </p>
-<h2 id="输出格式"><a href="#输出格式" class="headerlink" title="输出格式"></a>输出格式</h2><p>输出一行，包含两个整数，以一个空格分隔，分别表示小 A、小 B的得分。  </p>
-<h2 id="输入输出样例"><a href="#输入输出样例" class="headerlink" title="输入输出样例"></a>输入输出样例</h2><h3 id="输入-1"><a href="#输入-1" class="headerlink" title="输入 1"></a>输入 1</h3><p>10 5 6<br>0 1 2 3 4<br>0 3 4 2 1 0  </p>
-<h3 id="输出-1"><a href="#输出-1" class="headerlink" title="输出 1"></a>输出 1</h3><p>6 2   </p>
-<h3 id="输入-2"><a href="#输入-2" class="headerlink" title="输入 2"></a>输入 2</h3><p>9 5 5<br>0 1 2 3 4<br>1 0 3 2 4  </p>
-<h3 id="输出-2"><a href="#输出-2" class="headerlink" title="输出 2"></a>输出 2</h3><p>4 4  </p>
-<h2 id="说明-提示"><a href="#说明-提示" class="headerlink" title="说明/提示"></a>说明/提示</h2><p>对于$100%$的数据，$0 &lt; N \leq 200, 0 &lt; N_A \leq 200, 0 &lt; N_B \leq 200$。  </p>
-<h2 id="题解"><a href="#题解" class="headerlink" title="题解"></a>题解</h2><h3 id="思路1"><a href="#思路1" class="headerlink" title="思路1"></a>思路1</h3><p>这题本身非常简单，只需要把剪刀、石头、布、蜥蜴人、斯波克之间的关系搞清，简单模拟一下即可，于是写出了下面的憨批代码。  </p>
-<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">judge</span><span class="params">(<span class="keyword">int</span> &amp;sa,<span class="keyword">int</span> &amp;sb,<span class="keyword">int</span> a,<span class="keyword">int</span> b)</span><span class="comment">//模拟一次游戏</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">if</span>(a==<span class="number">0</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b==<span class="number">1</span>) sb++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">2</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">3</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">4</span>) sb++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a==<span class="number">1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b==<span class="number">0</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">2</span>) sb++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">3</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">4</span>) sb++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a==<span class="number">2</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b==<span class="number">0</span>) sb++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">1</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">3</span>) sb++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">4</span>) sa++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a==<span class="number">3</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b==<span class="number">0</span>) sb++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">1</span>) sb++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">2</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">4</span>) sa++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="keyword">if</span>(a==<span class="number">4</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(b==<span class="number">0</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">1</span>) sa++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">2</span>) sb++;</span><br><span class="line">		<span class="keyword">else</span> <span class="keyword">if</span>(b==<span class="number">3</span>) sb++;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sa=<span class="number">0</span>,sb=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> n,na,nb;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">int</span> ca[<span class="number">203</span>],cb[<span class="number">203</span>];</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;na&gt;&gt;nb;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=na;i++) <span class="built_in">cin</span>&gt;&gt;ca[i];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=nb;i++) <span class="built_in">cin</span>&gt;&gt;cb[i];</span><br><span class="line">	<span class="keyword">int</span> k;</span><br><span class="line">	<span class="comment">//模拟循环过程</span></span><br><span class="line">	<span class="keyword">for</span>(k=<span class="number">1</span>;k*na&lt;=<span class="number">201</span>;k++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=na;i++) </span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i+k*na&lt;=<span class="number">201</span>) ca[i+k*na]=ca[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(k=<span class="number">1</span>;k*nb&lt;=<span class="number">201</span>;k++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=nb;i++) </span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i+k*nb&lt;=<span class="number">201</span>) cb[i+k*nb]=cb[i];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) judge(sa,sb,ca[i],cb[i]);</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;sa&lt;&lt;<span class="string">' '</span>&lt;&lt;sb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h3 id="思路2"><a href="#思路2" class="headerlink" title="思路2"></a>思路2</h3><p>在题解区看到了一篇思路较清奇的题解，可以学习一下。  </p>
-<table>
-<thead>
-<tr>
-<th align="center">A的得分(下方为A，有方为B）</th>
-<th align="center">剪刀</th>
-<th align="center">石头</th>
-<th align="center">布</th>
-<th align="center">蜥蜴人</th>
-<th align="center">斯波克</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>剪刀</strong></td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center"><strong>石头</strong></td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center"><strong>布</strong></td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center"><strong>蜥蜴人</strong></td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center"><strong>斯波克</strong></td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-<table>
-<thead>
-<tr>
-<th align="center">B的得分（下方为B，右方为A）</th>
-<th align="center">剪刀</th>
-<th align="center">石头</th>
-<th align="center">布</th>
-<th align="center">蜥蜴人</th>
-<th align="center">斯波克</th>
-</tr>
-</thead>
-<tbody><tr>
-<td align="center"><strong>剪刀</strong></td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center"><strong>石头</strong></td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-</tr>
-<tr>
-<td align="center"><strong>布</strong></td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center"><strong>蜥蜴人</strong></td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">0</td>
-</tr>
-<tr>
-<td align="center"><strong>斯波克</strong></td>
-<td align="center">0</td>
-<td align="center">0</td>
-<td align="center">1</td>
-<td align="center">1</td>
-<td align="center">0</td>
-</tr>
-</tbody></table>
-<p>显然，A出$i$,B出$j$，在上述两个$5\times 5$的方阵中$M_{ij}=!M_{ji}(i\ne j )$。<br>于是设计一个得分表，再让游戏次数对每一个周期取余即可。  </p>
-<h3 id="代码2"><a href="#代码2" class="headerlink" title="代码2"></a>代码2</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> sa=<span class="number">0</span>,sb=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> score[<span class="number">5</span>][<span class="number">5</span>]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>,<span class="number">0</span>&#125;;<span class="comment">//计分表</span></span><br><span class="line">	<span class="keyword">int</span> n,na,nb;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;na&gt;&gt;nb;</span><br><span class="line">	<span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">202</span>;</span><br><span class="line">	<span class="keyword">int</span> a[N],b[N];</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="comment">//i必须从0开始，否则下面循环结构不成立</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;na;i++) <span class="built_in">cin</span>&gt;&gt;a[i];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;nb;i++) <span class="built_in">cin</span>&gt;&gt;b[i];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//循环结构</span></span><br><span class="line">		sa+=score[a[i%na]][b[i%nb]];</span><br><span class="line">		sb+=score[b[i%nb]][a[i%na]];</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;sa&lt;&lt;<span class="string">' '</span>&lt;&lt;sb;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-      
-
-      
-        <div class="page-reward">
-          <a href="javascript:;" class="page-reward-btn tooltip-top">
-            <div class="tooltip tooltip-east">
-            <span class="tooltip-item">
-              赏
-            </span>
-            <span class="tooltip-content">
-              <span class="tooltip-text">
-                <span class="tooltip-inner">
-                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
-                  <div class="reward-box">
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
-                      <span class="reward-type">支付宝</span>
-                    </div>
-                    
-                    
-                    <div class="reward-box-item">
-                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
-                      <span class="reward-type">微信</span>
-                    </div>
-                    
-                  </div>
-                </span>
-              </span>
-            </span>
-          </div>
-          </a>
-        </div>
-      
-    </div>
-    <div class="article-info article-info-index">
-      
-      
+        <div class="article-info info-on-right">
+          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">洛谷</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">POJ</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模拟</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">DFS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-      
+          
 
-      
-
-      
-        
-<div class="share-btn share-icons tooltip-left">
-  <div class="tooltip tooltip-east">
-    <span class="tooltip-item">
-      <a href="javascript:;" class="share-sns share-outer">
-        <i class="icon icon-share"></i>
-      </a>
-    </span>
-    <span class="tooltip-content">
-      <div class="share-wrap">
-        <div class="share-icons">
-          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
-            <i class="icon icon-weibo"></i>
-          </a>
-          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
-            <i class="icon icon-weixin"></i>
-          </a>
-          <a class="qq share-sns" href="javascript:;" data-type="qq">
-            <i class="icon icon-qq"></i>
-          </a>
-          <a class="douban share-sns" href="javascript:;" data-type="douban">
-            <i class="icon icon-douban"></i>
-          </a>
-          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
-            <i class="icon icon-qzone"></i>
-          </a>
-          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
-            <i class="icon icon-facebook"></i>
-          </a>
-          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
-            <i class="icon icon-twitter"></i>
-          </a>
-          <a class="google share-sns" href="javascript:;" data-type="google">
-            <i class="icon icon-google"></i>
-          </a>
         </div>
-      </div>
-    </span>
-  </div>
-</div>
-
-<div class="page-modal wx-share js-wx-box">
-    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
-    <p>扫一扫，分享到微信</p>
-    <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/03/02/%E6%B4%9B%E8%B0%B7P1328-%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8%E7%89%88%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/" alt="微信分享二维码">
-    </div>
-</div>
-
-<div class="mask js-mask"></div>
-
-      
-      <div class="clearfix"></div>
-    </div>
+        <div class="clearfix"></div>
+    </header>
   </div>
 </article>
-
-  
-<nav id="article-nav">
-  
-    <a href="/2020/03/02/Codeforces-Round-625-Div-2-based-on-Technocup-2020-Final-Round/" id="article-nav-newer" class="article-nav-link-wrap">
-      <i class="icon-circle-left"></i>
-      <div class="article-nav-title">
-        
-          Codeforces Round #625 (Div. 2)
-        
-      </div>
-    </a>
   
   
-    <a href="/2020/02/29/%E7%BA%A6%E7%91%9F%E5%A4%AB%E9%97%AE%E9%A2%98-Josephus-problem/" id="article-nav-older" class="article-nav-link-wrap">
-      <div class="article-nav-title">约瑟夫问题(Josephus problem)</div>
-      <i class="icon-circle-right"></i>
-    </a>
-  
-</nav>
-
-
-<aside class="wrap-side-operation">
-    <div class="mod-side-operation">
-        
-        <div class="jump-container" id="js-jump-container" style="display:none;">
-            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
-                <i class="icon-font icon-back"></i>
-            </a>
-            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
-                <i class="icon-font icon-plane jump-plane"></i>
-            </div>
-        </div>
-        
-        
-        <div class="toc-container tooltip-left">
-            <i class="icon-font icon-category"></i>
-            <div class="tooltip tooltip-east">
-                <span class="tooltip-item">
-                </span>
-                <span class="tooltip-content">
-                    <div class="toc-article">
-                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入格式"><span class="toc-number">2.</span> <span class="toc-text">输入格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出格式"><span class="toc-number">3.</span> <span class="toc-text">输出格式</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入输出样例"><span class="toc-number">4.</span> <span class="toc-text">输入输出样例</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#输入-1"><span class="toc-number">4.1.</span> <span class="toc-text">输入 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出-1"><span class="toc-number">4.2.</span> <span class="toc-text">输出 1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输入-2"><span class="toc-number">4.3.</span> <span class="toc-text">输入 2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#输出-2"><span class="toc-number">4.4.</span> <span class="toc-text">输出 2</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#说明-提示"><span class="toc-number">5.</span> <span class="toc-text">说明&#x2F;提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#题解"><span class="toc-number">6.</span> <span class="toc-text">题解</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#思路1"><span class="toc-number">6.1.</span> <span class="toc-text">思路1</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#思路2"><span class="toc-number">6.2.</span> <span class="toc-text">思路2</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#代码2"><span class="toc-number">6.3.</span> <span class="toc-text">代码2</span></a></li></ol></li></ol>
-                    </div>
-                </span>
-            </div>
-        </div>
-        
-    </div>
-</aside>
-
-
-
-  
-  
+    </div></section>
   
 
-  
-
-  
-
-  
-
+    
 
 
           </div>
@@ -503,9 +234,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: true,
+		isPost: false,
 		isArchive: false,
-		isTag: false,
+		isTag: true,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
