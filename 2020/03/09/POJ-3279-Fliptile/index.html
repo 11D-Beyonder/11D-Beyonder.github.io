@@ -6,14 +6,18 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: Codeforces | 11D_Beyonder&#39;s Blog</title>
+  <title>POJ 3279 Fliptile | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/Codeforces/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="POJ 3279 Fliptile">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/POJ-3279-Fliptile/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="article:published_time" content="2020-03-09T05:55:36.000Z">
+<meta property="article:modified_time" content="2020-03-09T09:31:21.715Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="POJ">
+<meta property="article:tag" content="二进制问题">
 <meta name="twitter:card" content="summary">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
@@ -137,302 +141,211 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-POJ-3279-Fliptile" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
+      <header class="article-header">
+        
+  
+    <h1 class="article-title" itemprop="name">
+      POJ 3279 Fliptile
+    </h1>
+  
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/03/09/POJ-3279-Fliptile/" class="archive-article-date">
+  	<time datetime="2020-03-09T05:55:36.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
+</a>
+
+        
+      </header>
     
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Farmer John knows that an intellectually satisfied cow is a happy cow who will give more milk. He has arranged a brainy activity for cows in which they manipulate an$M × N$ grid $(1 ≤ M ≤ 15,1 ≤ N ≤ 15)$ of square tiles, each of which is colored black on one side and white on the other side.<br>As one would guess, when a single white tile is flipped, it changes to black; when a single black tile is flipped, it changes to white. The cows are rewarded when they flip the tiles so that each tile has the white side face up. However, the cows have rather large hooves and when they try to flip a certain tile, they also flip all the adjacent tiles (tiles that share a full edge with the flipped tile). Since the flips are tiring, the cows want to minimize the number of flips they have to make.<br>Help the cows determine the minimum number of flips required, and the locations to flip to achieve that minimum. If there are multiple ways to achieve the task with the minimum amount of flips, return the one with the least lexicographical ordering in the output when considered as a string. If the task is impossible, print one line with the word “IMPOSSIBLE”.</p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>Line $1$: Two space-separated integers: $M$ and $N$<br>Lines $2…M+1$: Line $i+1$ describes the colors (left to right) of row $i$ of the grid with $N$ space-separated integers which are $1$ for black and $0$ for white。  </p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>Lines $1…M$: Each line contains $N$ space-separated integers, each specifying how many times to flip that particular location.</p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>4 4<br>1 0 0 1<br>0 1 1 0<br>0 1 1 0<br>1 0 0 1  </p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>0 0 0 0<br>1 0 0 1<br>1 0 0 1<br>0 0 0 0  </p>
+<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>有一大块由黑白两色地砖组成的拼图，$1$代表黑色，$0$代表白色。每次翻动一块地砖，都会使该地砖及其周围地砖（有完整的边相接的地砖）颜色改变（黑变白，白变黑）。要求用最少的翻动次数，将所有地砖变成白色，输出每一块地砖被翻动的次数，如果有多种方案，按字典序输出。  </p>
+<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>首先，一块地砖翻动奇数次产生的效果是相同的，翻动偶数次相当于没有翻动；因此，如果要翻动一块地砖，该地砖被翻动的次数只需要是$1$。<br>因此，打印出来的答案就是一个$0$和$1$构成的矩阵，每一行都可以看作是一个二进制数。<br>事实上，当第$0$行的翻动方案确定后，第$1$行也随之确定（翻动与第$0$行黑地砖相邻的地砖），接着第$2$行也确定……一直递推至第$M-1$行，这是只需要检查第$M$行是否都是白色地砖，如果是白色地砖，则该方案可行。<br>枚举第一行的所有方案，若找不到一种可行的方案，就输出”IMPOSSIBLE”。<br>每一行的翻转情况可以看作一个二进制整数数$x\in [0,2^N-1]$（一个都不翻转或全部翻转），对于每一个$x$，将其二进制位拆开，如果第$j$位为$1$，则翻转第$0$行第$j$个地砖，题目要求字典序输出，因此第一行的方案要先从$0$开始枚举。接着一直模拟到$M-1$行，检查$M-1$行的合法性，若合法，则视情况更新翻动地砖的最小次数和第一行的方案（在枚举中用一个十进制数表示，模拟中拆成二进制数）。  </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">20</span>;</span><br><span class="line"><span class="keyword">int</span> <span class="built_in">map</span>[N][N],temp[N][N],ans[N][N];</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="keyword">int</span> cnt;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> dx[]=&#123;<span class="number">-1</span>,<span class="number">1</span>,<span class="number">0</span>,<span class="number">0</span>&#125;,dy[]=&#123;<span class="number">0</span>,<span class="number">0</span>,<span class="number">-1</span>,<span class="number">1</span>&#125;;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">flip</span><span class="params">(<span class="keyword">int</span> x,<span class="keyword">int</span> y)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	temp[x][y]^=<span class="number">1</span>;</span><br><span class="line">	ans[x][y]=<span class="number">1</span>;<span class="comment">//翻转了(x,y) </span></span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;<span class="number">4</span>;i++)<span class="comment">//枚举相邻四个地砖</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> nx=x+dx[i];</span><br><span class="line">		<span class="keyword">int</span> ny=y+dy[i];</span><br><span class="line">		<span class="keyword">if</span>(nx&lt;<span class="number">0</span>||ny&lt;<span class="number">0</span>||nx&gt;=m||ny&gt;=n) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">else</span> temp[nx][ny]^=<span class="number">1</span>;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">ok</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memcpy</span>(temp,<span class="built_in">map</span>,<span class="keyword">sizeof</span>(temp));<span class="comment">//临时数组</span></span><br><span class="line">	cnt=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(x&amp;(<span class="number">1</span>&lt;&lt;(n<span class="number">-1</span>-j))) <span class="comment">//检查第j块砖是否要翻转</span></span><br><span class="line">		&#123;</span><br><span class="line">			flip(<span class="number">0</span>,j);</span><br><span class="line">			cnt++;<span class="comment">//总翻转次数增加1</span></span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(temp[i<span class="number">-1</span>][j]) </span><br><span class="line">			&#123;</span><br><span class="line">				flip(i,j);</span><br><span class="line">				cnt++;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(temp[m<span class="number">-1</span>][j])</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> i,j;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;<span class="built_in">map</span>[i][j];</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> least=<span class="number">0x3f3f3f3f</span>;</span><br><span class="line">	<span class="keyword">int</span> choose=<span class="number">-1</span>;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;(<span class="number">1</span>&lt;&lt;n);i++)<span class="comment">//翻转组合00000...~11111... </span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(ok(i))</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(cnt&lt;least)</span><br><span class="line">			&#123;</span><br><span class="line">				least=cnt;</span><br><span class="line">				choose=i;<span class="comment">//记录第一行翻转的组合 </span></span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(choose!=<span class="number">-1</span>)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(ans,<span class="number">0</span>,<span class="keyword">sizeof</span>(ans));</span><br><span class="line">		ok(choose);</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">0</span>;i&lt;m;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(j=<span class="number">0</span>;j&lt;n;j++)</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="built_in">cout</span>&lt;&lt;ans[i][j];</span><br><span class="line">				<span class="keyword">if</span>(j&lt;n<span class="number">-1</span>) <span class="built_in">putchar</span>(<span class="string">' '</span>);</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="built_in">putchar</span>(<span class="string">'\n'</span>);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"IMPOSSIBLE"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
       
       
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/08/Codeforces-Round-626-Div-2/" class="archive-article-date">
-  	<time datetime="2020-03-07T16:06:38.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-08</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/08/Codeforces-Round-626-Div-2/">Codeforces Round #626 (Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">POJ</a>
         		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/05/CodeCraft-20-Div-2/" class="archive-article-date">
-  	<time datetime="2020-03-04T17:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/CodeCraft-20-Div-2/">CodeCraft-20 (Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
+      		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">二进制问题</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/03/09/POJ-3279-Fliptile/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/04/Ozon-Tech-Challenge-2020-Div-1-Div-2/" class="archive-article-date">
-  	<time datetime="2020-03-03T17:16:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+  
+    <a href="/2020/03/09/POJ-3278-Catch-That-Cow/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">POJ 3278 Catch That Cow</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/Ozon-Tech-Challenge-2020-Div-1-Div-2/">Ozon Tech Challenge 2020 (Div.1 + Div.2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation"><span class="toc-number">6.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">7.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-number">8.</span> <span class="toc-text">Code</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/02/Codeforces-Round-625-Div-2/" class="archive-article-date">
-  	<time datetime="2020-03-02T03:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
+        
+    </div>
+</aside>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/Codeforces-Round-625-Div-2/">Codeforces Round #625 (Div. 2)</a>
-    </h1>
-  
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/25/Codeforces-Round-624-Div-3/" class="archive-article-date">
-  	<time datetime="2020-02-25T07:28:59.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-25</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/25/Codeforces-Round-624-Div-3/">Codeforces Round #624 (Div.3)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/" class="archive-article-date">
-  	<time datetime="2020-02-21T13:56:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Educational-Codeforces-Round-82-Rated-for-Div-2/">Educational Codeforces Round 82 (Rated for Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/02/21/Codeforces-Round-620-Div-2/" class="archive-article-date">
-  	<time datetime="2020-02-21T05:40:20.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-02-21</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/02/21/Codeforces-Round-620-Div-2/">Codeforces Round #620 (Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -470,9 +383,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
