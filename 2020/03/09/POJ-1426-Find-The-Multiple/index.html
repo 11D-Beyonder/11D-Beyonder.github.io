@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 模拟 | 11D_Beyonder&#39;s Blog</title>
+  <title>POJ 1426 Find The Multiple | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E6%A8%A1%E6%8B%9F/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="POJ 1426 Find The Multiple">
+<meta property="og:url" content="http://yoursite.com/2020/03/09/POJ-1426-Find-The-Multiple/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/09/6ZAI.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/09/6ZAM.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/09/6ZAR.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/09/6ZAX.jpg">
+<meta property="article:published_time" content="2020-03-09T11:55:48.000Z">
+<meta property="article:modified_time" content="2020-03-09T12:35:20.959Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="POJ">
+<meta property="article:tag" content="BFS">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.niupic.com/images/2020/03/09/6ZAI.jpg">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
   
@@ -137,66 +146,214 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-POJ-1426-Find-The-Multiple" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/02/%E6%B4%9B%E8%B0%B7P1328-%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8%E7%89%88%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/" class="archive-article-date">
-  	<time datetime="2020-03-02T01:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/%E6%B4%9B%E8%B0%B7P1328-%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8%E7%89%88%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/">洛谷P1328 生活大爆炸版石头剪刀布</a>
+    <h1 class="article-title" itemprop="name">
+      POJ 1426 Find The Multiple
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/03/09/POJ-1426-Find-The-Multiple/" class="archive-article-date">
+  	<time datetime="2020-03-09T11:55:48.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-09</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+<h2 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h2><p>Given a positive integer $n$, write a program to find out a nonzero multiple m of $n$ whose decimal representation contains only the digits $0$ and $1$. You may assume that $n$ is not greater than 200 and there is a corresponding m containing no more than $100$ decimal digits.  </p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>The input file may contain multiple test cases. Each line contains a value of $n (1 &lt;= n &lt;= 200)$. A line containing a zero terminates the input.  </p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>For each value of $n$ in the input print a line containing the corresponding value of $m$. The decimal representation of $m$ must not contain more than $100$ digits. If there are multiple solutions for a given value of $n$, any one of them is acceptable.  </p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>2<br>6<br>19<br>0  </p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>10<br>100100100100100100<br>111111111111111111  </p>
+<h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>输入一个不大于$200$的正整数$n$，输出一个$n$的倍数，且这个倍数只能由$0$和$1$构成。  </p>
+<h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>逐项检验肯定是不行的，我们不妨想想怎么构造$01$串。<br>要使构造的$01$串$x$成为$n$的倍数，那么最小的$x$就是$1$，之后就是$10,11,100,101,110,111…$<br>可见，对于任何一个$01$串$x$，都可延伸出两个$01$串$10x+1,10x$，就这样从$1$开始，形成了一颗无限的完全二叉树，这样的数据结构，适合$BFS$构造。<br>于是可以枚举$[1,200]$之间的全部整数，找到它们符合条件的倍数。  </p>
+<figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">200</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;ull&gt;ans;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">queue</span>&lt;ull&gt;multiple;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=N;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//初始化，清空队列</span></span><br><span class="line">		<span class="built_in">queue</span>&lt;ull&gt;e;</span><br><span class="line">		swap(e,multiple);</span><br><span class="line">		<span class="comment">//从1开始递推</span></span><br><span class="line">		multiple.push(<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">while</span>(!multiple.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			ull now=multiple.front();</span><br><span class="line">			<span class="keyword">if</span>(now%i==<span class="number">0</span>) </span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//找到倍数，退出循环</span></span><br><span class="line">				ans.push_back(now);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//根节点出队</span></span><br><span class="line">				multiple.pop();</span><br><span class="line">				<span class="comment">//两个子节点入队</span></span><br><span class="line">				multiple.push(now*<span class="number">10</span>);</span><br><span class="line">				multiple.push(now*<span class="number">10</span>+<span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">200</span>;i++) <span class="built_in">printf</span>(<span class="string">"%d*%lld=%lld\n"</span>,i,ans[i<span class="number">-1</span>]/i,ans[i<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>打了个表出来（以下未显示全部）<br><img src="https://i.niupic.com/images/2020/03/09/6ZAI.jpg" style="zoom: 50%;" />  <img src="https://i.niupic.com/images/2020/03/09/6ZAM.jpg" style="zoom: 50%;" />  </p>
+<p><img src="https://i.niupic.com/images/2020/03/09/6ZAR.jpg" style="zoom: 50%;" />  <img src="https://i.niupic.com/images/2020/03/09/6ZAX.jpg" style="zoom: 50%;" />  </p>
+<h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//打表</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ans[]=&#123;</span><br><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">111</span>,<span class="number">100</span>,<span class="number">10</span>,<span class="number">1110</span>,<span class="number">1001</span>,<span class="number">1000</span>,</span><br><span class="line"><span class="number">111111111</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">11100</span>,<span class="number">1001</span>,<span class="number">10010</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">10000</span>,<span class="number">11101</span>,<span class="number">1111111110</span>,<span class="number">11001</span>,</span><br><span class="line"><span class="number">100</span>,<span class="number">10101</span>,<span class="number">110</span>,<span class="number">110101</span>,<span class="number">111000</span>,<span class="number">100</span>,</span><br><span class="line"><span class="number">10010</span>,<span class="number">1101111111</span>,<span class="number">100100</span>,<span class="number">1101101</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">111011</span>,<span class="number">100000</span>,<span class="number">111111</span>,<span class="number">111010</span>,</span><br><span class="line"><span class="number">10010</span>,<span class="number">11111111100</span>,<span class="number">111</span>,<span class="number">110010</span>,<span class="number">10101</span>,</span><br><span class="line"><span class="number">1000</span>,<span class="number">11111</span>,<span class="number">101010</span>,<span class="number">1101101</span>,<span class="number">1100</span>,</span><br><span class="line"><span class="number">1111111110</span>,<span class="number">1101010</span>,<span class="number">10011</span>,<span class="number">1110000</span>,</span><br><span class="line"><span class="number">1100001</span>,<span class="number">100</span>,<span class="number">100011</span>,<span class="number">100100</span>,<span class="number">100011</span>,</span><br><span class="line"><span class="number">11011111110</span>,<span class="number">110</span>,<span class="number">1001000</span>,<span class="number">11001</span>,<span class="number">11011010</span>,</span><br><span class="line"><span class="number">11011111</span>,<span class="number">11100</span>,<span class="number">100101</span>,<span class="number">1110110</span>,<span class="number">1111011111</span>,</span><br><span class="line"><span class="number">1000000</span>,<span class="number">10010</span>,<span class="number">1111110</span>,<span class="number">1101011</span>,<span class="number">1110100</span>,</span><br><span class="line"><span class="number">10000101</span>,<span class="number">10010</span>,<span class="number">10011</span>,<span class="number">111111111000</span>,<span class="number">10001</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">11100</span>,<span class="number">1100100</span>,<span class="number">1001</span>,<span class="number">101010</span>,<span class="number">10010011</span>,</span><br><span class="line"><span class="number">10000</span>,<span class="number">1111111101</span>,<span class="number">111110</span>,<span class="number">101011</span>,<span class="number">1010100</span>,</span><br><span class="line"><span class="number">111010</span>,<span class="number">11011010</span>,<span class="number">11010111</span>,<span class="number">11000</span>,<span class="number">11010101</span>,</span><br><span class="line"><span class="number">1111111110</span>,<span class="number">1001</span>,<span class="number">11010100</span>,<span class="number">10000011</span>,<span class="number">100110</span>,</span><br><span class="line"><span class="number">110010</span>,<span class="number">11100000</span>,<span class="number">11100001</span>,<span class="number">11000010</span>,</span><br><span class="line"><span class="number">111111111111111111</span>,<span class="number">100</span>,<span class="number">101</span>,<span class="number">1000110</span>,</span><br><span class="line"><span class="number">11100001</span>,<span class="number">1001000</span>,<span class="number">101010</span>,<span class="number">1000110</span>,<span class="number">100010011</span>,</span><br><span class="line"><span class="number">110111111100</span>,<span class="number">1001010111</span>,<span class="number">110</span>,<span class="number">111</span>,<span class="number">10010000</span>,<span class="number">1011011</span>,</span><br><span class="line"><span class="number">110010</span>,<span class="number">1101010</span>,<span class="number">110110100</span>,<span class="number">10101111111</span>,<span class="number">110111110</span>,</span><br><span class="line"><span class="number">100111011</span>,<span class="number">111000</span>,<span class="number">11011</span>,<span class="number">1001010</span>,<span class="number">10001100111</span>,</span><br><span class="line"><span class="number">11101100</span>,<span class="number">1000</span>,<span class="number">11110111110</span>,<span class="number">11010011</span>,<span class="number">10000000</span>,</span><br><span class="line"><span class="number">100100001</span>,<span class="number">10010</span>,<span class="number">101001</span>,<span class="number">11111100</span>,<span class="number">11101111</span>,</span><br><span class="line"><span class="number">11010110</span>,<span class="number">11011111110</span>,<span class="number">11101000</span>,<span class="number">10001</span>,<span class="number">100001010</span>,</span><br><span class="line"><span class="number">110110101</span>,<span class="number">100100</span>,<span class="number">10011</span>,<span class="number">100110</span>,<span class="number">1001</span>,<span class="number">1111111110000</span>,</span><br><span class="line"><span class="number">11011010</span>,<span class="number">100010</span>,<span class="number">1100001</span>,<span class="number">11100</span>,<span class="number">110111</span>,<span class="number">11100</span>,</span><br><span class="line"><span class="number">1110001</span>,<span class="number">11001000</span>,<span class="number">10111110111</span>,<span class="number">10010</span>,<span class="number">1110110</span>,</span><br><span class="line"><span class="number">1010100</span>,<span class="number">10101101011</span>,<span class="number">100100110</span>,<span class="number">100011</span>,<span class="number">100000</span>,</span><br><span class="line"><span class="number">11101111</span>,<span class="number">11111111010</span>,<span class="number">1010111</span>,<span class="number">1111100</span>,<span class="number">1111110</span>,</span><br><span class="line"><span class="number">1010110</span>,<span class="number">11111011</span>,<span class="number">10101000</span>,<span class="number">10111101</span>,<span class="number">111010</span>,</span><br><span class="line"><span class="number">1111011111</span>,<span class="number">110110100</span>,<span class="number">1011001101</span>,<span class="number">110101110</span>,</span><br><span class="line"><span class="number">100100</span>,<span class="number">110000</span>,<span class="number">100101111</span>,<span class="number">110101010</span>,<span class="number">11010111</span>,</span><br><span class="line"><span class="number">11111111100</span>,<span class="number">1001111</span>,<span class="number">10010</span>,<span class="number">100101</span>,<span class="number">110101000</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">100000110</span>,<span class="number">1001011</span>,<span class="number">1001100</span>,<span class="number">1010111010111</span>,</span><br><span class="line"><span class="number">110010</span>,<span class="number">11101111</span>,<span class="number">111000000</span>,<span class="number">11001</span>,<span class="number">111000010</span>,<span class="number">101010</span>,</span><br><span class="line"><span class="number">110000100</span>,<span class="number">1101000101</span>,<span class="number">1111111111111111110</span>,</span><br><span class="line"><span class="number">111000011</span>,<span class="number">1000</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n) <span class="built_in">cout</span>&lt;&lt;ans[n<span class="number">-1</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">洛谷</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">POJ</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模拟</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/03/09/POJ-1426-Find-The-Multiple/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/03/09/POJ-3279-Fliptile/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">POJ 3279 Fliptile</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Description"><span class="toc-number">1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Translation"><span class="toc-number">6.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea"><span class="toc-number">7.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code"><span class="toc-number">8.</span> <span class="toc-text">Code</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -234,9 +391,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
