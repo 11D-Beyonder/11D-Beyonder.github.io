@@ -6,15 +6,22 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Archives: 2020/3 | 11D_Beyonder&#39;s Blog</title>
+  <title>HDU 1495 非常可乐 | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/archives/2020/03/page/2/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="HDU 1495 非常可乐">
+<meta property="og:url" content="http://yoursite.com/2020/03/10/HDU-1495-%E9%9D%9E%E5%B8%B8%E5%8F%AF%E4%B9%90/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="http://img.blog.csdn.net/20160802195555942">
+<meta property="article:published_time" content="2020-03-10T15:27:55.000Z">
+<meta property="article:modified_time" content="2020-03-10T16:15:33.643Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="HDU">
+<meta property="article:tag" content="BFS">
+<meta property="article:tag" content="数论">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="http://img.blog.csdn.net/20160802195555942">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
   
@@ -137,38 +144,84 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-HDU-1495-非常可乐" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/06/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E6%B1%82%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%AA%E6%95%B0/" class="archive-article-date">
-  	<time datetime="2020-03-06T05:57:16.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-06</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/06/%E6%A0%91%E7%8A%B6%E6%95%B0%E7%BB%84%E6%B1%82%E9%80%86%E5%BA%8F%E5%AF%B9%E4%B8%AA%E6%95%B0/">树状数组求逆序对个数</a>
+    <h1 class="article-title" itemprop="name">
+      HDU 1495 非常可乐
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
+<a href="/2020/03/10/HDU-1495-%E9%9D%9E%E5%B8%B8%E5%8F%AF%E4%B9%90/" class="archive-article-date">
+  	<time datetime="2020-03-10T15:27:55.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-10</time>
+</a>
+
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>  
+<h2 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h2><p>大家一定觉的运动以后喝可乐是一件很惬意的事情，但是seeyou却不这么认为。因为每次当seeyou买了可乐以后，阿牛就要求和seeyou一起分享这一瓶可乐，而且一定要喝的和seeyou一样多。但seeyou的手中只有两个杯子，它们的容量分别是$N$ 毫升和$M$ 毫升 可乐的体积为$S （S&lt;101）$毫升　(正好装满一瓶) ，它们三个之间可以相互倒可乐 (都是没有刻度的，且 $S=N+M，101＞S＞0，N＞0，M＞0$) 。聪明的ACMER你们说他们能平分吗？如果能请输出倒可乐的最少的次数，如果不能输出”NO”。  </p>
+<h2 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h2><p>三个整数 : $S$ 可乐的体积 , $N$ 和 $M$是两个杯子的容量，以”0 0 0”结束。   </p>
+<h2 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h2><p>如果能平分的话请输出最少要倒的次数，否则输出”NO”。  </p>
+<h2 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h2><p>7 4 3<br>4 1 3<br>0 0 0  </p>
+<h2 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h2><p>NO<br>3  </p>
+<h2 id="Idea1"><a href="#Idea1" class="headerlink" title="Idea1"></a>Idea1</h2><p>每一次操作有选取两个瓶子，并从中选取一个瓶子倒入另一个瓶子，因此每一次操作有$C_3^2 \times C_2^1=6$种选择。<br>于是可以利用$BFS$枚举每一次状态的六种选择。  </p>
+<h2 id="Code1"><a href="#Code1" class="headerlink" title="Code1"></a>Code1</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br><span class="line">79</span><br><span class="line">80</span><br><span class="line">81</span><br><span class="line">82</span><br><span class="line">83</span><br><span class="line">84</span><br><span class="line">85</span><br><span class="line">86</span><br><span class="line">87</span><br><span class="line">88</span><br><span class="line">89</span><br><span class="line">90</span><br><span class="line">91</span><br><span class="line">92</span><br><span class="line">93</span><br><span class="line">94</span><br><span class="line">95</span><br><span class="line">96</span><br><span class="line">97</span><br><span class="line">98</span><br><span class="line">99</span><br><span class="line">100</span><br><span class="line">101</span><br><span class="line">102</span><br><span class="line">103</span><br><span class="line">104</span><br><span class="line">105</span><br><span class="line">106</span><br><span class="line">107</span><br><span class="line">108</span><br><span class="line">109</span><br><span class="line">110</span><br><span class="line">111</span><br><span class="line">112</span><br><span class="line">113</span><br><span class="line">114</span><br><span class="line">115</span><br><span class="line">116</span><br><span class="line">117</span><br><span class="line">118</span><br><span class="line">119</span><br><span class="line">120</span><br><span class="line">121</span><br><span class="line">122</span><br><span class="line">123</span><br><span class="line">124</span><br><span class="line">125</span><br><span class="line">126</span><br><span class="line">127</span><br><span class="line">128</span><br><span class="line">129</span><br><span class="line">130</span><br><span class="line">131</span><br><span class="line">132</span><br><span class="line">133</span><br><span class="line">134</span><br><span class="line">135</span><br><span class="line">136</span><br><span class="line">137</span><br><span class="line">138</span><br><span class="line">139</span><br><span class="line">140</span><br><span class="line">141</span><br><span class="line">142</span><br><span class="line">143</span><br><span class="line">144</span><br><span class="line">145</span><br><span class="line">146</span><br><span class="line">147</span><br><span class="line">148</span><br><span class="line">149</span><br><span class="line">150</span><br><span class="line">151</span><br><span class="line">152</span><br><span class="line">153</span><br><span class="line">154</span><br><span class="line">155</span><br><span class="line">156</span><br><span class="line">157</span><br><span class="line">158</span><br><span class="line">159</span><br><span class="line">160</span><br><span class="line">161</span><br><span class="line">162</span><br><span class="line">163</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">120</span>;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">state</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> a,b,c;</span><br><span class="line">	<span class="keyword">int</span> step;</span><br><span class="line">&#125;;</span><br><span class="line"><span class="keyword">bool</span> ok;</span><br><span class="line"><span class="keyword">int</span> s,n,m;</span><br><span class="line"><span class="keyword">bool</span> vis[N][N][N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	ok=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">memset</span>(vis,<span class="number">0</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">bfs</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="comment">//初状态入队</span></span><br><span class="line">	vis[s][<span class="number">0</span>][<span class="number">0</span>]=<span class="number">1</span>;</span><br><span class="line">	state start;</span><br><span class="line">	start.a=s;</span><br><span class="line">	start.b=<span class="number">0</span>;</span><br><span class="line">	start.c=<span class="number">0</span>;</span><br><span class="line">	start.step=<span class="number">0</span>;</span><br><span class="line">	<span class="built_in">queue</span>&lt;state&gt;q;</span><br><span class="line">	q.push(start);</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">while</span>(!q.empty())</span><br><span class="line">	&#123;</span><br><span class="line">		state nxt;</span><br><span class="line">		state now=q.front();</span><br><span class="line">		<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">6</span>;i++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">if</span>(i==<span class="number">1</span>)<span class="comment">//a倒到b </span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(now.a+now.b&lt;=n) </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.a=<span class="number">0</span>;</span><br><span class="line">					nxt.b=now.a+now.b;</span><br><span class="line">					nxt.c=now.c;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.b=n;</span><br><span class="line">					nxt.c=now.c;</span><br><span class="line">					nxt.a=now.a+now.b-n;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">2</span>)<span class="comment">//b倒到a </span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(now.a+now.b&lt;=s) </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.b=<span class="number">0</span>;</span><br><span class="line">					nxt.a=now.a+now.b;</span><br><span class="line">					nxt.c=now.c;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.a=s;</span><br><span class="line">					nxt.b=now.a+now.b-s;</span><br><span class="line">					nxt.c=now.c;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">3</span>)<span class="comment">//a倒到c</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(now.a+now.c&lt;=m) </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.a=<span class="number">0</span>;</span><br><span class="line">					nxt.c=now.a+now.c;</span><br><span class="line">					nxt.b=now.b;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.c=m;</span><br><span class="line">					nxt.b=now.b;</span><br><span class="line">					nxt.a=now.a+now.c-m;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; </span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">4</span>)<span class="comment">//c倒到a</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(now.a+now.b&lt;=s) </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.c=<span class="number">0</span>;</span><br><span class="line">					nxt.a=now.a+now.c;</span><br><span class="line">					nxt.b=now.b;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.b=now.b;</span><br><span class="line">					nxt.a=s;</span><br><span class="line">					nxt.c=now.a+now.c-s;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125; </span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">5</span>)<span class="comment">//b倒到c </span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(now.b+now.c&lt;=m) </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.b=<span class="number">0</span>;</span><br><span class="line">					nxt.a=now.a;</span><br><span class="line">					nxt.c=now.b+now.c;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.a=now.a;</span><br><span class="line">					nxt.c=m;</span><br><span class="line">					nxt.b=now.b+now.c-m;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span> <span class="keyword">if</span>(i==<span class="number">6</span>)<span class="comment">//c倒到b </span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="keyword">if</span>(now.b+now.c&lt;=n) </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.c=<span class="number">0</span>;</span><br><span class="line">					nxt.b=now.b+now.c;</span><br><span class="line">					nxt.a=now.a;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					nxt.b=n;</span><br><span class="line">					nxt.a=now.a;</span><br><span class="line">					nxt.c=now.b+now.c-n;</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">if</span>(vis[nxt.a][nxt.b][nxt.c]) <span class="keyword">continue</span>;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				nxt.step=now.step+<span class="number">1</span>;</span><br><span class="line">				<span class="keyword">if</span>((!nxt.a&amp;&amp;nxt.b==nxt.c)||(!nxt.b&amp;&amp;nxt.a==nxt.c)||(!nxt.c&amp;&amp;nxt.a==nxt.b))</span><br><span class="line">				&#123;</span><br><span class="line">					ok=<span class="number">1</span>;</span><br><span class="line">					<span class="built_in">cout</span>&lt;&lt;nxt.step&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">					<span class="keyword">return</span>;</span><br><span class="line">				&#125;</span><br><span class="line">				<span class="keyword">else</span> </span><br><span class="line">				&#123;</span><br><span class="line">					vis[nxt.a][nxt.b][nxt.c]=<span class="number">1</span>;</span><br><span class="line">					q.push(nxt);</span><br><span class="line">				&#125;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">		q.pop();</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">if</span>(s&amp;<span class="number">1</span>) ok=<span class="number">0</span>;<span class="comment">//是奇数不可能均分</span></span><br><span class="line">	<span class="keyword">else</span> bfs();</span><br><span class="line">	<span class="keyword">if</span>(!ok) <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;n&gt;&gt;m)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!s&amp;&amp;!n&amp;&amp;!m) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">else</span> solve();	</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="Idea2"><a href="#Idea2" class="headerlink" title="Idea2"></a>Idea2</h2><p>设两个小瓶子容积分别为$a,b$，问题转化成通过两个小瓶子的若干次倒进或倒出操作得到(a+b)/2体积的可乐，设两个小瓶子被倒进或倒出$x$次和$y$次；这里的$x$和$y$是累加后的操作即$x=第一个瓶子倒出的次数-倒进的次数，y=第二个瓶子倒出的次数-倒进的次数$。<br>那么问题转化成：  </p>
+<p><img src="http://img.blog.csdn.net/20160802195555942" alt="">  </p>
+<p>所以$|x|+|y|$的最小值为$\frac {c+d}{2}=\frac{s}{2gcd(a,b)}$，通过$x$和$y$的通解形式显然可以看出$x$和$y$一正一负，不妨设$x&lt;0$，那么就是往第一个小瓶子倒进$x$次，第二个小瓶子倒出$y$次，但是由于瓶子容积有限，所以倒进倒出操作都是通过大瓶子来解决的，一次倒进操作后为了继续使用小瓶子还要将小瓶子中可乐倒回大瓶子中，倒出操作同理，所以总操作次数是$\frac{c+d}{2}\times 2=c+d=\frac {s}{gcd(a,b)}$，但是注意最后剩下的$\frac{s}{2}$体积的可乐一定是放在两个小瓶子中较大的那个中，而不是再倒回到大瓶子中，所以操作数要减一，答案就是$\frac {s}{gcd(a,b)}-1$。  </p>
+<h2 id="Code2"><a href="#Code2" class="headerlink" title="Code2"></a>Code2</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">int</span> s,n,m;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	s/=__gcd(n,m);</span><br><span class="line">	<span class="keyword">if</span>(s&amp;<span class="number">1</span>) <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">cout</span>&lt;&lt;s<span class="number">-1</span>&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;s&gt;&gt;n&gt;&gt;m)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(!s&amp;&amp;!n&amp;&amp;!m) <span class="keyword">break</span>;</span><br><span class="line">		<span class="keyword">else</span> solve();	</span><br><span class="line">	&#125;	</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -178,237 +231,140 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">树状数组</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/05/CodeCraft-20-Div-2/" class="archive-article-date">
-  	<time datetime="2020-03-04T17:10:42.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-05</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/05/CodeCraft-20-Div-2/">CodeCraft-20 (Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/04/Ozon-Tech-Challenge-2020-Div-1-Div-2/" class="archive-article-date">
-  	<time datetime="2020-03-03T17:16:19.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-04</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/04/Ozon-Tech-Challenge-2020-Div-1-Div-2/">Ozon Tech Challenge 2020 (Div.1 + Div.2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/02/%E6%B4%9B%E8%B0%B7P2181-%E5%AF%B9%E8%A7%92%E7%BA%BF/" class="archive-article-date">
-  	<time datetime="2020-03-02T10:03:04.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
-
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/%E6%B4%9B%E8%B0%B7P2181-%E5%AF%B9%E8%A7%92%E7%BA%BF/">洛谷P2181 对角线</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">洛谷</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">计算几何</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">数论</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/03/10/HDU-1495-%E9%9D%9E%E5%B8%B8%E5%8F%AF%E4%B9%90/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/02/Codeforces-Round-625-Div-2/" class="archive-article-date">
-  	<time datetime="2020-03-02T03:54:25.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+    <a href="/2020/03/11/POJ-3126-Prime-Path/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          POJ 3126 Prime Path
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/10/HDU-1241-Oil-Deposits/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">HDU 1241 Oil Deposits</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/Codeforces-Round-625-Div-2/">Codeforces Round #625 (Div. 2)</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">Codeforces</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#Problem-Description"><span class="toc-number">1.</span> <span class="toc-text">Problem Description</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Input"><span class="toc-number">2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Output"><span class="toc-number">3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Input"><span class="toc-number">4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Sample-Output"><span class="toc-number">5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea1"><span class="toc-number">6.</span> <span class="toc-text">Idea1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code1"><span class="toc-number">7.</span> <span class="toc-text">Code1</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Idea2"><span class="toc-number">8.</span> <span class="toc-text">Idea2</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Code2"><span class="toc-number">9.</span> <span class="toc-text">Code2</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/02/%E6%B4%9B%E8%B0%B7P1328-%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8%E7%89%88%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/" class="archive-article-date">
-  	<time datetime="2020-03-02T01:57:15.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-02</time>
-</a>
+        
+    </div>
+</aside>
 
-        </div>
-    	 
+
+
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/02/%E6%B4%9B%E8%B0%B7P1328-%E7%94%9F%E6%B4%BB%E5%A4%A7%E7%88%86%E7%82%B8%E7%89%88%E7%9F%B3%E5%A4%B4%E5%89%AA%E5%88%80%E5%B8%83/">洛谷P1328 生活大爆炸版石头剪刀布</a>
-    </h1>
+  
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">洛谷</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">模拟</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-  
-    </div></section>
   
 
-    
-    <nav id="page-nav">
-      <a class="extend prev" rel="prev" href="/archives/2020/03/">&amp;laquo; Prev</a><a class="page-number" href="/archives/2020/03/">1</a><span class="page-number current">2</span>
-    </nav>
   
+
+  
+
 
 
           </div>
@@ -446,8 +402,8 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
-		isArchive: true,
+		isPost: true,
+		isArchive: false,
 		isTag: false,
 		isCategory: false,
 		open_in_new: false,

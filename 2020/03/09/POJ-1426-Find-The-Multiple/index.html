@@ -18,10 +18,10 @@
 <meta property="og:image" content="https://i.niupic.com/images/2020/03/09/6ZAR.jpg">
 <meta property="og:image" content="https://i.niupic.com/images/2020/03/09/6ZAX.jpg">
 <meta property="article:published_time" content="2020-03-09T11:55:48.000Z">
-<meta property="article:modified_time" content="2020-03-09T12:35:20.959Z">
+<meta property="article:modified_time" content="2020-03-09T12:45:36.407Z">
 <meta property="article:author" content="11D_Beyonder">
-<meta property="article:tag" content="POJ">
 <meta property="article:tag" content="BFS">
+<meta property="article:tag" content="POJ">
 <meta name="twitter:card" content="summary">
 <meta name="twitter:image" content="https://i.niupic.com/images/2020/03/09/6ZAI.jpg">
   
@@ -69,7 +69,7 @@
 			</ul>
 		</nav>
     <nav>
-          文章总数 33
+          文章总数 37
     </nav>
 		<nav class="header-smart-menu">
     		
@@ -183,7 +183,7 @@
 <h2 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h2><p>输入一个不大于$200$的正整数$n$，输出一个$n$的倍数，且这个倍数只能由$0$和$1$构成。  </p>
 <h2 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h2><p>逐项检验肯定是不行的，我们不妨想想怎么构造$01$串。<br>要使构造的$01$串$x$成为$n$的倍数，那么最小的$x$就是$1$，之后就是$10,11,100,101,110,111…$<br>可见，对于任何一个$01$串$x$，都可延伸出两个$01$串$10x+1,10x$，就这样从$1$开始，形成了一颗无限的完全二叉树，这样的数据结构，适合$BFS$构造。<br>于是可以枚举$[1,200]$之间的全部整数，找到它们符合条件的倍数。  </p>
 <figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;vector&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;queue&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ull unsigned long long </span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">200</span>;</span><br><span class="line"><span class="built_in">vector</span>&lt;ull&gt;ans;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">queue</span>&lt;ull&gt;multiple;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=N;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//初始化，清空队列</span></span><br><span class="line">		<span class="built_in">queue</span>&lt;ull&gt;e;</span><br><span class="line">		swap(e,multiple);</span><br><span class="line">		<span class="comment">//从1开始递推</span></span><br><span class="line">		multiple.push(<span class="number">1</span>);</span><br><span class="line">		<span class="keyword">while</span>(!multiple.empty())</span><br><span class="line">		&#123;</span><br><span class="line">			ull now=multiple.front();</span><br><span class="line">			<span class="keyword">if</span>(now%i==<span class="number">0</span>) </span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//找到倍数，退出循环</span></span><br><span class="line">				ans.push_back(now);</span><br><span class="line">				<span class="keyword">break</span>;</span><br><span class="line">			&#125;</span><br><span class="line">			<span class="keyword">else</span></span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//根节点出队</span></span><br><span class="line">				multiple.pop();</span><br><span class="line">				<span class="comment">//两个子节点入队</span></span><br><span class="line">				multiple.push(now*<span class="number">10</span>);</span><br><span class="line">				multiple.push(now*<span class="number">10</span>+<span class="number">1</span>);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=<span class="number">200</span>;i++) <span class="built_in">printf</span>(<span class="string">"%d*%lld=%lld\n"</span>,i,ans[i<span class="number">-1</span>]/i,ans[i<span class="number">-1</span>]);</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<p>打了个表出来（以下未显示全部）<br><img src="https://i.niupic.com/images/2020/03/09/6ZAI.jpg" style="zoom: 50%;" />  <img src="https://i.niupic.com/images/2020/03/09/6ZAM.jpg" style="zoom: 50%;" />  </p>
+<p>打了个表出来（以下未显示全部），但是这样之解写进程序会MLE，因此把这一堆数据复制到数组里输出吧。<br><img src="https://i.niupic.com/images/2020/03/09/6ZAI.jpg" style="zoom: 50%;" />  <img src="https://i.niupic.com/images/2020/03/09/6ZAM.jpg" style="zoom: 50%;" />  </p>
 <p><img src="https://i.niupic.com/images/2020/03/09/6ZAR.jpg" style="zoom: 50%;" />  <img src="https://i.niupic.com/images/2020/03/09/6ZAX.jpg" style="zoom: 50%;" />  </p>
 <h2 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="comment">//打表</span></span><br><span class="line"><span class="keyword">unsigned</span> <span class="keyword">long</span> <span class="keyword">long</span> ans[]=&#123;</span><br><span class="line"><span class="number">1</span>,<span class="number">10</span>,<span class="number">111</span>,<span class="number">100</span>,<span class="number">10</span>,<span class="number">1110</span>,<span class="number">1001</span>,<span class="number">1000</span>,</span><br><span class="line"><span class="number">111111111</span>,<span class="number">10</span>,<span class="number">11</span>,<span class="number">11100</span>,<span class="number">1001</span>,<span class="number">10010</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">10000</span>,<span class="number">11101</span>,<span class="number">1111111110</span>,<span class="number">11001</span>,</span><br><span class="line"><span class="number">100</span>,<span class="number">10101</span>,<span class="number">110</span>,<span class="number">110101</span>,<span class="number">111000</span>,<span class="number">100</span>,</span><br><span class="line"><span class="number">10010</span>,<span class="number">1101111111</span>,<span class="number">100100</span>,<span class="number">1101101</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">111011</span>,<span class="number">100000</span>,<span class="number">111111</span>,<span class="number">111010</span>,</span><br><span class="line"><span class="number">10010</span>,<span class="number">11111111100</span>,<span class="number">111</span>,<span class="number">110010</span>,<span class="number">10101</span>,</span><br><span class="line"><span class="number">1000</span>,<span class="number">11111</span>,<span class="number">101010</span>,<span class="number">1101101</span>,<span class="number">1100</span>,</span><br><span class="line"><span class="number">1111111110</span>,<span class="number">1101010</span>,<span class="number">10011</span>,<span class="number">1110000</span>,</span><br><span class="line"><span class="number">1100001</span>,<span class="number">100</span>,<span class="number">100011</span>,<span class="number">100100</span>,<span class="number">100011</span>,</span><br><span class="line"><span class="number">11011111110</span>,<span class="number">110</span>,<span class="number">1001000</span>,<span class="number">11001</span>,<span class="number">11011010</span>,</span><br><span class="line"><span class="number">11011111</span>,<span class="number">11100</span>,<span class="number">100101</span>,<span class="number">1110110</span>,<span class="number">1111011111</span>,</span><br><span class="line"><span class="number">1000000</span>,<span class="number">10010</span>,<span class="number">1111110</span>,<span class="number">1101011</span>,<span class="number">1110100</span>,</span><br><span class="line"><span class="number">10000101</span>,<span class="number">10010</span>,<span class="number">10011</span>,<span class="number">111111111000</span>,<span class="number">10001</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">11100</span>,<span class="number">1100100</span>,<span class="number">1001</span>,<span class="number">101010</span>,<span class="number">10010011</span>,</span><br><span class="line"><span class="number">10000</span>,<span class="number">1111111101</span>,<span class="number">111110</span>,<span class="number">101011</span>,<span class="number">1010100</span>,</span><br><span class="line"><span class="number">111010</span>,<span class="number">11011010</span>,<span class="number">11010111</span>,<span class="number">11000</span>,<span class="number">11010101</span>,</span><br><span class="line"><span class="number">1111111110</span>,<span class="number">1001</span>,<span class="number">11010100</span>,<span class="number">10000011</span>,<span class="number">100110</span>,</span><br><span class="line"><span class="number">110010</span>,<span class="number">11100000</span>,<span class="number">11100001</span>,<span class="number">11000010</span>,</span><br><span class="line"><span class="number">111111111111111111</span>,<span class="number">100</span>,<span class="number">101</span>,<span class="number">1000110</span>,</span><br><span class="line"><span class="number">11100001</span>,<span class="number">1001000</span>,<span class="number">101010</span>,<span class="number">1000110</span>,<span class="number">100010011</span>,</span><br><span class="line"><span class="number">110111111100</span>,<span class="number">1001010111</span>,<span class="number">110</span>,<span class="number">111</span>,<span class="number">10010000</span>,<span class="number">1011011</span>,</span><br><span class="line"><span class="number">110010</span>,<span class="number">1101010</span>,<span class="number">110110100</span>,<span class="number">10101111111</span>,<span class="number">110111110</span>,</span><br><span class="line"><span class="number">100111011</span>,<span class="number">111000</span>,<span class="number">11011</span>,<span class="number">1001010</span>,<span class="number">10001100111</span>,</span><br><span class="line"><span class="number">11101100</span>,<span class="number">1000</span>,<span class="number">11110111110</span>,<span class="number">11010011</span>,<span class="number">10000000</span>,</span><br><span class="line"><span class="number">100100001</span>,<span class="number">10010</span>,<span class="number">101001</span>,<span class="number">11111100</span>,<span class="number">11101111</span>,</span><br><span class="line"><span class="number">11010110</span>,<span class="number">11011111110</span>,<span class="number">11101000</span>,<span class="number">10001</span>,<span class="number">100001010</span>,</span><br><span class="line"><span class="number">110110101</span>,<span class="number">100100</span>,<span class="number">10011</span>,<span class="number">100110</span>,<span class="number">1001</span>,<span class="number">1111111110000</span>,</span><br><span class="line"><span class="number">11011010</span>,<span class="number">100010</span>,<span class="number">1100001</span>,<span class="number">11100</span>,<span class="number">110111</span>,<span class="number">11100</span>,</span><br><span class="line"><span class="number">1110001</span>,<span class="number">11001000</span>,<span class="number">10111110111</span>,<span class="number">10010</span>,<span class="number">1110110</span>,</span><br><span class="line"><span class="number">1010100</span>,<span class="number">10101101011</span>,<span class="number">100100110</span>,<span class="number">100011</span>,<span class="number">100000</span>,</span><br><span class="line"><span class="number">11101111</span>,<span class="number">11111111010</span>,<span class="number">1010111</span>,<span class="number">1111100</span>,<span class="number">1111110</span>,</span><br><span class="line"><span class="number">1010110</span>,<span class="number">11111011</span>,<span class="number">10101000</span>,<span class="number">10111101</span>,<span class="number">111010</span>,</span><br><span class="line"><span class="number">1111011111</span>,<span class="number">110110100</span>,<span class="number">1011001101</span>,<span class="number">110101110</span>,</span><br><span class="line"><span class="number">100100</span>,<span class="number">110000</span>,<span class="number">100101111</span>,<span class="number">110101010</span>,<span class="number">11010111</span>,</span><br><span class="line"><span class="number">11111111100</span>,<span class="number">1001111</span>,<span class="number">10010</span>,<span class="number">100101</span>,<span class="number">110101000</span>,</span><br><span class="line"><span class="number">1110</span>,<span class="number">100000110</span>,<span class="number">1001011</span>,<span class="number">1001100</span>,<span class="number">1010111010111</span>,</span><br><span class="line"><span class="number">110010</span>,<span class="number">11101111</span>,<span class="number">111000000</span>,<span class="number">11001</span>,<span class="number">111000010</span>,<span class="number">101010</span>,</span><br><span class="line"><span class="number">110000100</span>,<span class="number">1101000101</span>,<span class="number">1111111111111111110</span>,</span><br><span class="line"><span class="number">111000011</span>,<span class="number">1000</span></span><br><span class="line">&#125;;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> n;</span><br><span class="line">	<span class="keyword">while</span>(<span class="built_in">cin</span>&gt;&gt;n&amp;&amp;n) <span class="built_in">cout</span>&lt;&lt;ans[n<span class="number">-1</span>]&lt;&lt;<span class="built_in">endl</span>;</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
       
@@ -229,11 +229,11 @@
 		<ul class="article-tag-list">
 			 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">POJ</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">BFS</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">POJ</a>
         		</li>
       		
 		</ul>
@@ -303,6 +303,15 @@
 
   
 <nav id="article-nav">
+  
+    <a href="/2020/03/10/Educational-Codeforces-Round-83-Rated-for-Div-2/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          Educational Codeforces Round 83 (Rated for Div. 2)
+        
+      </div>
+    </a>
   
   
     <a href="/2020/03/09/POJ-3279-Fliptile/" id="article-nav-older" class="article-nav-link-wrap">
@@ -492,11 +501,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">POJ</a>
+                <a href="javascript:void(0)" class="js-tag color4">HDU</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">BFS</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">并查集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">POJ</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -508,7 +529,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图论</a>
+                <a href="javascript:void(0)" class="js-tag color4">扩展欧几里得算法</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -516,23 +537,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">扩展欧几里得算法</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">洛谷</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+                <a href="javascript:void(0)" class="js-tag color3">图论</a>
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HDU</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">树状数组</a>
+                <a href="javascript:void(0)" class="js-tag color5">计算几何</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -540,7 +553,11 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">计算几何</a>
+                <a href="javascript:void(0)" class="js-tag color5">树状数组</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
               </li>
             
             <div class="clearfix"></div>
