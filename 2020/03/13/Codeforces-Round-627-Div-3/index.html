@@ -17,7 +17,7 @@
 <meta property="og:image" content="https://espresso.codeforces.com/9e670fa3eabfebd5ecdfa6085157f1f4ccfe494e.png">
 <meta property="og:image" content="https://espresso.codeforces.com/de84e2ea205b39d12a73b422b7f6b0229de451ba.png">
 <meta property="article:published_time" content="2020-03-13T08:08:35.000Z">
-<meta property="article:modified_time" content="2020-03-14T20:02:05.958Z">
+<meta property="article:modified_time" content="2020-03-14T20:15:45.729Z">
 <meta property="article:author" content="11D_Beyonder">
 <meta property="article:tag" content="Codeforces">
 <meta name="twitter:card" content="summary">
@@ -219,7 +219,7 @@
 <h2 id="Translation-3"><a href="#Translation-3" class="headerlink" title="Translation"></a>Translation</h2><p>给两个数列${ a_n } , { b_n } $，求满足$a_i+a_j&gt;b_i+b_j(i&lt;j)$的$(i,j)$对的个数。</p>
 <h2 id="Idea-3"><a href="#Idea-3" class="headerlink" title="Idea"></a>Idea</h2><p>$a_i+a_j&gt;b_i+b_j\Leftrightarrow a_i-b_i&gt;a_j-b_j$，令$c=a-b$，则问题转化为求$c_i+c_j&gt;0(i&lt;j)$的$(i,j)$对的个数，实际上就是在数列${ c_n }$中不考虑顺序地不重复得选取$x$个满足条件的数对，问$x$的最大值。<br>将${ c_n }$从大到小排序，可以用对于每一个$c_i$，若$c_i&lt;=0$，在$c_i$前面一定找不到使得$c_i+c_j&gt;0$的$j$；若$c_i&gt;0$，需要二分找到第一个大于$-c_i$的数字的位置$pos$，那么答案增加$i-pos$。</p>
 <h2 id="Code-3"><a href="#Code-3" class="headerlink" title="Code"></a>Code</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;algorithm&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line">ll c[<span class="number">200005</span>];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line">ll ans=<span class="number">0</span>;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">cin</span>&gt;&gt;c[i];</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		ll temp;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;temp;</span><br><span class="line">		c[i]-=temp;</span><br><span class="line">	&#125;</span><br><span class="line">	sort(c+<span class="number">1</span>,c+<span class="number">1</span>+n);</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">if</span>(c[i]&lt;=<span class="number">0</span>) <span class="keyword">continue</span>;</span><br><span class="line">		<span class="keyword">else</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> pos;</span><br><span class="line">			<span class="comment">//STL使用</span></span><br><span class="line">			pos=upper_bound(c+<span class="number">1</span>,c+<span class="number">1</span>+n,-c[i])-c;</span><br><span class="line">			ans+=i-pos;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
-<h1 id="E-Sleeping-Schedule"><a href="#E-Sleeping-Schedule" class="headerlink" title="E. Sleeping Schedule"></a>E. Sleeping Schedule</h1><p>Vova had a pretty weird sleeping schedule. There are $h$ hours in a day. Vova will sleep exactly $n$ times. The $i$-th time he will sleep exactly after $a_i$ hours from the time he woke up. You can assume that Vova woke up exactly at the beginning of this story (the initial time is $0$). Each time Vova sleeps <strong>exactly one day</strong> (in other words, $h$ hours).<br>Vova thinks that the i-th sleeping time is <strong>good</strong> if he starts to sleep between hours l and r inclusive.<br>Vova can control himself and before the $i$-th time can choose between two options: go to sleep after $a_i$ hours or after $a_i−1$ hours.<br>Your task is to say the maximum number of <strong>good</strong> sleeping times Vova can obtain if he acts optimally.  </p>
+<h1 id="E-Sleeping-Schedule"><a href="#E-Sleeping-Schedule" class="headerlink" title="E. Sleeping Schedule"></a>E. Sleeping Schedule</h1><p>Vova had a pretty weird sleeping schedule. There are $h$ hours in a day. Vova will sleep exactly $n$ times. The $i$-th time he will sleep exactly after $a_i$ hours from the time he woke up. You can assume that Vova woke up exactly at the beginning of this story (the initial time is $0$). Each time Vova sleeps <strong>exactly one day</strong> (in other words, $h$ hours).<br>Vova thinks that the $i$-th sleeping time is <strong>good</strong> if he starts to sleep between hours $l$ and $r$ inclusive.<br>Vova can control himself and before the $i$-th time can choose between two options: go to sleep after $a_i$ hours or after $a_i−1$ hours.<br>Your task is to say the maximum number of <strong>good</strong> sleeping times Vova can obtain if he acts optimally.  </p>
 <h2 id="Input-4"><a href="#Input-4" class="headerlink" title="Input"></a>Input</h2><p>The first line of the input contains four integers $n,h,l$ and $r$$ (1≤n≤2000,3≤h≤2000,0≤l≤r&lt;h)$ — the number of times Vova goes to sleep, the number of hours in a day and the segment of the good sleeping time.<br>The second line of the input contains n integers $a_1, a_2, \dots, a_n(1 \le a_i &lt; h)$, where $a_i$ is the number of hours after which Vova goes to sleep the $i$-th time.  </p>
 <h2 id="Output-4"><a href="#Output-4" class="headerlink" title="Output"></a>Output</h2><p>Print one integer — the maximum number of good sleeping times Vova can obtain if he acts optimally.  </p>
 <h2 id="Example-3"><a href="#Example-3" class="headerlink" title="Example"></a>Example</h2><h3 id="input-4"><a href="#input-4" class="headerlink" title="input"></a>input</h3><p>7 24 21 23<br>16 17 14 20 20 11 22  </p>
@@ -541,7 +541,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">HDU</a>
+                <a href="javascript:void(0)" class="js-tag color4">FZU</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -549,11 +549,23 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+                <a href="javascript:void(0)" class="js-tag color4">HDU</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
               </li>
              
               <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color4">并查集</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">数论</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">图论</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -565,7 +577,15 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color1">二进制问题</a>
+                <a href="javascript:void(0)" class="js-tag color4">位运算</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
+              </li>
+             
+              <li class="article-tag-list-item">
+                <a href="javascript:void(0)" class="js-tag color4">UVA</a>
               </li>
              
               <li class="article-tag-list-item">
@@ -577,14 +597,6 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">图论</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">计算几何</a>
-              </li>
-             
-              <li class="article-tag-list-item">
                 <a href="javascript:void(0)" class="js-tag color3">贪心</a>
               </li>
              
@@ -593,19 +605,7 @@ MathJax.Hub.Queue(function() {
               </li>
              
               <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color3">模拟</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">FZU</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color4">UVA</a>
-              </li>
-             
-              <li class="article-tag-list-item">
-                <a href="javascript:void(0)" class="js-tag color5">动态规划</a>
+                <a href="javascript:void(0)" class="js-tag color5">计算几何</a>
               </li>
             
             <div class="clearfix"></div>
