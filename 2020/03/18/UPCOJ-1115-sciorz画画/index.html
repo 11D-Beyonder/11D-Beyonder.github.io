@@ -6,15 +6,24 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 动态规划 | 11D_Beyonder&#39;s Blog</title>
+  <title>UPCOJ 1115 sciorz画画 | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="UPCOJ 1115 sciorz画画">
+<meta property="og:url" content="http://yoursite.com/2020/03/18/UPCOJ-1115-sciorz%E7%94%BB%E7%94%BB/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/18/72ZD.png">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73lZ.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73mx.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73mZ.jpg">
+<meta property="article:published_time" content="2020-03-18T09:33:26.000Z">
+<meta property="article:modified_time" content="2020-03-19T09:20:53.578Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="动态规划">
+<meta property="article:tag" content="UPCOJ">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.niupic.com/images/2020/03/18/72ZD.png">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
   
@@ -137,38 +146,82 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
+            <article id="post-UPCOJ-1115-sciorz画画" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
+    
+      <header class="article-header">
+        
   
+    <h1 class="article-title" itemprop="name">
+      UPCOJ 1115 sciorz画画
+    </h1>
   
-    
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
+
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
+
 <a href="/2020/03/18/UPCOJ-1115-sciorz%E7%94%BB%E7%94%BB/" class="archive-article-date">
   	<time datetime="2020-03-18T09:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
 </a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/18/UPCOJ-1115-sciorz%E7%94%BB%E7%94%BB/">UPCOJ 1115 sciorz画画</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+<h2 id="题目描述"><a href="#题目描述" class="headerlink" title="题目描述"></a>题目描述</h2><p>众所周知，sciorz会画画。某天，sciorz画了一个凸多边形，这个多边形的每个顶点都有一个权值$a[i]$。sciorz觉得这个凸多边形不够美丽，于是他决定在$n$个点之间连线，最终用$n-3$条不相交的线将这个凸$n$边形分割成$n-2$个三角形。sciorz认为，一个三角形的美丽值是三个顶点权值的乘积，凸多边形的美丽值是其内部三角形的美丽值的和。sciorz想找到一种分割方案，使得这个凸多边形的美丽值最大。sciorz忙着刷难题，所以他随手就把这个签到题扔给你，希望你帮sciorz算出最大的美丽值。<br><img src="https://i.niupic.com/images/2020/03/18/72ZD.png" alt=""></p>
+<h2 id="输入"><a href="#输入" class="headerlink" title="输入"></a>输入</h2><p>第一行一个$t$,表示有$t$组样例。<br>每组样例的第一行是一个$n$,表示多边形的边数。<br>第二行$n$个数,第$i$个数表示多边形第$i$个顶点的权值$a[i]$，按逆时针顺序给出。  </p>
+<h2 id="输出"><a href="#输出" class="headerlink" title="输出"></a>输出</h2><p>对于每组样例，输出一行。格式为”Case #x: y”，x为样例编号，y为答案。  </p>
+<h2 id="样例输入"><a href="#样例输入" class="headerlink" title="样例输入"></a>样例输入</h2><p>2<br>3<br>1 2 3<br>4<br>1 2 3 4  </p>
+<h2 id="样例输出"><a href="#样例输出" class="headerlink" title="样例输出"></a>样例输出</h2><p>Case #1: 6<br>Case #2: 32  </p>
+<h2 id="提示"><a href="#提示" class="headerlink" title="提示"></a>提示</h2><p>第一个样例只有一个三角形，所以不用分割，答案是$1\times2\times3=6$。<br>第二个三角形，最优分割方案是分割为 $(1, 2, 4)$和$(2 3 4)$两个三角形，答案是$1\times 2\times 4+2\times 3\times 4=32$<br>$1\leqslant t\leqslant 100$<br>$3\leqslant n\leqslant 100$<br>$1\leqslant a[i]\leqslant 100$  </p>
+<h2 id="思路"><a href="#思路" class="headerlink" title="思路"></a>思路</h2><p>这是一个经典题目：凸多边形最优三角形剖分。解法是区间$DP$。<br>$ dp[i][j]$ 表示从第$i$个点到第$j$个点最优剖分的答案。<br>当 $j=i$ 或 $j=i+1$ 时，无法构成三角形， $dp[i][j]=0$ 。<br>当$j=i+2$时，相邻的三点构成了三角形。<br><img src="https://i.niupic.com/images/2020/03/19/73lZ.jpg" style="zoom:67%;" /><br>当$j\geqslant i+2$ 时，考虑一个分割点$k$,$(i,j,k)$三点构成一个三角形，此时划分为$i$到$k$部分，$k$到$j$部分，以及三角形$(i,j,k)$部分这三个部分。$i$到$k$部分和$k$到$j$部分是子问题，可以利用之前求出的结果，三角形$(i,j,k)$的值是三点权值之积。<br>当$j=i+4$时，是一个四边形，假设$i=1,j=5$，如图<br><img src="https://i.niupic.com/images/2020/03/19/73mx.jpg" style="zoom:67%;" /><br>我们枚举一下分割点$k$,其范围是 $i+1\leqslant k\leqslant j-1$。 当$k=3$时，如下图所示，$(i,j,k)$三点形成了一个绿色三角形，它将上图中的四边形分成了三部分，分别是$i$到$k$部分，$k$到$j$部分，和三角形$(i,j,k)$。在下图中，$i$到$k$部分和$k$到$j$部分是三点相邻的情况，是一个子问题，我们之前已经计算过了，可以利用之前的答案；$(i,j,k)$三角形的值就是三点权值之积。三者之和就是这种分割方法的值。<br><img src="https://i.niupic.com/images/2020/03/19/73mZ.jpg" style="zoom: 67%;" />  </p>
+<p>状态转移方程为    $dp[i][j]=\max\limits_{i+1\leqslant k\leqslant j-1}\{dp[i][k]+dp[k][j]+cost(i,j,k) \}$</p>
+<h2 id="代码"><a href="#代码" class="headerlink" title="代码"></a>代码</h2><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">define</span> ll long long</span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">110</span>;</span><br><span class="line">ll dp[N][N];</span><br><span class="line">ll val[N];</span><br><span class="line"><span class="keyword">int</span> n;</span><br><span class="line"><span class="function">ll <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n;</span><br><span class="line">	<span class="built_in">memset</span>(dp,<span class="number">0</span>,<span class="keyword">sizeof</span>(dp));</span><br><span class="line">	<span class="keyword">int</span> i,j,k;</span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++) <span class="built_in">cin</span>&gt;&gt;val[i];</span><br><span class="line">	<span class="keyword">for</span>(i=n<span class="number">-1</span>;i&gt;=<span class="number">1</span>;i--)<span class="comment">//从dp[n-2][n]算到dp[1][n]</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">for</span>(j=i+<span class="number">2</span>;j&lt;=n;j++)</span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">for</span>(k=i+<span class="number">1</span>;k&lt;=j<span class="number">-1</span>;k++)</span><br><span class="line">			&#123;</span><br><span class="line">				dp[i][j]=max(dp[i][j],dp[i][k]+dp[k][j]+val[i]*val[j]*val[k]);</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> dp[<span class="number">1</span>][n];</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">int</span> times=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">while</span>(++times&lt;=t) <span class="built_in">printf</span>(<span class="string">"Case #%d: %lld\n"</span>,times,solve());</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
 
-        <div class="article-info info-on-right">
-          
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -184,63 +237,130 @@
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/03/18/UPCOJ-1115-sciorz%E7%94%BB%E7%94%BB/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/13/HDU-1003-Max-Sum/" class="archive-article-date">
-  	<time datetime="2020-03-13T07:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
-</a>
 
+  
+<nav id="article-nav">
+  
+    <a href="/2020/03/19/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95-Hungarian-algorithm/" id="article-nav-newer" class="article-nav-link-wrap">
+      <i class="icon-circle-left"></i>
+      <div class="article-nav-title">
+        
+          匈牙利算法(Hungarian algorithm)
+        
+      </div>
+    </a>
+  
+  
+    <a href="/2020/03/18/UPCOJ%201116%20%E5%A5%8E%E5%A5%8E%E5%8F%91%E7%BA%A2%E5%8C%85/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">UPCOJ 1116 奎奎发红包</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
         </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/HDU-1003-Max-Sum/">HDU 1003 Max Sum</a>
-    </h1>
-  
-
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">HDU</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		
-		</ul>
-	</div>
-
-          
-
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-2"><a class="toc-link" href="#题目描述"><span class="toc-number">1.</span> <span class="toc-text">题目描述</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输入"><span class="toc-number">2.</span> <span class="toc-text">输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#输出"><span class="toc-number">3.</span> <span class="toc-text">输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#样例输入"><span class="toc-number">4.</span> <span class="toc-text">样例输入</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#样例输出"><span class="toc-number">5.</span> <span class="toc-text">样例输出</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#提示"><span class="toc-number">6.</span> <span class="toc-text">提示</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#思路"><span class="toc-number">7.</span> <span class="toc-text">思路</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#代码"><span class="toc-number">8.</span> <span class="toc-text">代码</span></a></li></ol>
+                    </div>
+                </span>
+            </div>
         </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
+        
+    </div>
+</aside>
+
+
+
   
   
-    </div></section>
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -278,9 +398,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,

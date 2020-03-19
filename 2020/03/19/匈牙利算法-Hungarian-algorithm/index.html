@@ -6,15 +6,30 @@
   <meta name="renderer" content="webkit">
   <meta http-equiv="X-UA-Compatible" content="IE=edge" >
   <link rel="dns-prefetch" href="http://yoursite.com">
-  <title>Tag: 动态规划 | 11D_Beyonder&#39;s Blog</title>
+  <title>匈牙利算法(Hungarian algorithm) | 11D_Beyonder&#39;s Blog</title>
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-  <meta property="og:type" content="website">
-<meta property="og:title" content="11D_Beyonder&#39;s Blog">
-<meta property="og:url" content="http://yoursite.com/tags/%E5%8A%A8%E6%80%81%E8%A7%84%E5%88%92/index.html">
+  <meta property="og:type" content="article">
+<meta property="og:title" content="匈牙利算法(Hungarian algorithm)">
+<meta property="og:url" content="http://yoursite.com/2020/03/19/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95-Hungarian-algorithm/index.html">
 <meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
 <meta property="og:locale" content="en_US">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73qb.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73qq.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73qq.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73tj.gif">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73sB.png">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73sE.jpg">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73sH.png">
+<meta property="og:image" content="https://i.niupic.com/images/2020/03/19/73t2.jpg">
+<meta property="article:published_time" content="2020-03-19T04:46:47.000Z">
+<meta property="article:modified_time" content="2020-03-19T13:08:06.653Z">
 <meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="HDU">
+<meta property="article:tag" content="图论">
+<meta property="article:tag" content="POJ">
+<meta property="article:tag" content="算法模板">
 <meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://i.niupic.com/images/2020/03/19/73qb.jpg">
   
     <link rel="alternative" href="/atom.xml" title="11D_Beyonder&#39;s Blog" type="application/atom+xml">
   
@@ -137,82 +152,115 @@
             <canvas data-colors="#eaeaea" data-sectionHeight="100" data-contentId="js-content" id="myCanvas1" class="anm-canvas"></canvas>
           </div>
           <div id="js-content" class="content-ll">
-            
-  
-  
+            <article id="post-匈牙利算法-Hungarian-algorithm" class="article article-type-post " itemscope itemprop="blogPost">
+  <div class="article-inner">
     
-    
-      
-      
-      <section class="archives-wrap">
-        <div class="archive-year-wrap">
-          <a href="/archives/2020" class="archive-year">2020</a>
-        </div>
-        <div class="archives">
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/18/UPCOJ-1115-sciorz%E7%94%BB%E7%94%BB/" class="archive-article-date">
-  	<time datetime="2020-03-18T09:33:26.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-18</time>
-</a>
-
-        </div>
-    	 
+      <header class="article-header">
+        
   
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/18/UPCOJ-1115-sciorz%E7%94%BB%E7%94%BB/">UPCOJ 1115 sciorz画画</a>
+    <h1 class="article-title" itemprop="name">
+      匈牙利算法(Hungarian algorithm)
     </h1>
   
 
-        <div class="article-info info-on-right">
-          
-	<div class="article-tag tagcloud">
-		<i class="icon-price-tags icon"></i>
-		<ul class="article-tag-list">
-			 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
-        		</li>
-      		 
-        		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color1">UPCOJ</a>
-        		</li>
-      		
-		</ul>
-	</div>
+        
+        
+        <!-- 不蒜子统计 -->
+        <span id="busuanzi_container_page_pv" style='display:none' class="archive-article-date">
+              <i class="icon-smile icon"></i> 阅读数：<span id="busuanzi_value_page_pv"></span>次
+        </span>
 
-          
-
-        </div>
-        <div class="clearfix"></div>
-    </header>
-  </div>
-</article>
-  
-    
-    
-    <article class="archive-article archive-type-post">
-  <div class="archive-article-inner">
-    <header class="archive-article-header">
-      	<div class="article-meta">
-	      	
-<a href="/2020/03/13/HDU-1003-Max-Sum/" class="archive-article-date">
-  	<time datetime="2020-03-13T07:59:41.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-13</time>
+<a href="/2020/03/19/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95-Hungarian-algorithm/" class="archive-article-date">
+  	<time datetime="2020-03-19T04:46:47.000Z" itemprop="datePublished"><i class="icon-calendar icon"></i>2020-03-19</time>
 </a>
 
-        </div>
-    	 
-  
-    <h1 itemprop="name">
-      <a class="archive-article-title" href="/2020/03/13/HDU-1003-Max-Sum/">HDU 1003 Max Sum</a>
-    </h1>
-  
+        
+      </header>
+    
+    <div class="article-entry" itemprop="articleBody">
+      
+        <hr>
+<a id="more"></a>
+<h1 id="二分图最大匹配"><a href="#二分图最大匹配" class="headerlink" title="二分图最大匹配"></a>二分图最大匹配</h1><h2 id="二分图"><a href="#二分图" class="headerlink" title="二分图"></a>二分图</h2><p>二分图又称作二部图，是图论中的一种特殊模型。 设$G=(V,E)$是一个无向图，如果顶点$V$可分割为两个互不相交的子集$(A,B)$，并且图中的每条边$(i,j)$所关联的两个顶点$i$和$j$分别属于这两个不同的顶点集$(i \in A,j \in B)$，则称图$G$为一个二分图。<br><img src="https://i.niupic.com/images/2020/03/19/73qb.jpg" style="zoom: 50%;" />  </p>
+<p><strong>判定定理：无向图G为二分图的充分必要条件是，G至少有两个顶点，且其所有回路的长度均为偶数。</strong>  </p>
+<h2 id="最大匹配"><a href="#最大匹配" class="headerlink" title="最大匹配"></a>最大匹配</h2><p>给定一个二分图$G$，在$G$的一个子图$M$中，$M$的边集中的任意两条边都不依附于同一个顶点，则称$M$是一个<strong>匹配</strong>。所有匹配组成的集合中，边数最大的子集称为图的<strong>最大匹配</strong>。<br>如果一个匹配中，图中的每个顶点都和图中某条边相关联，则称此匹配为完全匹配，也称作完备匹配。  </p>
+<h2 id="增广路径"><a href="#增广路径" class="headerlink" title="增广路径"></a>增广路径</h2><p>给定图$G$的一个匹配$M$，如果一条路径的边$E$交替出现$E\in M$和$E\notin  M$的情况，我们称之为一条$M-$交错路径。<br>而如果一条$M-$交错路径，它的两个端点都不与$M$中的边关联，我们称这条路径叫做$M-$增广路径。<br><img src="https://i.niupic.com/images/2020/03/19/73qq.jpg" alt=""><br>如上图，边集$\{2,4\}$是一个匹配，于是$\{1,2,3,4,5\}$是一条$M-$交错路径，且该路径的两个端点不与匹配$M$关联，所以$\{1,2,3,4,5\}$还是一条$M-$增广路径。  </p>
+<p>设$P$为一条$M-$增广路径，则：</p>
+<ul>
+<li>$P$的路径长度必定为奇数，第一条边和最后一条边都不属于$M$.</li>
+<li>$P$经过取反操作可以得到一个更大的匹配$M’$.</li>
+<li>$M$为$G$的最大匹配当且仅当不存在相对于$M$的增广路径.<h1 id="匈牙利算法原理"><a href="#匈牙利算法原理" class="headerlink" title="匈牙利算法原理"></a>匈牙利算法原理</h1><h2 id="寻找增广路径"><a href="#寻找增广路径" class="headerlink" title="寻找增广路径"></a>寻找增广路径</h2><img src="https://i.niupic.com/images/2020/03/19/73qq.jpg" alt=""><br>如上图，边集$\{2,4\}$是一个匹配，$\{1,2,3,4,5\}$是一条$M-$增广路径。<br>毫无疑问，边集$\{1,3,5\}$也是一个匹配，而这个匹配比原先的匹配M多一条边，是一个比原先$M$更大的匹配。<br>寻找最大匹配的任务就相当于在已经确定的匹配下，不断找到新的增广路径，因为出现一条增广路径，就意味着目前的匹配中增加一条边。    <h2 id="算法轮廓"><a href="#算法轮廓" class="headerlink" title="算法轮廓"></a>算法轮廓</h2>①置$M$为空<br>②找出一条增广路径$P$，通过取反操作获得更大的匹配$M’$代替$M$<br>③重复②操作直到找不出增广路径为止  <h2 id="过程模拟"><a href="#过程模拟" class="headerlink" title="过程模拟"></a>过程模拟</h2>初始二分图如下<br><img src="https://i.niupic.com/images/2020/03/19/73tj.gif" alt="">  </li>
+</ul>
+<p>①随意选取一条边，比如$(x_1, y_1)$这条边，构建最初的匹配。   </p>
+<p><img src="https://i.niupic.com/images/2020/03/19/73sB.png" alt="">  </p>
+<p>②给$x_2$添加一个匹配，添加$(x_2, y_2)$边。  </p>
+<p><img src="https://i.niupic.com/images/2020/03/19/73sE.jpg" alt="">  </p>
+<p>③现在要给$x_3$匹配一条边，发现它的另一端$y_1$已经被$x_1$占用了，于是$x_1$与$y_1$脱离，让$x_3$与$y_1$相连。$x_1$开始寻找新的匹配$y_2$，因为$y_2$ 与$x_2$相连，于是$x_2$与$y_2$脱离，让$x_1$与$y_2$相连。$x_2$找到$y_5$与之相连。  </p>
+<p><img src="https://i.niupic.com/images/2020/03/19/73sH.png" alt="">  </p>
+<p>上述的过程可以称作一种协商的形式，每一个点进行配对时，如果目标的连接点已经被连接，就需要进行协商操作，使得目标点产生空缺。上述过程中的节点可组成点集$\{x_3, y_1, x_1, y_2, x_2, y_5\}$，形成一条路径$P$。<br>在步骤②中，已经形成了匹配$M$，$P$实际上是一条$M-$增广路径。<br>发现一条增广路径，就意味着一个更大匹配的出现。于是，我们将$M$中的配对点拆分开，重新组合，得到了一个更大匹配， 其拥有$(x_3,  y_1),(x_1, y_2),  (x_2,y_5)$三条边。<br>同样，$x_4 , x_5$ 按顺序加入进来，最终会得到这个二分图的最大匹配。<br><strong>注意:最大匹配不唯一，最大匹配数是唯一的。</strong>  </p>
+<h3 id="时间复杂度"><a href="#时间复杂度" class="headerlink" title="时间复杂度"></a>时间复杂度</h3><p>邻接矩阵$O(n^3)$，邻接表$O(mn)$。</p>
+<h1 id="模板题"><a href="#模板题" class="headerlink" title="模板题"></a>模板题</h1><h2 id="POJ-3041-Asteroids"><a href="#POJ-3041-Asteroids" class="headerlink" title="POJ 3041 Asteroids"></a>POJ 3041 Asteroids</h2><h3 id="Description"><a href="#Description" class="headerlink" title="Description"></a>Description</h3><p>Bessie wants to navigate her spaceship through a dangerous asteroid field in the shape of an $N\times N$ grid $(1\leqslant N\leqslant 500)$. The grid contains $K$ asteroids $(1\leqslant  K\leqslant 10000)$, which are conveniently located at the lattice points of the grid.<br>Fortunately, Bessie has a powerful weapon that can vaporize all the asteroids in any given row or column of the grid with a single shot. This weapon is quite expensive, so she wishes to use it sparingly. Given the location of all the asteroids in the field, find the minimum number of shots Bessie needs to fire to eliminate all of the asteroids.  </p>
+<h3 id="Input"><a href="#Input" class="headerlink" title="Input"></a>Input</h3><p>Line 1: Two integers $N$ and $K$, separated by a single space.<br>Lines 2..K+1: Each line contains two space-separated integers $R$ and $C$ $(1\leqslant R, C\leqslant  N)$ denoting the row and column coordinates of an asteroid, respectively.  </p>
+<h3 id="Output"><a href="#Output" class="headerlink" title="Output"></a>Output</h3><p>Line 1: The integer representing the minimum number of times Bessie must shoot.</p>
+<h3 id="Sample-Input"><a href="#Sample-Input" class="headerlink" title="Sample Input"></a>Sample Input</h3><p>3 4<br>1 1<br>1 3<br>2 2<br>3 2  </p>
+<h3 id="Sample-Output"><a href="#Sample-Output" class="headerlink" title="Sample Output"></a>Sample Output</h3><p>2  </p>
+<h3 id="Hint"><a href="#Hint" class="headerlink" title="Hint"></a>Hint</h3><h4 id="INPUT-DETAILS"><a href="#INPUT-DETAILS" class="headerlink" title="INPUT DETAILS"></a>INPUT DETAILS</h4><p>The following diagram represents the data, where “X” is an asteroid and “.” is empty space:<br>X.X<br>.X.<br>.X.  </p>
+<h4 id="OUTPUT-DETAILS"><a href="#OUTPUT-DETAILS" class="headerlink" title="OUTPUT DETAILS"></a>OUTPUT DETAILS</h4><p>Bessie may fire across row $1$ to destroy the asteroids at $(1,1)$ and $(1,3)$, and then she may fire down column $2$ to destroy the asteroids at $(2,2)$ and $(3,2)$.  </p>
+<h3 id="Translation"><a href="#Translation" class="headerlink" title="Translation"></a>Translation</h3><p>一个飞船在$N\times N$的网格里面飞，网格里有障碍，一个子弹可以打穿一行或者一列，求消除所有障碍的最少子弹。  </p>
+<h3 id="Idea"><a href="#Idea" class="headerlink" title="Idea"></a>Idea</h3><p>将行坐标看作一个集合，列坐标看作一个集合，形成一张二分图，每个点就连接两个集合的边，求出最大匹配就是所要的答案。<br>模拟样例如图，每选取一条边，其效应就会借助点影响与该点相连的其他边，因此只需要找一种最大匹配方案即可，最大匹配中每一条边都没有共用点。  </p>
+<img src="https://i.niupic.com/images/2020/03/19/73t2.jpg" style="zoom:80%;" />  
 
-        <div class="article-info info-on-right">
-          
+<p>这是两个集合中点的个数相同的二分图匹配。  </p>
+<h3 id="Code"><a href="#Code" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">510</span>;</span><br><span class="line"><span class="keyword">int</span> tot;</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> head[N];</span><br><span class="line"><span class="keyword">int</span> match[N];</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">E</span>//链式前向星存图</span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> v;</span><br><span class="line">	<span class="keyword">int</span> nxt;</span><br><span class="line">&#125;edge[N*N];</span><br><span class="line"><span class="keyword">int</span> n,k;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span><span class="comment">//加边操作</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tot++;</span><br><span class="line">	edge[tot].v=v;</span><br><span class="line">	edge[tot].nxt=head[u];</span><br><span class="line">	head[u]=tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="comment">//遍历以x为一个端点的边</span></span><br><span class="line">	<span class="keyword">for</span>(i=head[x];i!=<span class="number">-1</span>;i=edge[i].nxt)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> p=edge[i].v;</span><br><span class="line">		<span class="keyword">if</span>(!vis[p])<span class="comment">//p点还没有访问过</span></span><br><span class="line">		&#123;</span><br><span class="line">			vis[p]=<span class="literal">true</span>;<span class="comment">//置为访问</span></span><br><span class="line">			<span class="comment">//如果p点没有连接点或者连接上的点能找到另一点去连接</span></span><br><span class="line">			<span class="keyword">if</span>(match[p]==<span class="number">-1</span>||dfs(match[p]))</span><br><span class="line">			&#123;</span><br><span class="line">				<span class="comment">//进入后相当于找到一条增广路径</span></span><br><span class="line">				match[p]=x;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;n&gt;&gt;k;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="comment">//初始化</span></span><br><span class="line">	<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">	<span class="built_in">memset</span>(match,<span class="number">-1</span>,<span class="keyword">sizeof</span>(match));</span><br><span class="line">	<span class="keyword">while</span>(k--)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> u,v;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;u&gt;&gt;v;</span><br><span class="line">		add_edge(u,v);<span class="comment">//加边</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="comment">//搜索每一个点</span></span><br><span class="line">	<span class="keyword">for</span>(i=<span class="number">1</span>;i&lt;=n;i++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="comment">//初始化</span></span><br><span class="line">		<span class="built_in">memset</span>(vis,<span class="literal">false</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="keyword">if</span>(dfs(i)) ans++;<span class="comment">//找到一条可行边则答案加一</span></span><br><span class="line">	&#125;</span><br><span class="line">	<span class="built_in">cout</span>&lt;&lt;ans;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="HDU-1083-Courses"><a href="#HDU-1083-Courses" class="headerlink" title="HDU 1083 Courses"></a>HDU 1083 Courses</h2><h3 id="Problem-Description"><a href="#Problem-Description" class="headerlink" title="Problem Description"></a>Problem Description</h3><p>Consider a group of $N$ students and $P$ courses. Each student visits zero, one or more than one courses. Your task is to determine whether it is possible to form a committee of exactly $P$ students that satisfies simultaneously the conditions:</p>
+<ul>
+<li>every student in the committee represents a different course (a student can represent a course if he/she visits that course)  </li>
+<li>each course has a representative in the committee   <h3 id="Input-1"><a href="#Input-1" class="headerlink" title="Input"></a>Input</h3>Your program should read sets of data from a text file. The first line of the input file contains the number of the data sets. Each data set is presented in the following format:<br>$P$ $N$<br>$Count_1$ $Student_{11}$ $Student_{12} $$\dots$ $Student_{1Count_1}$<br>$Count_2$ $Student_{21}$ $Student_{22} $$\dots$ $Student_{2Count_2}$<br>……<br>$Count_P$ $Student_{P1}$ $Student_{P2} $$\dots$ $Student_{PCount_P}$<br>The first line in each data set contains two positive integers separated by one blank: $P$ $(1\leqslant P\leqslant 100)$ - the number of courses and $N$ $(1\leqslant N\leqslant  300)$ - the number of students. The next $P$ lines describe in sequence of the courses from course $1$ to course $P$, each line describing a course. The description of course $i$ is a line that starts with an integer $Count_i$ $(0\leqslant Count_i\leqslant N)$ representing the number of students visiting course $i$. Next, after a blank, you’ll find the $Count_i$ students, visiting the course, each two consecutive separated by one blank. Students are numbered with the positive integers from $1$ to $N$.<br>There are no blank lines between consecutive sets of data. Input data are correct.  </li>
+</ul>
+<h3 id="Output-1"><a href="#Output-1" class="headerlink" title="Output"></a>Output</h3><p>The result of the program is on the standard output. For each input data set the program prints on a single line “YES” if it is possible to form a committee and “NO” otherwise. There should not be any leading blanks at the start of the line.  </p>
+<h3 id="Sample-Input-1"><a href="#Sample-Input-1" class="headerlink" title="Sample Input"></a>Sample Input</h3><p>2<br>3 3<br>3 1 2 3<br>2 1 2<br>1 1<br>3 3<br>2 1 3<br>2 1 3<br>1 1  </p>
+<h3 id="Sample-Output-1"><a href="#Sample-Output-1" class="headerlink" title="Sample Output"></a>Sample Output</h3><p>YES<br>NO   </p>
+<h3 id="Translation-1"><a href="#Translation-1" class="headerlink" title="Translation"></a>Translation</h3><p>一共有 $P$ 门课，每门课都有若干的学生，现在要为每个课程选一名课代表，每个学生只能担任一门课的课代表，如果每个课都能找到课代表，则输出”YES”，否则”NO”。  </p>
+<h3 id="Idea-1"><a href="#Idea-1" class="headerlink" title="Idea"></a>Idea</h3><p>二分图最大匹配，对课程—学生关系建立一个二分图，进行二分图的最大匹配。如果最大匹配数与课程数相等，说明能够满足要求，否则不能。<br>和前一题是几乎一模一样的板子，只是这里两个集合中点的个数不同。  </p>
+<h3 id="Code-1"><a href="#Code-1" class="headerlink" title="Code"></a>Code</h3><figure class="highlight cpp"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br><span class="line">59</span><br><span class="line">60</span><br><span class="line">61</span><br><span class="line">62</span><br><span class="line">63</span><br><span class="line">64</span><br><span class="line">65</span><br><span class="line">66</span><br><span class="line">67</span><br><span class="line">68</span><br><span class="line">69</span><br><span class="line">70</span><br><span class="line">71</span><br><span class="line">72</span><br><span class="line">73</span><br><span class="line">74</span><br><span class="line">75</span><br><span class="line">76</span><br><span class="line">77</span><br><span class="line">78</span><br></pre></td><td class="code"><pre><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstring&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;iostream&gt;</span></span></span><br><span class="line"><span class="meta">#<span class="meta-keyword">include</span><span class="meta-string">&lt;cstdio&gt;</span></span></span><br><span class="line"><span class="keyword">using</span> <span class="keyword">namespace</span> <span class="built_in">std</span>;</span><br><span class="line"><span class="keyword">const</span> <span class="keyword">int</span> N=<span class="number">301</span>;</span><br><span class="line"><span class="keyword">int</span> tot;</span><br><span class="line"><span class="keyword">bool</span> vis[N];</span><br><span class="line"><span class="keyword">int</span> match[N];</span><br><span class="line"><span class="keyword">int</span> head[N];</span><br><span class="line"><span class="keyword">int</span> m,n;</span><br><span class="line"><span class="class"><span class="keyword">struct</span> <span class="title">E</span></span></span><br><span class="line"><span class="class">&#123;</span></span><br><span class="line">	<span class="keyword">int</span> v;</span><br><span class="line">	<span class="keyword">int</span> nxt;</span><br><span class="line">&#125;edge[N*N];</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">add_edge</span><span class="params">(<span class="keyword">int</span> u,<span class="keyword">int</span> v)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	tot++;</span><br><span class="line">	edge[tot].v=v;</span><br><span class="line">	edge[tot].nxt=head[u];</span><br><span class="line">	head[u]=tot;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">init</span><span class="params">()</span><span class="comment">//初始化</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="built_in">memset</span>(head,<span class="number">-1</span>,<span class="keyword">sizeof</span>(head));</span><br><span class="line">	<span class="built_in">memset</span>(match,<span class="number">-1</span>,<span class="keyword">sizeof</span>(match));</span><br><span class="line">	tot=<span class="number">0</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">bool</span> <span class="title">dfs</span><span class="params">(<span class="keyword">int</span> x)</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> i;</span><br><span class="line">	<span class="keyword">for</span>(i=head[x];i!=<span class="number">-1</span>;i=edge[i].nxt)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> p=edge[i].v;</span><br><span class="line">		<span class="keyword">if</span>(!vis[p])</span><br><span class="line">		&#123;</span><br><span class="line">			vis[p]=<span class="number">1</span>;</span><br><span class="line">			<span class="keyword">if</span>(match[p]==<span class="number">-1</span>||dfs(match[p]))</span><br><span class="line">			&#123;</span><br><span class="line">				match[p]=x;</span><br><span class="line">				<span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">			&#125;</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">void</span> <span class="title">solve</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	init();</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;m&gt;&gt;n;</span><br><span class="line">	<span class="keyword">int</span> u;</span><br><span class="line">	<span class="keyword">for</span>(u=<span class="number">1</span>;u&lt;=m;u++)</span><br><span class="line">	&#123;</span><br><span class="line">		<span class="keyword">int</span> cnt;</span><br><span class="line">		<span class="built_in">cin</span>&gt;&gt;cnt;</span><br><span class="line">		<span class="keyword">while</span>(cnt--)<span class="comment">//统计与每一门课相连的学生</span></span><br><span class="line">		&#123;</span><br><span class="line">			<span class="keyword">int</span> v;</span><br><span class="line">			<span class="built_in">cin</span>&gt;&gt;v;</span><br><span class="line">			add_edge(u,v);</span><br><span class="line">		&#125;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">int</span> ans=<span class="number">0</span>;</span><br><span class="line">	<span class="keyword">for</span>(u=<span class="number">1</span>;u&lt;=m;u++)<span class="comment">//开始匹配</span></span><br><span class="line">	&#123;</span><br><span class="line">		<span class="built_in">memset</span>(vis,<span class="literal">false</span>,<span class="keyword">sizeof</span>(vis));</span><br><span class="line">		<span class="keyword">if</span>(dfs(u)) ans++;</span><br><span class="line">	&#125;</span><br><span class="line">	<span class="keyword">if</span>(ans==m) <span class="built_in">puts</span>(<span class="string">"YES"</span>);</span><br><span class="line">	<span class="keyword">else</span> <span class="built_in">puts</span>(<span class="string">"NO"</span>);</span><br><span class="line">&#125;</span><br><span class="line"><span class="function"><span class="keyword">int</span> <span class="title">main</span><span class="params">()</span></span></span><br><span class="line"><span class="function"></span>&#123;</span><br><span class="line">	<span class="keyword">int</span> t;</span><br><span class="line">	<span class="built_in">cin</span>&gt;&gt;t;</span><br><span class="line">	<span class="keyword">while</span>(t--) solve();</span><br><span class="line">	<span class="keyword">return</span> <span class="number">0</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+      
+
+      
+        <div class="page-reward">
+          <a href="javascript:;" class="page-reward-btn tooltip-top">
+            <div class="tooltip tooltip-east">
+            <span class="tooltip-item">
+              赏
+            </span>
+            <span class="tooltip-content">
+              <span class="tooltip-text">
+                <span class="tooltip-inner">
+                  <p class="reward-p"><i class="icon icon-quo-left"></i>谢谢你请我恰饭<i class="icon icon-quo-right"></i></p>
+                  <div class="reward-box">
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174652.jpg">
+                      <span class="reward-type">支付宝</span>
+                    </div>
+                    
+                    
+                    <div class="reward-box-item">
+                      <img class="reward-img" src="/assets/微信图片_20200222174646.jpg">
+                      <span class="reward-type">微信</span>
+                    </div>
+                    
+                  </div>
+                </span>
+              </span>
+            </span>
+          </div>
+          </a>
+        </div>
+      
+    </div>
+    <div class="article-info article-info-index">
+      
+      
 	<div class="article-tag tagcloud">
 		<i class="icon-price-tags icon"></i>
 		<ul class="article-tag-list">
@@ -222,25 +270,135 @@
         		</li>
       		 
         		<li class="article-tag-list-item">
-        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">动态规划</a>
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color3">图论</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color4">POJ</a>
+        		</li>
+      		 
+        		<li class="article-tag-list-item">
+        			<a href="javascript:void(0)" class="js-tag article-tag-list-link color5">算法模板</a>
         		</li>
       		
 		</ul>
 	</div>
 
-          
+      
 
+      
+
+      
+        
+<div class="share-btn share-icons tooltip-left">
+  <div class="tooltip tooltip-east">
+    <span class="tooltip-item">
+      <a href="javascript:;" class="share-sns share-outer">
+        <i class="icon icon-share"></i>
+      </a>
+    </span>
+    <span class="tooltip-content">
+      <div class="share-wrap">
+        <div class="share-icons">
+          <a class="weibo share-sns" href="javascript:;" data-type="weibo">
+            <i class="icon icon-weibo"></i>
+          </a>
+          <a class="weixin share-sns wxFab" href="javascript:;" data-type="weixin">
+            <i class="icon icon-weixin"></i>
+          </a>
+          <a class="qq share-sns" href="javascript:;" data-type="qq">
+            <i class="icon icon-qq"></i>
+          </a>
+          <a class="douban share-sns" href="javascript:;" data-type="douban">
+            <i class="icon icon-douban"></i>
+          </a>
+          <a class="qzone share-sns" href="javascript:;" data-type="qzone">
+            <i class="icon icon-qzone"></i>
+          </a>
+          <a class="facebook share-sns" href="javascript:;" data-type="facebook">
+            <i class="icon icon-facebook"></i>
+          </a>
+          <a class="twitter share-sns" href="javascript:;" data-type="twitter">
+            <i class="icon icon-twitter"></i>
+          </a>
+          <a class="google share-sns" href="javascript:;" data-type="google">
+            <i class="icon icon-google"></i>
+          </a>
         </div>
-        <div class="clearfix"></div>
-    </header>
+      </div>
+    </span>
+  </div>
+</div>
+
+<div class="page-modal wx-share js-wx-box">
+    <a class="close js-modal-close" href="javascript:;"><i class="icon icon-close"></i></a>
+    <p>扫一扫，分享到微信</p>
+    <div class="wx-qrcode">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://11d-beyonder.github.io/2020/03/19/%E5%8C%88%E7%89%99%E5%88%A9%E7%AE%97%E6%B3%95-Hungarian-algorithm/" alt="微信分享二维码">
+    </div>
+</div>
+
+<div class="mask js-mask"></div>
+
+      
+      <div class="clearfix"></div>
+    </div>
   </div>
 </article>
+
+  
+<nav id="article-nav">
   
   
-    </div></section>
+    <a href="/2020/03/18/UPCOJ-1115-sciorz%E7%94%BB%E7%94%BB/" id="article-nav-older" class="article-nav-link-wrap">
+      <div class="article-nav-title">UPCOJ 1115 sciorz画画</div>
+      <i class="icon-circle-right"></i>
+    </a>
+  
+</nav>
+
+
+<aside class="wrap-side-operation">
+    <div class="mod-side-operation">
+        
+        <div class="jump-container" id="js-jump-container" style="display:none;">
+            <a href="javascript:void(0)" class="mod-side-operation__jump-to-top">
+                <i class="icon-font icon-back"></i>
+            </a>
+            <div id="js-jump-plan-container" class="jump-plan-container" style="top: -11px;">
+                <i class="icon-font icon-plane jump-plane"></i>
+            </div>
+        </div>
+        
+        
+        <div class="toc-container tooltip-left">
+            <i class="icon-font icon-category"></i>
+            <div class="tooltip tooltip-east">
+                <span class="tooltip-item">
+                </span>
+                <span class="tooltip-content">
+                    <div class="toc-article">
+                    <ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link" href="#二分图最大匹配"><span class="toc-number">1.</span> <span class="toc-text">二分图最大匹配</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#二分图"><span class="toc-number">1.1.</span> <span class="toc-text">二分图</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#最大匹配"><span class="toc-number">1.2.</span> <span class="toc-text">最大匹配</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#增广路径"><span class="toc-number">1.3.</span> <span class="toc-text">增广路径</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#匈牙利算法原理"><span class="toc-number">2.</span> <span class="toc-text">匈牙利算法原理</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#寻找增广路径"><span class="toc-number">2.1.</span> <span class="toc-text">寻找增广路径</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#算法轮廓"><span class="toc-number">2.2.</span> <span class="toc-text">算法轮廓</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#过程模拟"><span class="toc-number">2.3.</span> <span class="toc-text">过程模拟</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#时间复杂度"><span class="toc-number">2.3.1.</span> <span class="toc-text">时间复杂度</span></a></li></ol></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link" href="#模板题"><span class="toc-number">3.</span> <span class="toc-text">模板题</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#POJ-3041-Asteroids"><span class="toc-number">3.1.</span> <span class="toc-text">POJ 3041 Asteroids</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Description"><span class="toc-number">3.1.1.</span> <span class="toc-text">Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input"><span class="toc-number">3.1.2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output"><span class="toc-number">3.1.3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input"><span class="toc-number">3.1.4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output"><span class="toc-number">3.1.5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Hint"><span class="toc-number">3.1.6.</span> <span class="toc-text">Hint</span></a><ol class="toc-child"><li class="toc-item toc-level-4"><a class="toc-link" href="#INPUT-DETAILS"><span class="toc-number">3.1.6.1.</span> <span class="toc-text">INPUT DETAILS</span></a></li><li class="toc-item toc-level-4"><a class="toc-link" href="#OUTPUT-DETAILS"><span class="toc-number">3.1.6.2.</span> <span class="toc-text">OUTPUT DETAILS</span></a></li></ol></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Translation"><span class="toc-number">3.1.7.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea"><span class="toc-number">3.1.8.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code"><span class="toc-number">3.1.9.</span> <span class="toc-text">Code</span></a></li></ol></li><li class="toc-item toc-level-2"><a class="toc-link" href="#HDU-1083-Courses"><span class="toc-number">3.2.</span> <span class="toc-text">HDU 1083 Courses</span></a><ol class="toc-child"><li class="toc-item toc-level-3"><a class="toc-link" href="#Problem-Description"><span class="toc-number">3.2.1.</span> <span class="toc-text">Problem Description</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Input-1"><span class="toc-number">3.2.2.</span> <span class="toc-text">Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Output-1"><span class="toc-number">3.2.3.</span> <span class="toc-text">Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Input-1"><span class="toc-number">3.2.4.</span> <span class="toc-text">Sample Input</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Sample-Output-1"><span class="toc-number">3.2.5.</span> <span class="toc-text">Sample Output</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Translation-1"><span class="toc-number">3.2.6.</span> <span class="toc-text">Translation</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Idea-1"><span class="toc-number">3.2.7.</span> <span class="toc-text">Idea</span></a></li><li class="toc-item toc-level-3"><a class="toc-link" href="#Code-1"><span class="toc-number">3.2.8.</span> <span class="toc-text">Code</span></a></li></ol></li></ol></li></ol>
+                    </div>
+                </span>
+            </div>
+        </div>
+        
+    </div>
+</aside>
+
+
+
+  
+  
   
 
-    
+  
+
+  
+
+  
+
 
 
           </div>
@@ -278,9 +436,9 @@
 	var yiliaConfig = {
 		mathjax: true,
 		isHome: false,
-		isPost: false,
+		isPost: true,
 		isArchive: false,
-		isTag: true,
+		isTag: false,
 		isCategory: false,
 		open_in_new: false,
 		toc_hide_index: true,
