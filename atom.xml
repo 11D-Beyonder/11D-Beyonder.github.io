@@ -1,0 +1,526 @@
+<?xml version="1.0" encoding="utf-8"?>
+<feed xmlns="http://www.w3.org/2005/Atom">
+  <title>11D_Beyonder&#39; s Blog</title>
+  <icon>https://11d-beyonder.github.io/icon.png</icon>
+  
+  <link href="https://11d-beyonder.github.io/atom.xml" rel="self"/>
+  
+  <link href="https://11d-beyonder.github.io/"/>
+  <updated>2023-01-31T13:10:49.258Z</updated>
+  <id>https://11d-beyonder.github.io/</id>
+  
+  <author>
+    <name>11D_Beyonder</name>
+    
+  </author>
+  
+  <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>关于分布式框架调度器的测试用例和算法</title>
+    <link href="https://11d-beyonder.github.io/2023/01/31/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E6%A1%86%E6%9E%B6%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%92%8C%E7%AE%97%E6%B3%95/"/>
+    <id>https://11d-beyonder.github.io/2023/01/31/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E6%A1%86%E6%9E%B6%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%92%8C%E7%AE%97%E6%B3%95/</id>
+    <published>2023-01-31T13:10:49.000Z</published>
+    <updated>2023-01-31T13:10:49.258Z</updated>
+    
+    
+    
+    
+    
+  </entry>
+  
+  <entry>
+    <title>Quantum computational finance: quantum algorithm for portfolio optimization</title>
+    <link href="https://11d-beyonder.github.io/2022/11/25/Quantum-computational-finance-quantum-algorithm-for-portfolio-optimization/"/>
+    <id>https://11d-beyonder.github.io/2022/11/25/Quantum-computational-finance-quantum-algorithm-for-portfolio-optimization/</id>
+    <published>2022-11-25T09:14:40.000Z</published>
+    <updated>2023-01-31T12:49:36.687Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;市场数据&lt;/h1&gt;
+&lt;h2 id=&quot;定价与收益&quot;&gt;定价与收益&lt;/h2&gt;
+&lt;p&gt;用向量描述特定资产的时间序列。&lt;/p&gt;
+&lt;p&gt;有 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
+        
+      
+    
+    
+    
+    <category term="量子计算" scheme="https://11d-beyonder.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="量子金融" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E9%87%91%E8%9E%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Quantum Algorithms for Portfolio Optimization</title>
+    <link href="https://11d-beyonder.github.io/2022/11/23/Quantum-Algorithms-for-Portfolio-Optimization/"/>
+    <id>https://11d-beyonder.github.io/2022/11/23/Quantum-Algorithms-for-Portfolio-Optimization/</id>
+    <published>2022-11-23T03:22:12.000Z</published>
+    <updated>2023-01-31T12:49:36.822Z</updated>
+    
+    
+    
+    
+    <category term="量子计算" scheme="https://11d-beyonder.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="量子金融" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E9%87%91%E8%9E%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>生成元与酉变换</title>
+    <link href="https://11d-beyonder.github.io/2022/11/16/%E7%94%9F%E6%88%90%E5%85%83%E4%B8%8E%E9%85%89%E5%8F%98%E6%8D%A2/"/>
+    <id>https://11d-beyonder.github.io/2022/11/16/%E7%94%9F%E6%88%90%E5%85%83%E4%B8%8E%E9%85%89%E5%8F%98%E6%8D%A2/</id>
+    <published>2022-11-16T10:18:46.000Z</published>
+    <updated>2023-01-31T12:49:33.077Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;矩阵指数&lt;/h1&gt;
+&lt;p&gt;&lt;a href=&quot;https://zh.m.wikipedia.org/zh-cn/%E7%9F%A9%E9%98%B5%E6%8C%87%E6%95%B0&quot;&gt;矩阵指数-维基百科&lt;/a&gt;&lt;/p&gt;
+&lt;p&gt;麦克劳林展开&lt;/p&gt;
+&lt;p&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="数学" scheme="https://11d-beyonder.github.io/categories/%E6%95%B0%E5%AD%A6/"/>
+    
+    
+    <category term="线性代数" scheme="https://11d-beyonder.github.io/tags/%E7%BA%BF%E6%80%A7%E4%BB%A3%E6%95%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>常见量子比特门</title>
+    <link href="https://11d-beyonder.github.io/2022/11/16/%E5%B8%B8%E8%A7%81%E9%87%8F%E5%AD%90%E6%AF%94%E7%89%B9%E9%97%A8/"/>
+    <id>https://11d-beyonder.github.io/2022/11/16/%E5%B8%B8%E8%A7%81%E9%87%8F%E5%AD%90%E6%AF%94%E7%89%B9%E9%97%A8/</id>
+    <published>2022-11-16T10:08:31.000Z</published>
+    <updated>2023-01-31T12:49:35.804Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h1&gt;单量子比特门&lt;/h1&gt;
+&lt;h2 id=&quot;Hadamard门&quot;&gt;Hadamard门&lt;/h2&gt;
+&lt;p&gt;&lt;span class=&quot;katex-display&quot;&gt;&lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
+        
+      
+    
+    
+    
+    <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="量子计算" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>MySQL安装</title>
+    <link href="https://11d-beyonder.github.io/2022/10/09/MySQL%E5%AE%89%E8%A3%85/"/>
+    <id>https://11d-beyonder.github.io/2022/10/09/MySQL%E5%AE%89%E8%A3%85/</id>
+    <published>2022-10-09T08:22:22.000Z</published>
+    <updated>2023-01-31T12:49:37.504Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;在CentOS7上安装MySQL8&lt;/strong&gt;&lt;/p&gt;
+&lt;h3 id=&quot;卸载MariaDB&quot;&gt;卸载MariaDB&lt;/h3&gt;
+&lt;p&gt;命令查看 MariaDB 的安装包&lt;/p&gt;
+&lt;figure class=&quot;highlight</summary>
+        
+      
+    
+    
+    
+    <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="数据库" scheme="https://11d-beyonder.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>VQE基本原理总结</title>
+    <link href="https://11d-beyonder.github.io/2022/09/15/VQE%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/"/>
+    <id>https://11d-beyonder.github.io/2022/09/15/VQE%E5%9F%BA%E6%9C%AC%E5%8E%9F%E7%90%86%E6%80%BB%E7%BB%93/</id>
+    <published>2022-09-15T03:17:31.000Z</published>
+    <updated>2023-01-31T12:49:36.344Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;简介-4&quot;&gt;简介&lt;/h3&gt;
+&lt;p&gt;给定哈密顿量 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
+        
+      
+    
+    
+    
+    <category term="量子计算" scheme="https://11d-beyonder.github.io/categories/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
+    
+    
+    <category term="VQE" scheme="https://11d-beyonder.github.io/tags/VQE/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Tackling the Qubit Mapping Problem for NISQ-Era Quantum Devices</title>
+    <link href="https://11d-beyonder.github.io/2022/08/21/Tackling-the-Qubit-Mapping-Problem-for-NISQ-Era-Quantum-Devices/"/>
+    <id>https://11d-beyonder.github.io/2022/08/21/Tackling-the-Qubit-Mapping-Problem-for-NISQ-Era-Quantum-Devices/</id>
+    <published>2022-08-21T15:44:46.000Z</published>
+    <updated>2023-01-31T12:49:36.623Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;strong&gt;文中所有图片引用自原文 &lt;a href=&quot;https://arxiv.org/abs/1809.02573&quot;&gt;Tackling the Qubit Mapping Problem for NISQ-Era Quantum</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="https://11d-beyonder.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="量子计算" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>QAOA求解均值方差投资组合优化问题</title>
+    <link href="https://11d-beyonder.github.io/2022/08/16/QAOA%E6%B1%82%E8%A7%A3%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/"/>
+    <id>https://11d-beyonder.github.io/2022/08/16/QAOA%E6%B1%82%E8%A7%A3%E5%9D%87%E5%80%BC%E6%96%B9%E5%B7%AE%E6%8A%95%E8%B5%84%E7%BB%84%E5%90%88%E4%BC%98%E5%8C%96%E9%97%AE%E9%A2%98/</id>
+    <published>2022-08-16T14:45:54.000Z</published>
+    <updated>2023-01-31T12:49:36.727Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;div class=&quot;block-box&quot;&gt;
+  
+  &lt;div class=&quot;block-item&quot;&gt;
+    &lt;embed
+      src=&quot;/pdf/QAOA求解均值方差投资组合优化问题.pdf&quot;
+      width=&quot;100%&quot;
+     </summary>
+        
+      
+    
+    
+    
+    <category term="课程笔记" scheme="https://11d-beyonder.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="量子金融" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E9%87%91%E8%9E%8D/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>用量子电路计算核函数的SVM分类器</title>
+    <link href="https://11d-beyonder.github.io/2022/07/09/%E7%94%A8%E9%87%8F%E5%AD%90%E7%94%B5%E8%B7%AF%E8%AE%A1%E7%AE%97%E6%A0%B8%E5%87%BD%E6%95%B0%E7%9A%84SVM%E5%88%86%E7%B1%BB%E5%99%A8/"/>
+    <id>https://11d-beyonder.github.io/2022/07/09/%E7%94%A8%E9%87%8F%E5%AD%90%E7%94%B5%E8%B7%AF%E8%AE%A1%E7%AE%97%E6%A0%B8%E5%87%BD%E6%95%B0%E7%9A%84SVM%E5%88%86%E7%B1%BB%E5%99%A8/</id>
+    <published>2022-07-08T17:42:45.000Z</published>
+    <updated>2023-01-31T12:49:33.175Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;初态为 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math xmlns=&quot;http://www.w3.org/1998/Math/MathML&quot;&gt;&lt;semantics&gt;&lt;mrow&gt;&lt;mi</summary>
+        
+      
+    
+    
+    
+    <category term="课程笔记" scheme="https://11d-beyonder.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="QML" scheme="https://11d-beyonder.github.io/tags/QML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PennyLane的使用</title>
+    <link href="https://11d-beyonder.github.io/2022/07/07/PennyLane%E7%9A%84%E4%BD%BF%E7%94%A8/"/>
+    <id>https://11d-beyonder.github.io/2022/07/07/PennyLane%E7%9A%84%E4%BD%BF%E7%94%A8/</id>
+    <published>2022-07-07T15:45:43.000Z</published>
+    <updated>2023-01-31T12:49:36.821Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;PennyLane是跨平台的量子机器学习Python包。&lt;/p&gt;
+&lt;figure class=&quot;highlight shell&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="课程笔记" scheme="https://11d-beyonder.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="QML" scheme="https://11d-beyonder.github.io/tags/QML/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>量子计算入门</title>
+    <link href="https://11d-beyonder.github.io/2022/07/07/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97%E5%85%A5%E9%97%A8/"/>
+    <id>https://11d-beyonder.github.io/2022/07/07/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97%E5%85%A5%E9%97%A8/</id>
+    <published>2022-07-06T16:58:17.000Z</published>
+    <updated>2023-01-31T12:49:32.128Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="课程笔记" scheme="https://11d-beyonder.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
+    
+    
+    <category term="量子计算" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Invited: Drug Discovery Approaches using Quantum Machine Learning</title>
+    <link href="https://11d-beyonder.github.io/2022/07/05/Invited-Drug-Discovery-Approaches-using-Quantum-Machine-Learning/"/>
+    <id>https://11d-beyonder.github.io/2022/07/05/Invited-Drug-Discovery-Approaches-using-Quantum-Machine-Learning/</id>
+    <published>2022-07-05T13:13:36.000Z</published>
+    <updated>2023-01-31T12:49:37.786Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9586268&quot;&gt;Invited: Drug Discovery Approaches using Quantum Machine Learning | IEEE</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="https://11d-beyonder.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="量子机器学习" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>PS-Tree: A piecewise symbolic regression tree</title>
+    <link href="https://11d-beyonder.github.io/2022/06/23/PS-Tree-A-piecewise-symbolic-regression-tree/"/>
+    <id>https://11d-beyonder.github.io/2022/06/23/PS-Tree-A-piecewise-symbolic-regression-tree/</id>
+    <published>2022-06-22T17:07:39.000Z</published>
+    <updated>2023-01-31T12:49:36.871Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://www.sciencedirect.com/science/article/pii/S2210650222000335&quot;&gt;PS-Tree: A piecewise symbolic regression tree -</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="https://11d-beyonder.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="阅读笔记" scheme="https://11d-beyonder.github.io/tags/%E9%98%85%E8%AF%BB%E7%AC%94%E8%AE%B0/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Regulating systemic crises: Stemming the contagion risk in networked-loans through deep graph learning</title>
+    <link href="https://11d-beyonder.github.io/2022/06/17/Regulating-systemic-crises-Stemming-the-contagion-risk-in-networked-loans-through-deep-graph-learning/"/>
+    <id>https://11d-beyonder.github.io/2022/06/17/Regulating-systemic-crises-Stemming-the-contagion-risk-in-networked-loans-through-deep-graph-learning/</id>
+    <published>2022-06-17T04:48:52.000Z</published>
+    <updated>2023-01-31T12:49:36.734Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9743296&quot;&gt;Regulating systemic crises: Stemming the contagion risk in networked-loans</summary>
+        
+      
+    
+    
+    
+    <category term="文献阅读" scheme="https://11d-beyonder.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
+    
+    
+    <category term="摘要翻译" scheme="https://11d-beyonder.github.io/tags/%E6%91%98%E8%A6%81%E7%BF%BB%E8%AF%91/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Codeforces Global Round 9</title>
+    <link href="https://11d-beyonder.github.io/2022/05/06/Codeforces-Global-Round-9/"/>
+    <id>https://11d-beyonder.github.io/2022/05/06/Codeforces-Global-Round-9/</id>
+    <published>2022-05-06T05:41:45.000Z</published>
+    <updated>2023-01-31T12:49:38.752Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;A-Sign-Flipping-looparrowright&quot;&gt;A. Sign Flipping &lt;a href=&quot;http://codeforces.com/problemset/problem/1375/A&quot;&gt;&lt;span</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://11d-beyonder.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="赛事记录" scheme="https://11d-beyonder.github.io/tags/%E8%B5%9B%E4%BA%8B%E8%AE%B0%E5%BD%95/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>Spring</title>
+    <link href="https://11d-beyonder.github.io/2022/03/02/Spring/"/>
+    <id>https://11d-beyonder.github.io/2022/03/02/Spring/</id>
+    <published>2022-03-02T06:40:43.000Z</published>
+    <updated>2023-01-31T12:49:36.655Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h2 id=&quot;IoC&quot;&gt;IoC&lt;/h2&gt;
+&lt;h3 id=&quot;概念&quot;&gt;概念&lt;/h3&gt;
+&lt;p&gt;IoC（控制反转，Inversion of</summary>
+        
+      
+    
+    
+    
+    <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Java" scheme="https://11d-beyonder.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>IDEA 启动异常</title>
+    <link href="https://11d-beyonder.github.io/2022/02/22/IDEA-%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/"/>
+    <id>https://11d-beyonder.github.io/2022/02/22/IDEA-%E5%90%AF%E5%8A%A8%E5%BC%82%E5%B8%B8/</id>
+    <published>2022-02-22T14:26:40.000Z</published>
+    <updated>2023-01-31T12:49:37.797Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;某天用IDEA打开项目，发现IDEA启动动画的进度条跑完，就一动不动了。&lt;/p&gt;
+&lt;p&gt;查看</summary>
+        
+      
+    
+    
+    
+    <category term="杂记" scheme="https://11d-beyonder.github.io/categories/%E6%9D%82%E8%AE%B0/"/>
+    
+    
+    <category term="编辑器" scheme="https://11d-beyonder.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaWeb</title>
+    <link href="https://11d-beyonder.github.io/2022/02/15/JavaWeb/"/>
+    <id>https://11d-beyonder.github.io/2022/02/15/JavaWeb/</id>
+    <published>2022-02-15T13:51:39.000Z</published>
+    <updated>2023-01-31T12:49:37.711Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;代码仓库：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Java" scheme="https://11d-beyonder.github.io/tags/Java/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JDBC</title>
+    <link href="https://11d-beyonder.github.io/2022/02/08/JDBC/"/>
+    <id>https://11d-beyonder.github.io/2022/02/08/JDBC/</id>
+    <published>2022-02-08T12:39:00.000Z</published>
+    <updated>2023-01-31T12:49:37.643Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;h3 id=&quot;简介-3&quot;&gt;简介&lt;/h3&gt;
+&lt;p&gt;JDBC用于在Java程序中操作数据库。JDBC提供一套访问各类数据库通用的API，不同的数据库厂商会根据各自的数据库特点去实现这些接口。&lt;/p&gt;
+&lt;p&gt;&lt;img</summary>
+        
+      
+    
+    
+    
+    <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="Java" scheme="https://11d-beyonder.github.io/tags/Java/"/>
+    
+    <category term="数据库" scheme="https://11d-beyonder.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
+    
+  </entry>
+  
+</feed>
