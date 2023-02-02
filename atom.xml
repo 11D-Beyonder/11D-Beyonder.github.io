@@ -6,7 +6,7 @@
   <link href="https://11d-beyonder.github.io/atom.xml" rel="self"/>
   
   <link href="https://11d-beyonder.github.io/"/>
-  <updated>2023-01-31T14:26:00.137Z</updated>
+  <updated>2023-02-02T13:46:02.330Z</updated>
   <id>https://11d-beyonder.github.io/</id>
   
   <author>
@@ -17,11 +17,11 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>关于分布式框架调度器的测试用例和算法</title>
-    <link href="https://11d-beyonder.github.io/2023/01/31/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E6%A1%86%E6%9E%B6%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%92%8C%E7%AE%97%E6%B3%95/"/>
-    <id>https://11d-beyonder.github.io/2023/01/31/%E5%85%B3%E4%BA%8E%E5%88%86%E5%B8%83%E5%BC%8F%E6%A1%86%E6%9E%B6%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%92%8C%E7%AE%97%E6%B3%95/</id>
+    <title>分布式框架调度器的测试用例和算法</title>
+    <link href="https://11d-beyonder.github.io/2023/01/31/%E5%88%86%E5%B8%83%E5%BC%8F%E6%A1%86%E6%9E%B6%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%92%8C%E7%AE%97%E6%B3%95/"/>
+    <id>https://11d-beyonder.github.io/2023/01/31/%E5%88%86%E5%B8%83%E5%BC%8F%E6%A1%86%E6%9E%B6%E8%B0%83%E5%BA%A6%E5%99%A8%E7%9A%84%E6%B5%8B%E8%AF%95%E7%94%A8%E4%BE%8B%E5%92%8C%E7%AE%97%E6%B3%95/</id>
     <published>2023-01-31T13:10:49.000Z</published>
-    <updated>2023-01-31T14:26:00.137Z</updated>
+    <updated>2023-02-02T13:46:02.330Z</updated>
     
     
       
@@ -184,7 +184,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;简介-5&quot;&gt;简介&lt;/h3&gt;
+    <summary type="html">&lt;h3 id=&quot;简介-4&quot;&gt;简介&lt;/h3&gt;
 &lt;p&gt;给定哈密顿量 &lt;span class=&quot;katex&quot;&gt;&lt;span class=&quot;katex-mathml&quot;&gt;&lt;math</summary>
         
       
@@ -521,7 +521,7 @@
       
         
         
-    <summary type="html">&lt;h3 id=&quot;简介-3&quot;&gt;简介&lt;/h3&gt;
+    <summary type="html">&lt;h3 id=&quot;简介-2&quot;&gt;简介&lt;/h3&gt;
 &lt;p&gt;JDBC用于在Java程序中操作数据库。JDBC提供一套访问各类数据库通用的API，不同的数据库厂商会根据各自的数据库特点去实现这些接口。&lt;/p&gt;
 &lt;p&gt;&lt;img</summary>
         
@@ -532,9 +532,9 @@
     <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
     
     
-    <category term="数据库" scheme="https://11d-beyonder.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
-    
     <category term="Java" scheme="https://11d-beyonder.github.io/tags/Java/"/>
+    
+    <category term="数据库" scheme="https://11d-beyonder.github.io/tags/%E6%95%B0%E6%8D%AE%E5%BA%93/"/>
     
   </entry>
   
