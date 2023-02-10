@@ -6,7 +6,7 @@
   <link href="https://11d-beyonder.github.io/atom.xml" rel="self"/>
   
   <link href="https://11d-beyonder.github.io/"/>
-  <updated>2023-02-04T14:29:36.731Z</updated>
+  <updated>2023-02-10T15:06:24.713Z</updated>
   <id>https://11d-beyonder.github.io/</id>
   
   <author>
@@ -15,6 +15,39 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>Hadoop集群部署</title>
+    <link href="https://11d-beyonder.github.io/2023/02/10/Hadoop%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/"/>
+    <id>https://11d-beyonder.github.io/2023/02/10/Hadoop%E9%9B%86%E7%BE%A4%E9%83%A8%E7%BD%B2/</id>
+    <published>2023-02-10T07:58:24.000Z</published>
+    <updated>2023-02-10T15:06:24.713Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;ul&gt;
+&lt;li&gt;
+&lt;p&gt;Ubuntu 20.04.05 LTS&lt;/p&gt;
+&lt;/li&gt;
+&lt;li&gt;
+&lt;p&gt;Hadoop</summary>
+        
+      
+    
+    
+    
+    <category term="科研" scheme="https://11d-beyonder.github.io/categories/%E7%A7%91%E7%A0%94/"/>
+    
+    
+    <category term="Hadoop" scheme="https://11d-beyonder.github.io/tags/Hadoop/"/>
+    
+    <category term="大数据" scheme="https://11d-beyonder.github.io/tags/%E5%A4%A7%E6%95%B0%E6%8D%AE/"/>
+    
+  </entry>
   
   <entry>
     <title>ChatGPT初体验：请教Linux环境配置的一些问题</title>
@@ -511,32 +544,6 @@
     
     
     <category term="编辑器" scheme="https://11d-beyonder.github.io/tags/%E7%BC%96%E8%BE%91%E5%99%A8/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>JavaWeb</title>
-    <link href="https://11d-beyonder.github.io/2022/02/15/JavaWeb/"/>
-    <id>https://11d-beyonder.github.io/2022/02/15/JavaWeb/</id>
-    <published>2022-02-15T13:51:39.000Z</published>
-    <updated>2023-01-31T12:49:37.711Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;blockquote&gt;
-&lt;p&gt;代码仓库：&lt;a</summary>
-        
-      
-    
-    
-    
-    <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
-    
-    
-    <category term="Java" scheme="https://11d-beyonder.github.io/tags/Java/"/>
     
   </entry>
   
