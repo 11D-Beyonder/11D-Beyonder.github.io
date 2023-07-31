@@ -6,7 +6,7 @@
   <link href="https://11d-beyonder.github.io/atom.xml" rel="self"/>
   
   <link href="https://11d-beyonder.github.io/"/>
-  <updated>2023-03-22T08:43:52.000Z</updated>
+  <updated>2023-07-31T03:37:14.638Z</updated>
   <id>https://11d-beyonder.github.io/</id>
   
   <author>
@@ -15,6 +15,32 @@
   </author>
   
   <generator uri="https://hexo.io/">Hexo</generator>
+  
+  <entry>
+    <title>计算机零基础必备转码宝典（dev）</title>
+    <link href="https://11d-beyonder.github.io/2023/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%9B%B6%E5%9F%BA%E7%A1%80%E8%BD%AC%E7%A0%81%E5%BF%85%E5%A4%87%E5%AE%9D%E5%85%B8/"/>
+    <id>https://11d-beyonder.github.io/2023/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%9B%B6%E5%9F%BA%E7%A1%80%E8%BD%AC%E7%A0%81%E5%BF%85%E5%A4%87%E5%AE%9D%E5%85%B8/</id>
+    <published>2023-07-31T03:36:38.000Z</published>
+    <updated>2023-07-31T03:37:14.638Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;blockquote&gt;
+&lt;p&gt;Copyright © 2023 &lt;a href=&quot;mailto:tianzezhu@zju.edu.cn&quot;&gt;11D_Beyonder&lt;/a&gt;, All rights</summary>
+        
+      
+    
+    
+    
+    <category term="技术栈学习" scheme="https://11d-beyonder.github.io/categories/%E6%8A%80%E6%9C%AF%E6%A0%88%E5%AD%A6%E4%B9%A0/"/>
+    
+    
+    <category term="转码" scheme="https://11d-beyonder.github.io/tags/%E8%BD%AC%E7%A0%81/"/>
+    
+  </entry>
   
   <entry>
     <title>HHL算法及其改进</title>
@@ -521,31 +547,6 @@
     
     
     <category term="量子计算" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>Invited: Drug Discovery Approaches using Quantum Machine Learning</title>
-    <link href="https://11d-beyonder.github.io/2022/07/05/Invited-Drug-Discovery-Approaches-using-Quantum-Machine-Learning/"/>
-    <id>https://11d-beyonder.github.io/2022/07/05/Invited-Drug-Discovery-Approaches-using-Quantum-Machine-Learning/</id>
-    <published>2022-07-05T13:13:36.000Z</published>
-    <updated>2023-01-31T12:49:37.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;p&gt;&lt;a href=&quot;https://ieeexplore.ieee.org/document/9586268&quot;&gt;Invited: Drug Discovery Approaches using Quantum Machine Learning | IEEE</summary>
-        
-      
-    
-    
-    
-    <category term="文献阅读" scheme="https://11d-beyonder.github.io/categories/%E6%96%87%E7%8C%AE%E9%98%85%E8%AF%BB/"/>
-    
-    
-    <category term="量子机器学习" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E6%9C%BA%E5%99%A8%E5%AD%A6%E4%B9%A0/"/>
     
   </entry>
   
