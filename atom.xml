@@ -6,7 +6,7 @@
   <link href="https://11d-beyonder.github.io/atom.xml" rel="self"/>
   
   <link href="https://11d-beyonder.github.io/"/>
-  <updated>2023-08-01T05:20:31.407Z</updated>
+  <updated>2023-10-12T08:44:01.085Z</updated>
   <id>https://11d-beyonder.github.io/</id>
   
   <author>
@@ -17,11 +17,36 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
+    <title>洛谷P1825 [USACO11OPEN] Corn Maze S</title>
+    <link href="https://11d-beyonder.github.io/2023/10/12/%E6%B4%9B%E8%B0%B7P1825-USACO11OPEN-Corn-Maze-S/"/>
+    <id>https://11d-beyonder.github.io/2023/10/12/%E6%B4%9B%E8%B0%B7P1825-USACO11OPEN-Corn-Maze-S/</id>
+    <published>2023-10-12T08:37:40.000Z</published>
+    <updated>2023-10-12T08:44:01.085Z</updated>
+    
+    
+      
+      
+        
+        
+    <summary type="html">&lt;p&gt;题面：&lt;a</summary>
+        
+      
+    
+    
+    
+    <category term="题解" scheme="https://11d-beyonder.github.io/categories/%E9%A2%98%E8%A7%A3/"/>
+    
+    
+    <category term="BFS" scheme="https://11d-beyonder.github.io/tags/BFS/"/>
+    
+  </entry>
+  
+  <entry>
     <title>计算机零基础必备转码宝典（dev）</title>
     <link href="https://11d-beyonder.github.io/2023/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%9B%B6%E5%9F%BA%E7%A1%80%E8%BD%AC%E7%A0%81%E5%BF%85%E5%A4%87%E5%AE%9D%E5%85%B8/"/>
     <id>https://11d-beyonder.github.io/2023/07/31/%E8%AE%A1%E7%AE%97%E6%9C%BA%E9%9B%B6%E5%9F%BA%E7%A1%80%E8%BD%AC%E7%A0%81%E5%BF%85%E5%A4%87%E5%AE%9D%E5%85%B8/</id>
     <published>2023-07-31T03:36:38.000Z</published>
-    <updated>2023-08-01T05:20:31.407Z</updated>
+    <updated>2023-08-01T05:23:31.380Z</updated>
     
     
       
@@ -522,31 +547,6 @@
     
     
     <category term="QML" scheme="https://11d-beyonder.github.io/tags/QML/"/>
-    
-  </entry>
-  
-  <entry>
-    <title>量子计算入门</title>
-    <link href="https://11d-beyonder.github.io/2022/07/07/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97%E5%85%A5%E9%97%A8/"/>
-    <id>https://11d-beyonder.github.io/2022/07/07/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97%E5%85%A5%E9%97%A8/</id>
-    <published>2022-07-06T16:58:17.000Z</published>
-    <updated>2023-01-31T12:49:32.000Z</updated>
-    
-    
-      
-      
-        
-        
-    <summary type="html">&lt;figure class=&quot;highlight python&quot;&gt;&lt;table&gt;&lt;tr&gt;&lt;td class=&quot;gutter&quot;&gt;&lt;pre&gt;&lt;span class=&quot;line&quot;&gt;1&lt;/span&gt;&lt;br&gt;&lt;span class=&quot;line&quot;&gt;2&lt;/span&gt;&lt;br&gt;&lt;span</summary>
-        
-      
-    
-    
-    
-    <category term="课程笔记" scheme="https://11d-beyonder.github.io/categories/%E8%AF%BE%E7%A8%8B%E7%AC%94%E8%AE%B0/"/>
-    
-    
-    <category term="量子计算" scheme="https://11d-beyonder.github.io/tags/%E9%87%8F%E5%AD%90%E8%AE%A1%E7%AE%97/"/>
     
   </entry>
   
