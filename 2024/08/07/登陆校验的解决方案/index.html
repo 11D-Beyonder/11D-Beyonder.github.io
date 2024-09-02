@@ -1,0 +1,281 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>登陆校验的解决方案 | 11D_Beyonder's Blog</title><meta name="author" content="11D_Beyonder"><meta name="copyright" content="11D_Beyonder"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="会话技术 用户打开浏览器，访问服务器资源，则会话建立。直到有一方断开连接，会话结束。在一次会话中可以包含多次请求和响应。一般认为打开一个浏览器就是一次会话。HTTP是无状态的，服务器并不知道你之前登陆过没有，需要用会话跟踪技术记录状态。 会话跟踪是一种维护浏览器状态的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在同一次会话的多次请求间共享数据。 会话跟踪方案包括客户端会话跟踪技术Cook">
+<meta property="og:type" content="article">
+<meta property="og:title" content="登陆校验的解决方案">
+<meta property="og:url" content="https://11d-beyonder.github.io/2024/08/07/%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html">
+<meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
+<meta property="og:description" content="会话技术 用户打开浏览器，访问服务器资源，则会话建立。直到有一方断开连接，会话结束。在一次会话中可以包含多次请求和响应。一般认为打开一个浏览器就是一次会话。HTTP是无状态的，服务器并不知道你之前登陆过没有，需要用会话跟踪技术记录状态。 会话跟踪是一种维护浏览器状态的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在同一次会话的多次请求间共享数据。 会话跟踪方案包括客户端会话跟踪技术Cook">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://11d-beyonder.github.io/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg">
+<meta property="article:published_time" content="2024-08-07T09:32:33.000Z">
+<meta property="article:modified_time" content="2024-09-02T05:49:18.139Z">
+<meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="Java">
+<meta property="article:tag" content="Spring">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://11d-beyonder.github.io/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://11d-beyonder.github.io/2024/08/07/%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 11D_Beyonder","link":"链接: ","source":"来源: 11D_Beyonder's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '登陆校验的解决方案',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: true,
+  postUpdate: '2024-09-02 13:49:18'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="11D_Beyonder's Blog"><img class="site-icon" src="/img/favicon.png"/><span class="site-name">11D_Beyonder's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">登陆校验的解决方案</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-08-07T09:32:33.000Z" title="发表于 2024-08-07 17:32:33">2024-08-07</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-02T05:49:18.139Z" title="更新于 2024-09-02 13:49:18">2024-09-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E5%90%8E%E7%AB%AF%E5%BC%80%E5%8F%91/">后端开发</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">1.4k</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>6分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="登陆校验的解决方案"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><h1>会话技术</h1>
+<p>用户打开浏览器，访问服务器资源，则会话建立。直到有一方断开连接，会话结束。在一次会话中可以包含多次请求和响应。一般认为打开一个浏览器就是一次会话。HTTP是无状态的，服务器并不知道你之前登陆过没有，需要用会话跟踪技术记录状态。</p>
+<p>会话跟踪是一种维护浏览器状态的方法，服务器需要识别多次请求是否来自于同一浏览器，以便在同一次会话的多次请求间共享数据。</p>
+<p>会话跟踪方案包括客户端会话跟踪技术Cookie、服务端会话跟踪技术Session、令牌技术。</p>
+<h2 id="Cookie">Cookie</h2>
+<p>第一次发送请求，服务端的响应头中包含 <code>Set-Cookie</code>，浏览器解析响应头，存储在本地。浏览器存储的 Cookie 可以在控制台的“应用-&gt;存储”中看到。接下来发送请求，就会在请求头中携带 <code>Cookie</code> 这一项。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">优点</th>
+<th style="text-align:center">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">HTTP协议中支持。</td>
+<td style="text-align:center">移动端APP无法使用。</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">不安全、用户可以禁用。</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">不能跨域（协议、IP或域名、端口有一个不同就算）。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="Session">Session</h2>
+<p>浏览器第一次请求，服务器创建一个Session，用 ID 标识。服务器在响应时用 <code>Set-Cookie</code> 字段返回 ID，浏览器存储在本地。接下来发送请求，就会在请求头中携带 <code>Cookie</code> 这一项，即 Session 的 ID。这种技术只在浏览器中存储 ID，不用 Cookie 存储全部信息。</p>
+<table>
+<thead>
+<tr>
+<th style="text-align:center">优点</th>
+<th style="text-align:center">缺点</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align:center">存储在服务端、安全。</td>
+<td style="text-align:center">服务器集群环境下无法使用。</td>
+</tr>
+<tr>
+<td style="text-align:center"></td>
+<td style="text-align:center">基于Cookie，包含Cookie的缺点。</td>
+</tr>
+</tbody>
+</table>
+<h2 id="令牌">令牌</h2>
+<p>登陆成功直接生成一个令牌，浏览器接收作为唯一身份认证（不一定要保存在Cookie中，前端可以存放在 LocalStorage）。接下来每次请求都携带令牌。</p>
+<p>优点：</p>
+<ul>
+<li>支持PC、移动端，</li>
+<li>解决集群环境下的认证问题，</li>
+<li>伪造的令牌可以被检查到，</li>
+<li>减轻服务器存储压力。</li>
+</ul>
+<p>定义了一种简洁的、自包含的格式，用于在通信双方以 Json数据格式安全的传输信息。由于数字签名的存在，这些信息是可靠的。</p>
+<h1>过滤器和拦截器</h1>
+<p>现在主流的方式是使用过滤器 Filter 和拦截器 Interceptor，通过校验 <a target="_blank" rel="noopener" href="https://jwt.io/">JWT（JSON Web Token）</a> 令牌对请求进行筛选并放行。具体来说：</p>
+<ul>
+<li>若发送登陆请求，直接放行；</li>
+<li>若没有携带JWT或JWT无效，则不放行；</li>
+<li>JWT有效，放行。</li>
+</ul>
+<h2 id="Filter">Filter</h2>
+<p>Filter 是 Java Web 三大组件之一，还有两个是 Servlet 和 Listener。</p>
+<p>实现的 Filter 需要加上注解 <code>@WebFilter</code>，用 <code>urlpattern</code> 设置拦截的路径。此外还需要在主类上添加一个注解 <code>@ServletComponentScan</code>，因为默认是不扫描 Servlet 相关组件的。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joe.tlias;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.SpringApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.autoconfigure.SpringBootApplication;</span><br><span class="line"><span class="keyword">import</span> org.springframework.boot.web.servlet.ServletComponentScan;</span><br><span class="line"></span><br><span class="line"><span class="meta">@ServletComponentScan</span></span><br><span class="line"><span class="meta">@SpringBootApplication</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">TliasApplication</span> &#123;</span><br><span class="line">	<span class="keyword">public</span> <span class="keyword">static</span> <span class="keyword">void</span> <span class="title function_">main</span><span class="params">(String[] args)</span> &#123;</span><br><span class="line">		SpringApplication.run(TliasApplication.class, args);</span><br><span class="line">	&#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br><span class="line">57</span><br><span class="line">58</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joe.tlias.filter;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> java.io.IOException;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson2.JSON;</span><br><span class="line"><span class="keyword">import</span> com.joe.tlias.pojo.Result;</span><br><span class="line"><span class="keyword">import</span> com.joe.tlias.utils.JwtUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.Filter;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.FilterChain;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.ServletException;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.ServletRequest;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.ServletResponse;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.annotation.WebFilter;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@WebFilter(urlPatterns = &quot;/*&quot;)</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginCheckFilter</span> <span class="keyword">implements</span> <span class="title class_">Filter</span> &#123;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">doFilter</span><span class="params">(ServletRequest request, ServletResponse response, FilterChain chain)</span></span><br><span class="line">            <span class="keyword">throws</span> IOException, ServletException &#123;</span><br><span class="line">        <span class="type">HttpServletRequest</span> <span class="variable">req</span> <span class="operator">=</span> (HttpServletRequest) request;</span><br><span class="line">        <span class="type">HttpServletResponse</span> <span class="variable">resp</span> <span class="operator">=</span> (HttpServletResponse) response;</span><br><span class="line">        <span class="type">String</span> <span class="variable">url</span> <span class="operator">=</span> req.getRequestURL().toString();</span><br><span class="line">        <span class="keyword">if</span> (url.contains(<span class="string">&quot;login&quot;</span>)) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;直接放行登陆。&quot;</span>);</span><br><span class="line">            chain.doFilter(req, resp);</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">jwt</span> <span class="operator">=</span> req.getHeader(<span class="string">&quot;token&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!StringUtils.hasLength(jwt)) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;token为空，返回未登录。&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            resp.getWriter().write(JSON.toJSONString(error));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            JwtUtils.parseJWT(jwt);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            e.printStackTrace();</span><br><span class="line">            log.info(<span class="string">&quot;解析令牌错误&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            resp.getWriter().write(JSON.toJSONString(error));</span><br><span class="line">            <span class="keyword">return</span>;</span><br><span class="line">        &#125;</span><br><span class="line">        log.info(<span class="string">&quot;令牌合法，放行。&quot;</span>);</span><br><span class="line">        chain.doFilter(request, response);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>过滤器链执行流程是和过滤器类名的字典序相关的，比如 <code>AFilter</code> 在 <code>BFilter</code> 前先执行。</p>
+<h2 id="Interceptor">Interceptor</h2>
+<p>Interceptor 是一种动态拦截方法调用的机制，类似于 Filter。这是 Spring 提供的，用于动态拦截控制器方法的执行。Interceptor 拦截请求，在指定的方法调用前后，根据业务需要执行预先设定的代码。</p>
+<p>定义 Interceptor 需要实现 <code>HandlerInterceptor</code> 接口，并重写其所有方法。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br><span class="line">22</span><br><span class="line">23</span><br><span class="line">24</span><br><span class="line">25</span><br><span class="line">26</span><br><span class="line">27</span><br><span class="line">28</span><br><span class="line">29</span><br><span class="line">30</span><br><span class="line">31</span><br><span class="line">32</span><br><span class="line">33</span><br><span class="line">34</span><br><span class="line">35</span><br><span class="line">36</span><br><span class="line">37</span><br><span class="line">38</span><br><span class="line">39</span><br><span class="line">40</span><br><span class="line">41</span><br><span class="line">42</span><br><span class="line">43</span><br><span class="line">44</span><br><span class="line">45</span><br><span class="line">46</span><br><span class="line">47</span><br><span class="line">48</span><br><span class="line">49</span><br><span class="line">50</span><br><span class="line">51</span><br><span class="line">52</span><br><span class="line">53</span><br><span class="line">54</span><br><span class="line">55</span><br><span class="line">56</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joe.tlias.interceptor;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.stereotype.Component;</span><br><span class="line"><span class="keyword">import</span> org.springframework.util.StringUtils;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.HandlerInterceptor;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.ModelAndView;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.alibaba.fastjson2.JSON;</span><br><span class="line"><span class="keyword">import</span> com.joe.tlias.pojo.Result;</span><br><span class="line"><span class="keyword">import</span> com.joe.tlias.utils.JwtUtils;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletRequest;</span><br><span class="line"><span class="keyword">import</span> jakarta.servlet.http.HttpServletResponse;</span><br><span class="line"><span class="keyword">import</span> lombok.extern.slf4j.Slf4j;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Component</span></span><br><span class="line"><span class="meta">@Slf4j</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">LoginCheckInterceptor</span> <span class="keyword">implements</span> <span class="title class_">HandlerInterceptor</span> &#123;</span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="type">boolean</span> <span class="title function_">preHandle</span><span class="params">(HttpServletRequest req, HttpServletResponse resp, Object handler)</span></span><br><span class="line">            <span class="keyword">throws</span> Exception &#123;</span><br><span class="line"></span><br><span class="line">        <span class="type">String</span> <span class="variable">jwt</span> <span class="operator">=</span> req.getHeader(<span class="string">&quot;token&quot;</span>);</span><br><span class="line"></span><br><span class="line">        <span class="keyword">if</span> (!StringUtils.hasLength(jwt)) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;token为空，返回未登录。&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            resp.getWriter().write(JSON.toJSONString(error));</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        <span class="keyword">try</span> &#123;</span><br><span class="line">            JwtUtils.parseJWT(jwt);</span><br><span class="line">        &#125; <span class="keyword">catch</span> (Exception e) &#123;</span><br><span class="line">            log.info(<span class="string">&quot;解析令牌错误&quot;</span>);</span><br><span class="line">            <span class="type">Result</span> <span class="variable">error</span> <span class="operator">=</span> Result.error(<span class="string">&quot;NOT_LOGIN&quot;</span>);</span><br><span class="line">            resp.getWriter().write(JSON.toJSONString(error));</span><br><span class="line">            <span class="keyword">return</span> <span class="literal">false</span>;</span><br><span class="line">        &#125;</span><br><span class="line"></span><br><span class="line">        log.info(<span class="string">&quot;令牌合法，放行。&quot;</span>);</span><br><span class="line">        <span class="keyword">return</span> <span class="literal">true</span>;</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">postHandle</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler,</span></span><br><span class="line"><span class="params">            ModelAndView modelAndView)</span> <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        log.info(<span class="string">&quot;post&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">afterCompletion</span><span class="params">(HttpServletRequest request, HttpServletResponse response, Object handler, Exception ex)</span></span><br><span class="line">            <span class="keyword">throws</span> Exception &#123;</span><br><span class="line">        log.info(<span class="string">&quot;after&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<p>接着要注册拦截器，需要实现 <code>WebMvcConfigurer</code> 接口。</p>
+<figure class="highlight java"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br><span class="line">18</span><br><span class="line">19</span><br><span class="line">20</span><br><span class="line">21</span><br></pre></td><td class="code"><pre><span class="line"><span class="keyword">package</span> com.joe.tlias.config;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> org.springframework.beans.factory.annotation.Autowired;</span><br><span class="line"><span class="keyword">import</span> org.springframework.context.annotation.Configuration;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.InterceptorRegistry;</span><br><span class="line"><span class="keyword">import</span> org.springframework.web.servlet.config.annotation.WebMvcConfigurer;</span><br><span class="line"></span><br><span class="line"><span class="keyword">import</span> com.joe.tlias.interceptor.LoginCheckInterceptor;</span><br><span class="line"></span><br><span class="line"><span class="meta">@Configuration</span></span><br><span class="line"><span class="keyword">public</span> <span class="keyword">class</span> <span class="title class_">WebConfig</span> <span class="keyword">implements</span> <span class="title class_">WebMvcConfigurer</span> &#123;</span><br><span class="line">    <span class="meta">@Autowired</span></span><br><span class="line">    <span class="keyword">private</span> LoginCheckInterceptor loginCheckInterceptor;</span><br><span class="line"></span><br><span class="line">    <span class="meta">@Override</span></span><br><span class="line">    <span class="keyword">public</span> <span class="keyword">void</span> <span class="title function_">addInterceptors</span><span class="params">(InterceptorRegistry registry)</span> &#123;</span><br><span class="line">        registry.addInterceptor(loginCheckInterceptor)</span><br><span class="line">                .addPathPatterns(<span class="string">&quot;/**&quot;</span>)</span><br><span class="line">                .excludePathPatterns(<span class="string">&quot;/login&quot;</span>);</span><br><span class="line">    &#125;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+<h2 id="对比">对比</h2>
+<p><img src="https://picgo-1306543186.cos.ap-chongqing.myqcloud.com/202408071711692.png" alt="请求拦截示意图（来自黑马课程）"></p>
+<p>两者拦截范围不同，过滤器会拦截所有的资源，而拦截器只会拦截 Spring 环境中的资源。</p>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://11d-beyonder.github.io/">11D_Beyonder</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://11d-beyonder.github.io/2024/08/07/%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/">https://11d-beyonder.github.io/2024/08/07/登陆校验的解决方案/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://11d-beyonder.github.io" target="_blank">11D_Beyonder's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Java/">Java</a><a class="post-meta__tags" href="/tags/Spring/">Spring</a></div><div class="post_share"><div class="social-share" data-image="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat-pay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/wechat-pay.JPG" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/ali-pay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/ali-pay.JPG" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="/img/qq-pay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/qq-pay.JPG" alt="QQ"/></a><div class="post-qr-code-desc">QQ</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/09/02/neovim%E5%B8%B8%E7%94%A8API/" title=""><img class="cover" src="/img/aropolis.png" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info"></div></div></a></div><div class="next-post pull-right"><a href="/2024/07/31/%E5%9C%A8Ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8Spotify/" title="在 Ubuntu 上安装和使用 Spotify"><img class="cover" src="/img/waterfall.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">在 Ubuntu 上安装和使用 Spotify</div></div></a></div></nav><div class="relatedPosts"><div class="headline"><i class="fas fa-thumbs-up fa-fw"></i><span>相关推荐</span></div><div class="relatedPosts-list"><div><a href="/2024/07/29/%E4%BD%BF%E7%94%A8-Maven-%E6%9E%84%E5%BB%BA%E6%97%B6%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%A6%82%E5%BF%B5/" title="使用 Maven 构建时几个重要的概念"><img class="cover" src="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" alt="cover"><div class="content is-center"><div class="date"><i class="far fa-calendar-alt fa-fw"></i> 2024-07-29</div><div class="title">使用 Maven 构建时几个重要的概念</div></div></a></div></div></div></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">11D_Beyonder</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/11D-Beyonder"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:ztz20001117@126.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/16821850" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a><a class="social-icon" href="https://www.zhihu.com/people/joe-63-36" target="_blank" title="Zhihu"><i class="fa-brands fa-zhihu"></i></a><a class="social-icon" href="https://codeforces.com/profile/11D_Beyonder" target="_blank" title="Codeforces"><i class="fa-solid fa-chart-simple"></i></a><a class="social-icon" href="https://atcoder.jp/users/ElevenD_Beyonder" target="_blank" title="AtCoder"><i class="fa-brands fa-optin-monster"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">暂无</div></div><div class="sticky_layout"><div class="card-widget" id="card-toc"><div class="item-headline"><i class="fas fa-stream"></i><span>目录</span><span class="toc-percentage"></span></div><div class="toc-content"><ol class="toc"><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">1.</span> <span class="toc-text">会话技术</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Cookie"><span class="toc-number">1.1.</span> <span class="toc-text">Cookie</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Session"><span class="toc-number">1.2.</span> <span class="toc-text">Session</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E4%BB%A4%E7%89%8C"><span class="toc-number">1.3.</span> <span class="toc-text">令牌</span></a></li></ol></li><li class="toc-item toc-level-1"><a class="toc-link"><span class="toc-number">2.</span> <span class="toc-text">过滤器和拦截器</span></a><ol class="toc-child"><li class="toc-item toc-level-2"><a class="toc-link" href="#Filter"><span class="toc-number">2.1.</span> <span class="toc-text">Filter</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#Interceptor"><span class="toc-number">2.2.</span> <span class="toc-text">Interceptor</span></a></li><li class="toc-item toc-level-2"><a class="toc-link" href="#%E5%AF%B9%E6%AF%94"><span class="toc-number">2.3.</span> <span class="toc-text">对比</span></a></li></ol></li></ol></div></div><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/02/neovim%E5%B8%B8%E7%94%A8API/" title="无题"><img src="/img/aropolis.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/09/02/neovim%E5%B8%B8%E7%94%A8API/" title="无题">无题</a><time datetime="2024-09-02T05:49:18.136Z" title="发表于 2024-09-02 13:49:18">2024-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/07/%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="登陆校验的解决方案"><img src="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="登陆校验的解决方案"/></a><div class="content"><a class="title" href="/2024/08/07/%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="登陆校验的解决方案">登陆校验的解决方案</a><time datetime="2024-08-07T09:32:33.000Z" title="发表于 2024-08-07 17:32:33">2024-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/31/%E5%9C%A8Ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8Spotify/" title="在 Ubuntu 上安装和使用 Spotify"><img src="/img/waterfall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 Ubuntu 上安装和使用 Spotify"/></a><div class="content"><a class="title" href="/2024/07/31/%E5%9C%A8Ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8Spotify/" title="在 Ubuntu 上安装和使用 Spotify">在 Ubuntu 上安装和使用 Spotify</a><time datetime="2024-07-31T05:21:59.000Z" title="发表于 2024-07-31 13:21:59">2024-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/30/%E5%9C%A8Ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AELLVM%E7%8E%AF%E5%A2%83/" title="在Ubuntu上配置LLVM环境"><img src="/img/school.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Ubuntu上配置LLVM环境"/></a><div class="content"><a class="title" href="/2024/07/30/%E5%9C%A8Ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AELLVM%E7%8E%AF%E5%A2%83/" title="在Ubuntu上配置LLVM环境">在Ubuntu上配置LLVM环境</a><time datetime="2024-07-30T15:34:39.000Z" title="发表于 2024-07-30 23:34:39">2024-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/29/%E4%BD%BF%E7%94%A8-Maven-%E6%9E%84%E5%BB%BA%E6%97%B6%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%A6%82%E5%BF%B5/" title="使用 Maven 构建时几个重要的概念"><img src="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Maven 构建时几个重要的概念"/></a><div class="content"><a class="title" href="/2024/07/29/%E4%BD%BF%E7%94%A8-Maven-%E6%9E%84%E5%BB%BA%E6%97%B6%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%A6%82%E5%BF%B5/" title="使用 Maven 构建时几个重要的概念">使用 Maven 构建时几个重要的概念</a><time datetime="2024-07-29T11:52:24.000Z" title="发表于 2024-07-29 19:52:24">2024-07-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By 11D_Beyonder</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://11d-beyonder.github.io/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button class="close" id="mobile-toc-button" type="button" title="目录"><i class="fas fa-list-ul"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>

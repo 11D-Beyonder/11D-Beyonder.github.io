@@ -1,0 +1,224 @@
+<!DOCTYPE html><html lang="zh-CN" data-theme="light"><head><meta charset="UTF-8"><meta http-equiv="X-UA-Compatible" content="IE=edge"><meta name="viewport" content="width=device-width, initial-scale=1.0,viewport-fit=cover"><title>事件修饰符 | 11D_Beyonder's Blog</title><meta name="author" content="11D_Beyonder"><meta name="copyright" content="11D_Beyonder"><meta name="format-detection" content="telephone=no"><meta name="theme-color" content="#ffffff"><meta name="description" content="Vue 3的事件修饰符包括：  .stop - 调用 event.stopPropagation()，防止事件冒泡。 .prevent - 调用 event.preventDefault()，阻止事件的默认行为。 .self - 只当事件是从事件绑定的元素本身触发时才触发回调。 .capture - 添加事件侦听器时使用事件捕获模式。 .once - 事件只触发一次。 .passive - 告诉浏">
+<meta property="og:type" content="article">
+<meta property="og:title" content="事件修饰符">
+<meta property="og:url" content="https://11d-beyonder.github.io/2024/07/29/%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6/index.html">
+<meta property="og:site_name" content="11D_Beyonder&#39;s Blog">
+<meta property="og:description" content="Vue 3的事件修饰符包括：  .stop - 调用 event.stopPropagation()，防止事件冒泡。 .prevent - 调用 event.preventDefault()，阻止事件的默认行为。 .self - 只当事件是从事件绑定的元素本身触发时才触发回调。 .capture - 添加事件侦听器时使用事件捕获模式。 .once - 事件只触发一次。 .passive - 告诉浏">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:image" content="https://11d-beyonder.github.io/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg">
+<meta property="article:published_time" content="2024-07-29T08:53:24.000Z">
+<meta property="article:modified_time" content="2024-09-02T05:49:18.137Z">
+<meta property="article:author" content="11D_Beyonder">
+<meta property="article:tag" content="Vue">
+<meta name="twitter:card" content="summary">
+<meta name="twitter:image" content="https://11d-beyonder.github.io/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg"><link rel="shortcut icon" href="/img/favicon.png"><link rel="canonical" href="https://11d-beyonder.github.io/2024/07/29/%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6/index.html"><link rel="preconnect" href="//cdn.jsdelivr.net"/><link rel="preconnect" href="//busuanzi.ibruce.info"/><link rel="stylesheet" href="/css/index.css?v=4.13.0"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.5.1/css/all.min.css"><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.min.css" media="print" onload="this.media='all'"><script>const GLOBAL_CONFIG = {
+  root: '/',
+  algolia: undefined,
+  localSearch: undefined,
+  translate: undefined,
+  noticeOutdate: undefined,
+  highlight: {"plugin":"highlight.js","highlightCopy":true,"highlightLang":true,"highlightHeightLimit":false},
+  copy: {
+    success: '复制成功',
+    error: '复制错误',
+    noSupport: '浏览器不支持'
+  },
+  relativeDate: {
+    homepage: false,
+    post: false
+  },
+  runtime: '',
+  dateSuffix: {
+    just: '刚刚',
+    min: '分钟前',
+    hour: '小时前',
+    day: '天前',
+    month: '个月前'
+  },
+  copyright: {"limitCount":50,"languages":{"author":"作者: 11D_Beyonder","link":"链接: ","source":"来源: 11D_Beyonder's Blog","info":"著作权归作者所有。商业转载请联系作者获得授权，非商业转载请注明出处。"}},
+  lightbox: 'fancybox',
+  Snackbar: undefined,
+  infinitegrid: {
+    js: 'https://cdn.jsdelivr.net/npm/@egjs/infinitegrid@4.11.1/dist/infinitegrid.min.js',
+    buttonText: '加载更多'
+  },
+  isPhotoFigcaption: true,
+  islazyload: false,
+  isAnchor: false,
+  percent: {
+    toc: true,
+    rightside: true,
+  },
+  autoDarkmode: true
+}</script><script id="config-diff">var GLOBAL_CONFIG_SITE = {
+  title: '事件修饰符',
+  isPost: true,
+  isHome: false,
+  isHighlightShrink: false,
+  isToc: false,
+  postUpdate: '2024-09-02 13:49:18'
+}</script><script>(win=>{
+      win.saveToLocal = {
+        set: (key, value, ttl) => {
+          if (ttl === 0) return
+          const now = Date.now()
+          const expiry = now + ttl * 86400000
+          const item = {
+            value,
+            expiry
+          }
+          localStorage.setItem(key, JSON.stringify(item))
+        },
+      
+        get: key => {
+          const itemStr = localStorage.getItem(key)
+      
+          if (!itemStr) {
+            return undefined
+          }
+          const item = JSON.parse(itemStr)
+          const now = Date.now()
+      
+          if (now > item.expiry) {
+            localStorage.removeItem(key)
+            return undefined
+          }
+          return item.value
+        }
+      }
+    
+      win.getScript = (url, attr = {}) => new Promise((resolve, reject) => {
+        const script = document.createElement('script')
+        script.src = url
+        script.async = true
+        script.onerror = reject
+        script.onload = script.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          script.onload = script.onreadystatechange = null
+          resolve()
+        }
+
+        Object.keys(attr).forEach(key => {
+          script.setAttribute(key, attr[key])
+        })
+
+        document.head.appendChild(script)
+      })
+    
+      win.getCSS = (url, id = false) => new Promise((resolve, reject) => {
+        const link = document.createElement('link')
+        link.rel = 'stylesheet'
+        link.href = url
+        if (id) link.id = id
+        link.onerror = reject
+        link.onload = link.onreadystatechange = function() {
+          const loadState = this.readyState
+          if (loadState && loadState !== 'loaded' && loadState !== 'complete') return
+          link.onload = link.onreadystatechange = null
+          resolve()
+        }
+        document.head.appendChild(link)
+      })
+    
+      win.activateDarkMode = () => {
+        document.documentElement.setAttribute('data-theme', 'dark')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#0d0d0d')
+        }
+      }
+      win.activateLightMode = () => {
+        document.documentElement.setAttribute('data-theme', 'light')
+        if (document.querySelector('meta[name="theme-color"]') !== null) {
+          document.querySelector('meta[name="theme-color"]').setAttribute('content', '#ffffff')
+        }
+      }
+      const t = saveToLocal.get('theme')
+    
+          const isDarkMode = window.matchMedia('(prefers-color-scheme: dark)').matches
+          const isLightMode = window.matchMedia('(prefers-color-scheme: light)').matches
+          const isNotSpecified = window.matchMedia('(prefers-color-scheme: no-preference)').matches
+          const hasNoSupport = !isDarkMode && !isLightMode && !isNotSpecified
+
+          if (t === undefined) {
+            if (isLightMode) activateLightMode()
+            else if (isDarkMode) activateDarkMode()
+            else if (isNotSpecified || hasNoSupport) {
+              const now = new Date()
+              const hour = now.getHours()
+              const isNight = hour <= 6 || hour >= 18
+              isNight ? activateDarkMode() : activateLightMode()
+            }
+            window.matchMedia('(prefers-color-scheme: dark)').addListener(e => {
+              if (saveToLocal.get('theme') === undefined) {
+                e.matches ? activateDarkMode() : activateLightMode()
+              }
+            })
+          } else if (t === 'light') activateLightMode()
+          else activateDarkMode()
+        
+      const asideStatus = saveToLocal.get('aside-status')
+      if (asideStatus !== undefined) {
+        if (asideStatus === 'hide') {
+          document.documentElement.classList.add('hide-aside')
+        } else {
+          document.documentElement.classList.remove('hide-aside')
+        }
+      }
+    
+      const detectApple = () => {
+        if(/iPad|iPhone|iPod|Macintosh/.test(navigator.userAgent)){
+          document.documentElement.classList.add('apple')
+        }
+      }
+      detectApple()
+    })(window)</script><meta name="generator" content="Hexo 7.3.0"></head><body><div id="loading-box"><div class="loading-left-bg"></div><div class="loading-right-bg"></div><div class="spinner-box"><div class="configure-border-1"><div class="configure-core"></div></div><div class="configure-border-2"><div class="configure-core"></div></div><div class="loading-word">加载中...</div></div></div><script>(()=>{
+  const $loadingBox = document.getElementById('loading-box')
+  const $body = document.body
+  const preloader = {
+    endLoading: () => {
+      $body.style.overflow = ''
+      $loadingBox.classList.add('loaded')
+    },
+    initLoading: () => {
+      $body.style.overflow = 'hidden'
+      $loadingBox.classList.remove('loaded')
+    }
+  }
+
+  preloader.initLoading()
+  window.addEventListener('load',() => { preloader.endLoading() })
+
+  if (false) {
+    document.addEventListener('pjax:send', () => { preloader.initLoading() })
+    document.addEventListener('pjax:complete', () => { preloader.endLoading() })
+  }
+})()</script><div id="sidebar"><div id="menu-mask"></div><div id="sidebar-menus"><div class="avatar-img is-center"><img src="/img/favicon.png" onerror="onerror=null;src='/img/friend_404.gif'" alt="avatar"/></div><div class="sidebar-site-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><hr class="custom-hr"/><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div></div></div><div class="post" id="body-wrap"><header class="post-bg" id="page-header" style="background-image: url('/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg')"><nav id="nav"><span id="blog-info"><a href="/" title="11D_Beyonder's Blog"><img class="site-icon" src="/img/favicon.png"/><span class="site-name">11D_Beyonder's Blog</span></a></span><div id="menus"><div class="menus_items"><div class="menus_item"><a class="site-page" href="/"><i class="fa-fw fas fa-home"></i><span> 首页</span></a></div><div class="menus_item"><a class="site-page" href="/archives/"><i class="fa-fw fas fa-archive"></i><span> 时间轴</span></a></div><div class="menus_item"><a class="site-page" href="/tags/"><i class="fa-fw fas fa-tags"></i><span> 标签</span></a></div><div class="menus_item"><a class="site-page" href="/categories/"><i class="fa-fw fas fa-folder-open"></i><span> 分类</span></a></div><div class="menus_item"><a class="site-page" href="/about/"><i class="fa-fw fas fa-heart"></i><span> 关于</span></a></div></div><div id="toggle-menu"><a class="site-page" href="javascript:void(0);"><i class="fas fa-bars fa-fw"></i></a></div></div></nav><div id="post-info"><h1 class="post-title">事件修饰符</h1><div id="post-meta"><div class="meta-firstline"><span class="post-meta-date"><i class="far fa-calendar-alt fa-fw post-meta-icon"></i><span class="post-meta-label">发表于</span><time class="post-meta-date-created" datetime="2024-07-29T08:53:24.000Z" title="发表于 2024-07-29 16:53:24">2024-07-29</time><span class="post-meta-separator">|</span><i class="fas fa-history fa-fw post-meta-icon"></i><span class="post-meta-label">更新于</span><time class="post-meta-date-updated" datetime="2024-09-02T05:49:18.137Z" title="更新于 2024-09-02 13:49:18">2024-09-02</time></span><span class="post-meta-categories"><span class="post-meta-separator">|</span><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/">计算机技术</a><i class="fas fa-angle-right post-meta-separator"></i><i class="fas fa-inbox fa-fw post-meta-icon"></i><a class="post-meta-categories" href="/categories/%E8%AE%A1%E7%AE%97%E6%9C%BA%E6%8A%80%E6%9C%AF/%E5%89%8D%E7%AB%AF%E5%BC%80%E5%8F%91/">前端开发</a></span></div><div class="meta-secondline"><span class="post-meta-separator">|</span><span class="post-meta-wordcount"><i class="far fa-file-word fa-fw post-meta-icon"></i><span class="post-meta-label">字数总计:</span><span class="word-count">737</span><span class="post-meta-separator">|</span><i class="far fa-clock fa-fw post-meta-icon"></i><span class="post-meta-label">阅读时长:</span><span>3分钟</span></span><span class="post-meta-separator">|</span><span class="post-meta-pv-cv" id="" data-flag-title="事件修饰符"><i class="far fa-eye fa-fw post-meta-icon"></i><span class="post-meta-label">阅读量:</span><span id="busuanzi_value_page_pv"><i class="fa-solid fa-spinner fa-spin"></i></span></span></div></div></div></header><main class="layout" id="content-inner"><div id="post"><article class="post-content" id="article-container"><p>Vue 3的事件修饰符包括：</p>
+<ol>
+<li><code>.stop</code> - 调用 <code>event.stopPropagation()</code>，防止事件冒泡。</li>
+<li><code>.prevent</code> - 调用 <code>event.preventDefault()</code>，阻止事件的默认行为。</li>
+<li><code>.self</code> - 只当事件是从事件绑定的元素本身触发时才触发回调。</li>
+<li><code>.capture</code> - 添加事件侦听器时使用事件捕获模式。</li>
+<li><code>.once</code> - 事件只触发一次。</li>
+<li><code>.passive</code> - 告诉浏览器你不想阻止事件的默认行为。</li>
+</ol>
+<p><a target="_blank" rel="noopener" href="https://cn.vuejs.org/guide/essentials/event-handling.html#event-modifiers">Vue文档</a>的解释有些抽象，下面通过举例说明。</p>
+<p>原始代码如下，当点击链接链接时输出 <code>a</code> 和 <code>div</code>，点击 <code>div</code> 区域时只输出 <code>div</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div style=&quot;background: yellow&quot; @click=&quot;console.log(&#x27;div&#x27;)&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;https://11d-beyonder.github.io&quot;</span><br><span class="line">      target=&quot;_blank&quot;</span><br><span class="line">      @click=&quot;console.log(&#x27;a&#x27;)&quot;</span><br><span class="line">      &gt;点我&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>如果你在子元素上使用 <code>.stop</code>，那么点击子元素时，父元素的点击事件不会被触发。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div style=&quot;background: yellow&quot; @click=&quot;console.log(&#x27;div&#x27;)&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;https://11d-beyonder.github.io&quot;</span><br><span class="line">      target=&quot;_blank&quot;</span><br><span class="line">      @click.stop=&quot;console.log(&#x27;a&#x27;)&quot;</span><br><span class="line">      &gt;点我&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>使用 <code>a</code> 标签时，点击的默认行为是跳转链接，使用 <code>.prevent</code> 可以阻止默认行为。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div style=&quot;background: yellow&quot; @click=&quot;console.log(&#x27;div&#x27;)&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;https://11d-beyonder.github.io&quot;</span><br><span class="line">      target=&quot;_blank&quot;</span><br><span class="line">      @click.prevent=&quot;console.log(&#x27;a&#x27;)&quot;</span><br><span class="line">      &gt;点我&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>使用 <code>.self</code>，点击链接时只会输出 <code>a</code>，冒泡到 <code>div</code> 则不会响应。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div style=&quot;background: yellow&quot; @click.self=&quot;console.log(&#x27;div&#x27;)&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;https://11d-beyonder.github.io&quot;</span><br><span class="line">      target=&quot;_blank&quot;</span><br><span class="line">      @click.self=&quot;console.log(&#x27;a&#x27;)&quot;</span><br><span class="line">      &gt;点我&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>使用 <code>.capture</code>，指向内部元素的事件，在被内部元素处理前，先被外部处理。点击链接，下面的例子会先输出 <code>div</code> 再输出 <code>a</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div style=&quot;background: yellow&quot; @click.capture=&quot;console.log(&#x27;div&#x27;)&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;https://11d-beyonder.github.io&quot;</span><br><span class="line">      target=&quot;_blank&quot;</span><br><span class="line">      @click=&quot;console.log(&#x27;a&#x27;)&quot;</span><br><span class="line">      &gt;点我&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p>用 <code>.once</code> 可以让事件只触发一次。这里要注意冒泡，下面的例子中，第一次点击链接，输出 <code>a</code> 和 <code>div</code>，接下来每次点击链接，都还会输出 <code>div</code>。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;template&gt;</span><br><span class="line">  &lt;div style=&quot;background: yellow&quot; @click=&quot;console.log(&#x27;div&#x27;)&quot;&gt;</span><br><span class="line">    &lt;a</span><br><span class="line">      href=&quot;https://11d-beyonder.github.io&quot;</span><br><span class="line">      target=&quot;_blank&quot;</span><br><span class="line">      @click.once=&quot;console.log(&#x27;a&#x27;)&quot;</span><br><span class="line">      &gt;点我&lt;/a</span><br><span class="line">    &gt;</span><br><span class="line">  &lt;/div&gt;</span><br><span class="line">&lt;/template&gt;</span><br></pre></td></tr></table></figure>
+<p><code>.passive</code> 用于告诉浏览器不阻止默认行为。此时就有一个问题：默认行为不阻止就会自动执行，这为啥要告诉浏览器？不妨参考<a target="_blank" rel="noopener" href="https://juejin.cn/post/6976954795051450375">这篇文章</a>。典型的例子是用于滚动和缩放。</p>
+<figure class="highlight plaintext"><table><tr><td class="gutter"><pre><span class="line">1</span><br></pre></td><td class="code"><pre><span class="line">&lt;div @scroll.passive=&quot;onScroll&quot;&gt;...&lt;/div&gt;</span><br></pre></td></tr></table></figure>
+</article><div class="post-copyright"><div class="post-copyright__author"><span class="post-copyright-meta"><i class="fas fa-circle-user fa-fw"></i>文章作者: </span><span class="post-copyright-info"><a href="https://11d-beyonder.github.io/">11D_Beyonder</a></span></div><div class="post-copyright__type"><span class="post-copyright-meta"><i class="fas fa-square-arrow-up-right fa-fw"></i>文章链接: </span><span class="post-copyright-info"><a href="https://11d-beyonder.github.io/2024/07/29/%E4%BA%8B%E4%BB%B6%E4%BF%AE%E9%A5%B0%E7%AC%A6/">https://11d-beyonder.github.io/2024/07/29/事件修饰符/</a></span></div><div class="post-copyright__notice"><span class="post-copyright-meta"><i class="fas fa-circle-exclamation fa-fw"></i>版权声明: </span><span class="post-copyright-info">本博客所有文章除特别声明外，均采用 <a href="https://creativecommons.org/licenses/by-nc-sa/4.0/" target="_blank">CC BY-NC-SA 4.0</a> 许可协议。转载请注明来自 <a href="https://11d-beyonder.github.io" target="_blank">11D_Beyonder's Blog</a>！</span></div></div><div class="tag_share"><div class="post-meta__tag-list"><a class="post-meta__tags" href="/tags/Vue/">Vue</a></div><div class="post_share"><div class="social-share" data-image="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" data-sites="facebook,twitter,wechat,weibo,qq"></div><link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/css/share.min.css" media="print" onload="this.media='all'"><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/sharejs/dist/js/social-share.min.js" defer></script></div></div><div class="post-reward"><div class="reward-button"><i class="fas fa-qrcode"></i>赞助</div><div class="reward-main"><ul class="reward-all"><li class="reward-item"><a href="/img/wechat-pay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/wechat-pay.JPG" alt="微信"/></a><div class="post-qr-code-desc">微信</div></li><li class="reward-item"><a href="/img/ali-pay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/ali-pay.JPG" alt="支付宝"/></a><div class="post-qr-code-desc">支付宝</div></li><li class="reward-item"><a href="/img/qq-pay.JPG" target="_blank"><img class="post-qr-code-img" src="/img/qq-pay.JPG" alt="QQ"/></a><div class="post-qr-code-desc">QQ</div></li></ul></div></div><nav class="pagination-post" id="pagination"><div class="prev-post pull-left"><a href="/2024/07/29/%E4%BD%BF%E7%94%A8-Maven-%E6%9E%84%E5%BB%BA%E6%97%B6%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%A6%82%E5%BF%B5/" title="使用 Maven 构建时几个重要的概念"><img class="cover" src="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of previous post"><div class="pagination-info"><div class="label">上一篇</div><div class="prev_info">使用 Maven 构建时几个重要的概念</div></div></a></div><div class="next-post pull-right"><a href="/2024/07/25/X%20%E8%BF%98%E6%98%AF%20Wayland%EF%BC%9F/" title="X 还是 Wayland？"><img class="cover" src="/img/lake.jpg" onerror="onerror=null;src='/img/404.jpg'" alt="cover of next post"><div class="pagination-info"><div class="label">下一篇</div><div class="next_info">X 还是 Wayland？</div></div></a></div></nav></div><div class="aside-content" id="aside-content"><div class="card-widget card-info"><div class="is-center"><div class="avatar-img"><img src="/img/favicon.png" onerror="this.onerror=null;this.src='/img/friend_404.gif'" alt="avatar"/></div><div class="author-info__name">11D_Beyonder</div><div class="author-info__description"></div></div><div class="card-info-data site-data is-center"><a href="/archives/"><div class="headline">文章</div><div class="length-num">7</div></a><a href="/tags/"><div class="headline">标签</div><div class="length-num">14</div></a><a href="/categories/"><div class="headline">分类</div><div class="length-num">8</div></a></div><a id="card-info-btn" target="_blank" rel="noopener" href="https://github.com/11D-Beyonder"><i class="fab fa-github"></i><span>Follow Me</span></a><div class="card-info-social-icons is-center"><a class="social-icon" href="mailto:ztz20001117@126.com" target="_blank" title="Email"><i class="fas fa-envelope"></i></a><a class="social-icon" href="https://space.bilibili.com/16821850" target="_blank" title="Bilibili"><i class="fa-brands fa-bilibili"></i></a><a class="social-icon" href="https://www.zhihu.com/people/joe-63-36" target="_blank" title="Zhihu"><i class="fa-brands fa-zhihu"></i></a><a class="social-icon" href="https://codeforces.com/profile/11D_Beyonder" target="_blank" title="Codeforces"><i class="fa-solid fa-chart-simple"></i></a><a class="social-icon" href="https://atcoder.jp/users/ElevenD_Beyonder" target="_blank" title="AtCoder"><i class="fa-brands fa-optin-monster"></i></a></div></div><div class="card-widget card-announcement"><div class="item-headline"><i class="fas fa-bullhorn fa-shake"></i><span>公告</span></div><div class="announcement_content">暂无</div></div><div class="sticky_layout"><div class="card-widget card-recent-post"><div class="item-headline"><i class="fas fa-history"></i><span>最新文章</span></div><div class="aside-list"><div class="aside-list-item"><a class="thumbnail" href="/2024/09/02/neovim%E5%B8%B8%E7%94%A8API/" title="无题"><img src="/img/aropolis.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="无题"/></a><div class="content"><a class="title" href="/2024/09/02/neovim%E5%B8%B8%E7%94%A8API/" title="无题">无题</a><time datetime="2024-09-02T05:49:18.136Z" title="发表于 2024-09-02 13:49:18">2024-09-02</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/08/07/%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="登陆校验的解决方案"><img src="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="登陆校验的解决方案"/></a><div class="content"><a class="title" href="/2024/08/07/%E7%99%BB%E9%99%86%E6%A0%A1%E9%AA%8C%E7%9A%84%E8%A7%A3%E5%86%B3%E6%96%B9%E6%A1%88/" title="登陆校验的解决方案">登陆校验的解决方案</a><time datetime="2024-08-07T09:32:33.000Z" title="发表于 2024-08-07 17:32:33">2024-08-07</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/31/%E5%9C%A8Ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8Spotify/" title="在 Ubuntu 上安装和使用 Spotify"><img src="/img/waterfall.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在 Ubuntu 上安装和使用 Spotify"/></a><div class="content"><a class="title" href="/2024/07/31/%E5%9C%A8Ubuntu%E4%B8%8A%E5%AE%89%E8%A3%85%E5%92%8C%E4%BD%BF%E7%94%A8Spotify/" title="在 Ubuntu 上安装和使用 Spotify">在 Ubuntu 上安装和使用 Spotify</a><time datetime="2024-07-31T05:21:59.000Z" title="发表于 2024-07-31 13:21:59">2024-07-31</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/30/%E5%9C%A8Ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AELLVM%E7%8E%AF%E5%A2%83/" title="在Ubuntu上配置LLVM环境"><img src="/img/school.png" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="在Ubuntu上配置LLVM环境"/></a><div class="content"><a class="title" href="/2024/07/30/%E5%9C%A8Ubuntu%E4%B8%8A%E9%85%8D%E7%BD%AELLVM%E7%8E%AF%E5%A2%83/" title="在Ubuntu上配置LLVM环境">在Ubuntu上配置LLVM环境</a><time datetime="2024-07-30T15:34:39.000Z" title="发表于 2024-07-30 23:34:39">2024-07-30</time></div></div><div class="aside-list-item"><a class="thumbnail" href="/2024/07/29/%E4%BD%BF%E7%94%A8-Maven-%E6%9E%84%E5%BB%BA%E6%97%B6%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%A6%82%E5%BF%B5/" title="使用 Maven 构建时几个重要的概念"><img src="/img/%E5%85%89%E8%B0%B7%E8%BD%AC%E7%9B%98.jpg" onerror="this.onerror=null;this.src='/img/404.jpg'" alt="使用 Maven 构建时几个重要的概念"/></a><div class="content"><a class="title" href="/2024/07/29/%E4%BD%BF%E7%94%A8-Maven-%E6%9E%84%E5%BB%BA%E6%97%B6%E5%87%A0%E4%B8%AA%E9%87%8D%E8%A6%81%E7%9A%84%E6%A6%82%E5%BF%B5/" title="使用 Maven 构建时几个重要的概念">使用 Maven 构建时几个重要的概念</a><time datetime="2024-07-29T11:52:24.000Z" title="发表于 2024-07-29 19:52:24">2024-07-29</time></div></div></div></div></div></div></main><footer id="footer"><div id="footer-wrap"><div class="copyright">&copy;2019 - 2024 By 11D_Beyonder</div><div class="framework-info"><span>框架 </span><a target="_blank" rel="noopener" href="https://hexo.io">Hexo</a><span class="footer-separator">|</span><span>主题 </span><a target="_blank" rel="noopener" href="https://github.com/jerryc127/hexo-theme-butterfly">Butterfly</a></div><div class="footer_custom_text">Hi, welcome to my <a href="https://11d-beyonder.github.io/">blog</a>!</div></div></footer></div><div id="rightside"><div id="rightside-config-hide"><button id="readmode" type="button" title="阅读模式"><i class="fas fa-book-open"></i></button><button id="darkmode" type="button" title="浅色和深色模式转换"><i class="fas fa-adjust"></i></button><button id="hide-aside-btn" type="button" title="单栏和双栏切换"><i class="fas fa-arrows-alt-h"></i></button></div><div id="rightside-config-show"><button id="rightside-config" type="button" title="设置"><i class="fas fa-cog fa-spin"></i></button><button id="go-up" type="button" title="回到顶部"><span class="scroll-percent"></span><i class="fas fa-arrow-up"></i></button></div></div><div><script src="/js/utils.js?v=4.13.0"></script><script src="/js/main.js?v=4.13.0"></script><script src="https://cdn.jsdelivr.net/npm/@fancyapps/ui@5.0.33/dist/fancybox/fancybox.umd.min.js"></script><div class="js-pjax"><link rel="stylesheet" type="text/css" href="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css"><script src="https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/contrib/copy-tex.min.js"></script><script>(() => {
+  document.querySelectorAll('#article-container span.katex-display').forEach(item => {
+    btf.wrap(item, 'div', { class: 'katex-wrap'})
+  })
+})()</script></div><canvas class="fireworks" mobile="false"></canvas><script src="https://cdn.jsdelivr.net/npm/butterfly-extsrc@1.1.3/dist/fireworks.min.js"></script><script async data-pjax src="//busuanzi.ibruce.info/busuanzi/2.3/busuanzi.pure.mini.js"></script></div></body></html>
